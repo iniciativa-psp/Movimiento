@@ -19,7 +19,8 @@ function psp_whatsapp_late_init() {
 
 
 
-add_shortcode('psp_whatsapp_grupos', 'psp_whatsapp_shortcode');
+add_shortcode('psp_whatsapp_grupos',   'psp_whatsapp_shortcode');
+add_shortcode('psp_mi_grupo_wa',       'psp_mi_grupo_wa_shortcode');
 add_action('admin_menu', 'psp_whatsapp_admin_menu');
 
 function psp_whatsapp_admin_menu() {
@@ -139,4 +140,100 @@ function psp_ajax_wa_front() {
     $params = ['activo' => 'eq.true', 'order' => 'nombre.asc', 'limit' => 100];
     if ($tipo !== 'todos') $params['tipo'] = 'eq.' . $tipo;
     wp_send_json_success(PSP_Supabase::select('whatsapp_grupos', $params) ?? []);
+}
+
+/**
+ * Shortcode: muestra el grupo de WhatsApp territorial asignado al miembro autenticado
+ * y grupos generales/sectoriales.
+ * Uso: [psp_mi_grupo_wa]
+ */
+function psp_mi_grupo_wa_shortcode(): string {
+    ob_start();
+    ?>
+    <div id="psp-mi-wa" class="psp-card">
+      <h3 style="margin-top:0;color:#0B5E43">&#x1F4AC; Tu Grupo de WhatsApp</h3>
+      <div id="psp-mi-wa-loading" style="color:#6B7280;font-size:13px">Cargando grupos...</div>
+      <div id="psp-mi-wa-content" style="display:none"></div>
+    </div>
+    <script>
+    (function() {
+      var jwt = (typeof PSP_CONFIG !== 'undefined' && PSP_CONFIG.jwt) ? PSP_CONFIG.jwt : (document.cookie.match(/psp_jwt=([^;]+)/) || [])[1];
+
+      function renderGrupos(grupos) {
+        if (!grupos || !grupos.length) {
+          return '<p style="color:#888;font-size:13px">&#x26A0;&#xFE0F; A&uacute;n no hay grupos disponibles para tu zona. Vuelve pronto.</p>';
+        }
+        return grupos.map(function(g) {
+          var badge = (g.categoria === 'territorial' || g.tipo === 'territorial')
+            ? '<span style="background:#0B5E43;color:#fff;padding:2px 8px;border-radius:20px;font-size:11px">Tu zona</span>'
+            : '<span style="background:#6B7280;color:#fff;padding:2px 8px;border-radius:20px;font-size:11px">' + (g.tipo || 'general') + '</span>';
+          return '<div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #E5E7EB">'
+            + '<span style="font-size:28px">&#x1F4AC;</span>'
+            + '<div style="flex:1"><div style="font-weight:700;font-size:14px">' + g.nombre + ' ' + badge + '</div>'
+            + '<div style="font-size:12px;color:#888;margin-top:2px">' + (g.miembros_actual || 0) + '/' + (g.miembros_max || 256) + ' miembros</div></div>'
+            + '<a href="' + g.link + '" target="_blank" rel="noopener" '
+            + 'style="background:#25D366;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap">'
+            + '&#x1F4F2; Unirme</a></div>';
+        }).join('');
+      }
+
+      async function loadGrupos() {
+        var content = document.getElementById('psp-mi-wa-content');
+        var loading = document.getElementById('psp-mi-wa-loading');
+
+        if (!jwt) {
+          loading.innerHTML = '<p style="color:#888;font-size:13px">Inicia sesi&oacute;n para ver tu grupo de WhatsApp territorial.</p>';
+          return;
+        }
+
+        try {
+          var restUrl = (typeof PSP_CONFIG !== 'undefined' && PSP_CONFIG.rest_url)
+            ? PSP_CONFIG.rest_url + 'wa-group'
+            : '/wp-json/psp/v1/wa-group';
+
+          var r = await fetch(restUrl, {
+            headers: {
+              'Authorization': 'Bearer ' + jwt,
+              'X-WP-Nonce': (typeof PSP_CONFIG !== 'undefined' && PSP_CONFIG.rest_nonce) ? PSP_CONFIG.rest_nonce : '',
+            }
+          });
+          var d = await r.json();
+
+          loading.style.display = 'none';
+          content.style.display = 'block';
+
+          if (!d.success || !d.grupos || !d.grupos.length) {
+            content.innerHTML = '<p style="color:#888;font-size:13px">&#x26A0;&#xFE0F; No hay grupos asignados a tu zona todav&iacute;a. Vuelve pronto o consulta los grupos generales.</p>';
+          } else {
+            content.innerHTML = renderGrupos(d.grupos);
+          }
+        } catch (e) {
+          loading.innerHTML = '<p style="color:#c00;font-size:13px">Error cargando grupos. Intenta recargar la p&aacute;gina.</p>';
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGrupos);
+      } else {
+        loadGrupos();
+      }
+    })();
+    </script>
+    <?php
+    return ob_get_clean();
+}
+
+// AJAX: asociar grupo a un territorio desde el admin
+add_action('wp_ajax_psp_asignar_wa_territorio', 'psp_ajax_asignar_wa_territorio');
+function psp_ajax_asignar_wa_territorio() {
+    if (!current_user_can('manage_options') || !check_admin_referer('psp_nonce', 'psp_nonce')) {
+        wp_send_json_error(['message' => 'No autorizado']);
+    }
+    $grupo_id       = sanitize_text_field($_POST['grupo_id']      ?? '');
+    $territorio_id  = sanitize_text_field($_POST['territorio_id'] ?? '');
+    if (!$grupo_id || !$territorio_id) {
+        wp_send_json_error(['message' => 'Datos incompletos']);
+    }
+    $r = PSP_Supabase::update('whatsapp_grupos', ['territorio_id' => $territorio_id], ['id' => 'eq.' . $grupo_id]);
+    $r ? wp_send_json_success() : wp_send_json_error(['message' => 'Error actualizando']);
 }

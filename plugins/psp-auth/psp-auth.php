@@ -23,11 +23,22 @@ function psp_auth_load() {
     require_once plugin_dir_path( __FILE__ ) . 'includes/auth-handler.php';
 }
 
-add_shortcode( 'psp_login',    'psp_login_shortcode' );
-add_shortcode( 'psp_registro', 'psp_registro_shortcode' );
-add_shortcode( 'psp_perfil',   'psp_perfil_shortcode' );
+add_shortcode( 'psp_login',              'psp_login_shortcode' );
+add_shortcode( 'psp_registro',           'psp_registro_shortcode' );
+add_shortcode( 'psp_perfil',             'psp_perfil_shortcode' );
+add_shortcode( 'psp_registro_completo',  'psp_registro_completo_shortcode' );
 
-// ── Shortcode Login ───────────────────────────────────────────────────────────
+// ── Capturar ?ref= y persistir en cookie ────────────────────────────────────
+add_action( 'init', 'psp_capture_ref_param' );
+function psp_capture_ref_param() {
+    if ( ! empty( $_GET['ref'] ) ) {
+        $codigo = sanitize_text_field( wp_unslash( $_GET['ref'] ) );
+        if ( preg_match( '/^[A-Z0-9\-]{5,30}$/', $codigo ) ) {
+            setcookie( 'psp_ref', $codigo, time() + 86400 * 30, '/', '', is_ssl(), true );
+            $_COOKIE['psp_ref'] = $codigo;
+        }
+    }
+}
 function psp_login_shortcode( $atts = [] ) {
     ob_start(); ?>
     <div id="psp-auth-wrap" class="psp-card">
@@ -407,4 +418,489 @@ function psp_perfil_shortcode( $atts = [] ) {
         . ( shortcode_exists('psp_mi_membresia') ? do_shortcode('[psp_mi_membresia]') : '<p>Cargando perfil...</p>' )
         . ( shortcode_exists('psp_mi_referido')  ? do_shortcode('[psp_mi_referido]')  : '' )
         . '</div>';
+}
+
+/**
+ * Shortcode: flujo completo de registro + pago B/.1 + confirmación
+ * Uso: [psp_registro_completo]
+ *
+ * Pasos:
+ *   1. Formulario de registro (nombre, celular, email, territorio)
+ *   2. Selección y confirmación de pago B/.1 (Yappy, transferencia, etc.)
+ *   3. Pantalla de éxito con enlace de referido + botón WhatsApp
+ */
+function psp_registro_completo_shortcode( $atts = [] ): string {
+    $atts = shortcode_atts( [
+        'redirect_url' => '',
+    ], $atts );
+
+    $ref_cookie  = sanitize_text_field( $_COOKIE['psp_ref'] ?? '' );
+    $ref_get     = sanitize_text_field( $_GET['ref']        ?? '' );
+    $ref_inicial = $ref_cookie ?: $ref_get;
+
+    $fee      = defined('PSP_MEMBERSHIP_FEE') ? PSP_MEMBERSHIP_FEE : 1.00;
+    $fee_fmt  = number_format( $fee, 2 );
+
+    // Datos de pago desde opciones de WP
+    $yappy_num   = get_option( 'psp_yappy_numero', '' );
+    $yappy_nom   = get_option( 'psp_yappy_nombre', 'Panamá Sin Pobreza' );
+    $banco_cuenta = get_option( 'psp_banco_cuenta', '' );
+    $banco_nombre = get_option( 'psp_banco_nombre', '' );
+    $banco_titular= get_option( 'psp_banco_titular', '' );
+    $paypal_email = get_option( 'psp_paypal_email', '' );
+
+    ob_start();
+    ?>
+    <div id="psp-rc-wrap" class="psp-card psp-registro-completo" style="max-width:520px;margin:0 auto">
+
+      <!-- Pasos visuales -->
+      <div class="psp-rc-steps" style="display:flex;gap:0;margin-bottom:24px">
+        <?php foreach (['Registro','Pago','¡Listo!'] as $i => $label): ?>
+        <div class="psp-rc-step <?php echo $i === 0 ? 'active' : ''; ?>"
+             id="psp-rc-step-<?php echo $i; ?>"
+             style="flex:1;text-align:center;padding:8px 4px;font-size:12px;font-weight:700;border-bottom:3px solid <?php echo $i === 0 ? '#0B5E43' : '#E5E7EB'; ?>;color:<?php echo $i === 0 ? '#0B5E43' : '#9CA3AF'; ?>">
+          <span style="display:block;font-size:18px"><?php echo ['1️⃣','2️⃣','✅'][$i]; ?></span>
+          <?php echo esc_html($label); ?>
+        </div>
+        <?php endforeach; ?>
+      </div>
+
+      <!-- ═══════════════ PASO 1: REGISTRO ═══════════════ -->
+      <div id="psp-rc-panel-0">
+        <h3 style="margin-top:0;color:#0B5E43">&#x1F1F5;&#x1F1E6; &Uacute;nete al Movimiento</h3>
+        <p style="font-size:13px;color:#6B7280;margin-bottom:18px">
+          Completa los datos. La membres&iacute;a tiene un aporte de
+          <strong>B/.<?php echo esc_html($fee_fmt); ?></strong>.
+        </p>
+        <div id="psp-rc-error-0" class="psp-alert psp-alert-error" style="display:none"></div>
+
+        <div class="psp-field">
+          <label class="psp-label">Nombre completo <span style="color:red">*</span></label>
+          <input type="text" id="psp-rc-nombre" class="psp-input" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="psp-field">
+          <label class="psp-label">Celular (con código de país) <span style="color:red">*</span></label>
+          <input type="tel" id="psp-rc-celular" class="psp-input" placeholder="+50761234567" required>
+        </div>
+        <div class="psp-field">
+          <label class="psp-label">Correo electr&oacute;nico</label>
+          <input type="email" id="psp-rc-email" class="psp-input" placeholder="tu@correo.com">
+          <span style="font-size:11px;color:#6B7280">Opcional, para recibir link m&aacute;gico de inicio de sesi&oacute;n.</span>
+        </div>
+
+        <!-- Selector territorial (usa psp-territorial si está activo) -->
+        <div class="psp-field">
+          <label class="psp-label">Ubicaci&oacute;n</label>
+          <?php if ( shortcode_exists('psp_territorial_selector') ): ?>
+            <?php echo do_shortcode('[psp_territorial_selector required="si" prefix="rc_"]'); ?>
+          <?php else: ?>
+            <div class="psp-terr-fallback">
+              <select id="rc_pais_id" class="psp-input" onchange="PSPRegComp.switchPais(this.value)">
+                <option value="PA" selected>&#x1F1F5;&#x1F1E6; Panam&aacute;</option>
+                <option value="">&#x1F30E; Internacional</option>
+              </select>
+              <input type="text" id="rc_ciudad" class="psp-input" placeholder="Ciudad" style="margin-top:8px;display:none">
+            </div>
+          <?php endif; ?>
+        </div>
+
+        <input type="hidden" id="psp-rc-ref" value="<?php echo esc_attr($ref_inicial); ?>">
+
+        <button id="psp-rc-btn-0" class="psp-btn psp-btn-primary psp-btn-block psp-btn-lg"
+                onclick="PSPRegComp.paso1()" style="margin-top:8px">
+          Continuar al pago &rarr;
+        </button>
+        <p style="font-size:11px;text-align:center;color:#9CA3AF;margin-top:10px">
+          Al continuar aceptas los <a href="/terminos" target="_blank">t&eacute;rminos del movimiento</a>.
+        </p>
+      </div>
+
+      <!-- ═══════════════ PASO 2: PAGO ═══════════════ -->
+      <div id="psp-rc-panel-1" style="display:none">
+        <h3 style="margin-top:0;color:#0B5E43">&#x1F4B3; Confirma tu Membres&iacute;a</h3>
+        <p style="font-size:13px;color:#6B7280;margin-bottom:4px">
+          Realiza un aporte de <strong style="font-size:16px;color:#0B5E43">B/.<?php echo esc_html($fee_fmt); ?></strong>
+          a trav&eacute;s de cualquiera de estos m&eacute;todos:
+        </p>
+        <div id="psp-rc-error-1" class="psp-alert psp-alert-error" style="display:none"></div>
+
+        <!-- Tabs de métodos de pago -->
+        <div class="psp-pay-tabs" style="display:flex;flex-wrap:wrap;gap:6px;margin:14px 0">
+          <?php
+          $metodos = [
+            'yappy'                    => ['emoji' => '📱', 'label' => 'Yappy'],
+            'clave'                    => ['emoji' => '🔑', 'label' => 'Clave'],
+            'tarjeta_bg'               => ['emoji' => '💳', 'label' => 'Tarjeta BG'],
+            'puntopago'                => ['emoji' => '🏧', 'label' => 'PuntoPago'],
+            'paypal'                   => ['emoji' => '🅿️', 'label' => 'PayPal'],
+            'transferencia_nacional'   => ['emoji' => '🏦', 'label' => 'Transferencia'],
+            'transferencia_internacional' => ['emoji' => '🌐', 'label' => 'SWIFT'],
+            'efectivo'                 => ['emoji' => '💵', 'label' => 'Efectivo'],
+          ];
+          foreach ( $metodos as $key => $m ):
+          ?>
+          <button class="psp-pay-tab" data-metodo="<?php echo esc_attr($key); ?>"
+                  onclick="PSPRegComp.selectMetodo('<?php echo esc_js($key); ?>')"
+                  style="padding:8px 12px;border:2px solid #E5E7EB;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;font-weight:600">
+            <?php echo esc_html($m['emoji'] . ' ' . $m['label']); ?>
+          </button>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- Instrucciones por método -->
+        <div id="psp-pay-instrucciones" style="background:#F0FDF4;border-radius:10px;padding:16px;margin-bottom:16px;display:none">
+
+          <div class="psp-pi" id="psp-pi-yappy" style="display:none">
+            <?php if ($yappy_num): ?>
+            <p>&#x1F4F1; Env&iacute;a <strong>B/.<?php echo esc_html($fee_fmt); ?></strong> v&iacute;a Yappy al n&uacute;mero:</p>
+            <p style="font-size:22px;font-weight:700;color:#0B5E43"><?php echo esc_html($yappy_num); ?></p>
+            <p style="font-size:13px">Nombre: <strong><?php echo esc_html($yappy_nom); ?></strong></p>
+            <p style="font-size:12px;color:#6B7280">Coloca tu nombre en el mensaje del pago.</p>
+            <?php else: ?>
+            <p>&#x26A0;&#xFE0F; Yappy no est&aacute; configurado a&uacute;n. Contacta al equipo para obtener el n&uacute;mero.</p>
+            <?php endif; ?>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-clave" style="display:none">
+            <p>&#x1F511; Disponible pr&oacute;ximamente v&iacute;a Sistema Clave (PagueloFacil).</p>
+            <p style="font-size:12px;color:#6B7280">Por ahora usa transferencia bancaria o Yappy.</p>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-tarjeta_bg" style="display:none">
+            <p>&#x1F4B3; Pago con Tarjeta (Banco General) — Disponible pr&oacute;ximamente.</p>
+            <p style="font-size:12px;color:#6B7280">Por ahora usa transferencia bancaria o Yappy.</p>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-puntopago" style="display:none">
+            <p>&#x1F3E7; Pago en puntos PuntoPago — Disponible pr&oacute;ximamente.</p>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-paypal" style="display:none">
+            <?php if ($paypal_email): ?>
+            <p>&#x1F4B8; Env&iacute;a <strong>B/.<?php echo esc_html($fee_fmt); ?></strong> por PayPal a:</p>
+            <p style="font-size:18px;font-weight:700;color:#0B5E43"><?php echo esc_html($paypal_email); ?></p>
+            <p style="font-size:12px;color:#6B7280">Selecciona "Pago a amigos y familiares" para evitar comisiones.</p>
+            <?php else: ?>
+            <p>&#x26A0;&#xFE0F; PayPal no configurado a&uacute;n.</p>
+            <?php endif; ?>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-transferencia_nacional" style="display:none">
+            <?php if ($banco_cuenta): ?>
+            <p>&#x1F3E6; Transferencia Bancaria Nacional (ACH/Banca en l&iacute;nea):</p>
+            <table style="font-size:13px;width:100%">
+              <tr><td><strong>Banco:</strong></td><td><?php echo esc_html($banco_nombre); ?></td></tr>
+              <tr><td><strong>Cuenta:</strong></td><td><?php echo esc_html($banco_cuenta); ?></td></tr>
+              <tr><td><strong>Titular:</strong></td><td><?php echo esc_html($banco_titular); ?></td></tr>
+            </table>
+            <?php else: ?>
+            <p>&#x26A0;&#xFE0F; Datos bancarios no configurados a&uacute;n. Contacta al equipo.</p>
+            <?php endif; ?>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-transferencia_internacional" style="display:none">
+            <p>&#x1F30D; Transferencia Internacional (SWIFT/IBAN).</p>
+            <p style="font-size:12px;color:#6B7280">Contacta al equipo para obtener los datos SWIFT.</p>
+          </div>
+
+          <div class="psp-pi" id="psp-pi-efectivo" style="display:none">
+            <p>&#x1F4B5; Pago en Efectivo — Contacta a tu coordinador territorial para coordinar el pago.</p>
+          </div>
+
+        </div>
+
+        <!-- Referencia de comprobante -->
+        <div class="psp-field">
+          <label class="psp-label">Referencia / N&uacute;mero de comprobante (opcional)</label>
+          <input type="text" id="psp-rc-referencia" class="psp-input" placeholder="Ej: 00123456 o número de transacción">
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <button onclick="PSPRegComp.volverPaso1()" class="psp-btn psp-btn-secondary"
+                  style="flex:1">&larr; Atr&aacute;s</button>
+          <button id="psp-rc-btn-1" onclick="PSPRegComp.paso2()" class="psp-btn psp-btn-primary"
+                  style="flex:2">Confirmar pago &#x2713;</button>
+        </div>
+        <p style="font-size:11px;text-align:center;color:#9CA3AF;margin-top:8px">
+          Tu membres&iacute;a se activar&aacute; tras verificar el pago (puede tomar hasta 24 h para transferencias manuales).
+        </p>
+      </div>
+
+      <!-- ═══════════════ PASO 3: ÉXITO ═══════════════ -->
+      <div id="psp-rc-panel-2" style="display:none;text-align:center">
+        <div style="font-size:64px;margin-bottom:8px">🎉</div>
+        <h3 style="color:#0B5E43;margin-top:0">&#xa1;Registro Exitoso!</h3>
+        <p id="psp-rc-success-msg" style="color:#374151;font-size:14px"></p>
+
+        <!-- Referral link -->
+        <div style="background:#F0FDF4;border:2px dashed #0B5E43;border-radius:10px;padding:16px;margin:16px 0">
+          <p style="font-size:13px;font-weight:700;color:#065F46;margin:0 0 8px">&#x1F517; Tu enlace personal de referido:</p>
+          <input type="text" id="psp-rc-reflink" class="psp-input" readonly
+                 style="font-size:12px;text-align:center;background:#fff"
+                 onclick="this.select()">
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button onclick="PSPRegComp.copiarLink()" class="psp-btn psp-btn-secondary" style="flex:1">
+              &#x1F4CB; Copiar
+            </button>
+            <button onclick="PSPRegComp.compartirWA()" class="psp-btn psp-btn-wa" style="flex:2;background:#25D366;color:#fff">
+              &#x1F4F2; Compartir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <p style="font-size:13px;color:#6B7280">
+          Por cada persona que se registre con tu enlace, ganar&aacute;s puntos y subir&aacute;s en el ranking.
+        </p>
+
+        <?php if ($atts['redirect_url']): ?>
+        <a href="<?php echo esc_url($atts['redirect_url']); ?>" class="psp-btn psp-btn-primary psp-btn-block"
+           style="margin-top:12px">Ver mi cuenta &rarr;</a>
+        <?php else: ?>
+        <a href="<?php echo esc_url(home_url('/mi-cuenta')); ?>" class="psp-btn psp-btn-primary psp-btn-block"
+           style="margin-top:12px">Ver mi cuenta &rarr;</a>
+        <?php endif; ?>
+      </div>
+
+    </div><!-- /#psp-rc-wrap -->
+
+    <style>
+    .psp-registro-completo .psp-field{margin-bottom:14px}
+    .psp-registro-completo .psp-label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:4px}
+    .psp-registro-completo .psp-input{width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid #D1D5DB;border-radius:8px;font-size:14px}
+    .psp-registro-completo .psp-input:focus{outline:none;border-color:#0B5E43;box-shadow:0 0 0 3px rgba(11,94,67,.15)}
+    .psp-registro-completo .psp-alert-error{background:#FEF2F2;color:#991B1B;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:12px}
+    .psp-registro-completo .psp-btn-block{display:block;width:100%;text-align:center}
+    .psp-registro-completo .psp-btn-lg{padding:13px;font-size:16px;font-weight:700}
+    .psp-pay-tab.selected{border-color:#0B5E43 !important;background:#F0FDF4 !important;color:#065F46}
+    .psp-rc-step.active{border-bottom-color:#0B5E43 !important;color:#0B5E43 !important}
+    </style>
+
+    <script>
+    (function() {
+      var state = {
+        miembro_id: null,
+        codigo: null,
+        metodo: null,
+        nombre: null,
+      };
+
+      window.PSPRegComp = {
+
+        setStep: function(n) {
+          [0,1,2].forEach(function(i){
+            var panel = document.getElementById('psp-rc-panel-' + i);
+            var step  = document.getElementById('psp-rc-step-' + i);
+            if (panel) panel.style.display = (i === n) ? '' : 'none';
+            if (step) {
+              step.style.borderBottomColor = (i <= n) ? '#0B5E43' : '#E5E7EB';
+              step.style.color             = (i <= n) ? '#0B5E43' : '#9CA3AF';
+            }
+          });
+        },
+
+        paso1: function() {
+          var nombre  = document.getElementById('psp-rc-nombre').value.trim();
+          var celular = document.getElementById('psp-rc-celular').value.trim();
+          var email   = document.getElementById('psp-rc-email').value.trim();
+          var ref     = document.getElementById('psp-rc-ref').value;
+
+          var err = document.getElementById('psp-rc-error-0');
+          if (!nombre || !celular) {
+            err.textContent = 'Nombre y celular son obligatorios.';
+            err.style.display = 'block'; return;
+          }
+          err.style.display = 'none';
+
+          var btn = document.getElementById('psp-rc-btn-0');
+          btn.disabled = true; btn.textContent = 'Registrando...';
+
+          // Recopilar territorio
+          var provincia_id     = document.getElementById('rc_psp_provincia')    ? document.getElementById('rc_psp_provincia').value    : '';
+          var distrito_id      = document.getElementById('rc_psp_distrito')     ? document.getElementById('rc_psp_distrito').value     : '';
+          var corregimiento_id = document.getElementById('rc_psp_corregimiento')? document.getElementById('rc_psp_corregimiento').value: '';
+          var comunidad_id     = document.getElementById('rc_psp_comunidad')    ? document.getElementById('rc_psp_comunidad').value    : '';
+          var pais_id          = document.getElementById('rc_pais_id')          ? document.getElementById('rc_pais_id').value          : 'PA';
+          var ciudad           = document.getElementById('rc_ciudad')           ? document.getElementById('rc_ciudad').value           : '';
+
+          var body = new FormData();
+          body.append('action',           'psp_registro');
+          body.append('psp_nonce',        PSP_CONFIG.nonce);
+          body.append('nombre',           nombre);
+          body.append('celular',          celular);
+          body.append('email',            email);
+          body.append('provincia_id',     provincia_id);
+          body.append('distrito_id',      distrito_id);
+          body.append('corregimiento_id', corregimiento_id);
+          body.append('comunidad_id',     comunidad_id);
+          body.append('pais_id',          pais_id || 'PA');
+          body.append('ciudad',           ciudad);
+          body.append('codigo_referido',  ref);
+
+          fetch(PSP_CONFIG.ajax_url, {method:'POST', body: body})
+            .then(function(r){ return r.json(); })
+            .then(function(d) {
+              btn.disabled = false; btn.textContent = 'Continuar al pago →';
+              if (!d.success) {
+                err.textContent = d.data && d.data.message ? d.data.message : 'Error al registrar.';
+                err.style.display = 'block'; return;
+              }
+              state.miembro_id = d.data.miembro_id;
+              state.codigo     = d.data.codigo;
+              state.nombre     = nombre;
+              PSPRegComp.setStep(1);
+            })
+            .catch(function(){ btn.disabled = false; btn.textContent = 'Continuar al pago →'; err.textContent = 'Error de conexión.'; err.style.display='block'; });
+        },
+
+        selectMetodo: function(metodo) {
+          state.metodo = metodo;
+          document.querySelectorAll('.psp-pay-tab').forEach(function(b){ b.classList.remove('selected'); });
+          var tab = document.querySelector('.psp-pay-tab[data-metodo="' + metodo + '"]');
+          if (tab) tab.classList.add('selected');
+          document.querySelectorAll('.psp-pi').forEach(function(el){ el.style.display='none'; });
+          var pi = document.getElementById('psp-pi-' + metodo);
+          if (pi) pi.style.display = 'block';
+          document.getElementById('psp-pay-instrucciones').style.display = 'block';
+        },
+
+        volverPaso1: function() { PSPRegComp.setStep(0); },
+
+        paso2: function() {
+          var err = document.getElementById('psp-rc-error-1');
+          if (!state.metodo) {
+            err.textContent = 'Selecciona un método de pago.';
+            err.style.display = 'block'; return;
+          }
+          err.style.display = 'none';
+
+          var btn = document.getElementById('psp-rc-btn-1');
+          btn.disabled = true; btn.textContent = 'Procesando...';
+
+          var referencia = document.getElementById('psp-rc-referencia').value.trim();
+          var body = new FormData();
+          body.append('action',     'psp_registrar_pago_membresia');
+          body.append('psp_nonce',  PSP_CONFIG.nonce);
+          body.append('miembro_id', state.miembro_id);
+          body.append('metodo',     state.metodo);
+          body.append('monto',      PSP_CONFIG.membership_fee || 1.00);
+          body.append('referencia', referencia);
+
+          fetch(PSP_CONFIG.ajax_url, {method:'POST', body: body})
+            .then(function(r){ return r.json(); })
+            .then(function(d) {
+              btn.disabled = false; btn.textContent = 'Confirmar pago ✓';
+              if (!d.success) {
+                err.textContent = d.data && d.data.message ? d.data.message : 'Error al registrar pago.';
+                err.style.display = 'block'; return;
+              }
+              var reflink = location.origin + '/?ref=' + encodeURIComponent(state.codigo);
+              document.getElementById('psp-rc-reflink').value = reflink;
+              document.getElementById('psp-rc-success-msg').innerHTML =
+                '¡Bienvenido/a, <strong>' + state.nombre + '</strong>! ' + d.data.mensaje;
+              PSPRegComp.setStep(2);
+            })
+            .catch(function(){ btn.disabled = false; btn.textContent = 'Confirmar pago ✓'; err.textContent = 'Error de conexión.'; err.style.display='block'; });
+        },
+
+        copiarLink: function() {
+          var link = document.getElementById('psp-rc-reflink').value;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(link).then(function(){
+              alert('¡Enlace copiado al portapapeles!');
+            }).catch(function(){
+              PSPRegComp._copiarFallback(link);
+            });
+          } else {
+            PSPRegComp._copiarFallback(link);
+          }
+        },
+
+        _copiarFallback: function(text) {
+          var inp = document.getElementById('psp-rc-reflink');
+          inp.select(); inp.setSelectionRange(0, 99999);
+          try { document.execCommand('copy'); alert('¡Enlace copiado!'); }
+          catch (e) { alert('Copia manualmente: ' + text); }
+        },
+
+        compartirWA: function() {
+          var link = document.getElementById('psp-rc-reflink').value;
+          var msg  = '🇵🇦 ¡Me uní al Movimiento Panamá Sin Pobreza! Juntos vamos a erradicar la pobreza. Regístrate aquí: ' + link;
+          window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+        },
+
+        switchPais: function(val) {
+          var ciudadField = document.getElementById('rc_ciudad');
+          if (ciudadField) ciudadField.style.display = val ? 'none' : 'block';
+        },
+      };
+    })();
+    </script>
+    <?php
+    return ob_get_clean();
+}
+
+// ── AJAX: registrar pago de membresía (desde el flujo psp_registro_completo) ──
+add_action('wp_ajax_psp_registrar_pago_membresia',        'psp_ajax_registrar_pago_membresia');
+add_action('wp_ajax_nopriv_psp_registrar_pago_membresia', 'psp_ajax_registrar_pago_membresia');
+function psp_ajax_registrar_pago_membresia(): void {
+    if (!psp_verify_nonce()) {
+        wp_send_json_error(['message' => 'Sesión inválida']);
+    }
+
+    if (!class_exists('PSP_Supabase')) {
+        wp_send_json_error(['message' => 'Sistema no disponible']);
+    }
+
+    $miembro_id = sanitize_text_field($_POST['miembro_id'] ?? '');
+    $metodo     = sanitize_text_field($_POST['metodo']     ?? '');
+    $monto      = (float)($_POST['monto'] ?? 1.00);
+    $referencia = sanitize_text_field($_POST['referencia'] ?? '');
+
+    if (!$miembro_id || !$metodo) {
+        wp_send_json_error(['message' => 'Datos incompletos']);
+    }
+
+    $metodos_validos = ['yappy','clave','tarjeta_bg','puntopago','paypal','transferencia_nacional','transferencia_internacional','efectivo'];
+    if (!in_array($metodo, $metodos_validos, true)) {
+        wp_send_json_error(['message' => 'Método de pago no válido']);
+    }
+
+    $fee_min = defined('PSP_MEMBERSHIP_FEE') ? PSP_MEMBERSHIP_FEE : 1.00;
+    if ($monto < $fee_min) {
+        wp_send_json_error(['message' => sprintf('El monto mínimo es B/.%.2f', $fee_min)]);
+    }
+
+    // Verificar que el miembro existe
+    $miembro = PSP_Supabase::select('miembros', ['id' => 'eq.' . $miembro_id, 'limit' => 1]);
+    if (!$miembro) {
+        wp_send_json_error(['message' => 'Miembro no encontrado']);
+    }
+
+    $metodos_manuales = ['transferencia_nacional', 'transferencia_internacional', 'efectivo'];
+    $estado_pago = in_array($metodo, $metodos_manuales, true) ? 'pendiente_verificacion' : 'pendiente';
+
+    $pago = PSP_Supabase::insert('pagos', [
+        'miembro_id' => $miembro_id,
+        'tenant_id'  => get_option('psp_tenant_id', 'panama'),
+        'monto'      => $monto,
+        'moneda'     => 'USD',
+        'metodo'     => $metodo,
+        'referencia' => $referencia ?: null,
+        'estado'     => $estado_pago,
+        'concepto'   => 'membresia',
+    ], true);
+
+    if (!$pago) {
+        wp_send_json_error(['message' => 'Error registrando pago. Intenta de nuevo.']);
+    }
+
+    $mensaje = in_array($metodo, $metodos_manuales, true)
+        ? '¡Pago registrado! Será verificado y tu membresía se activará en máximo 24 horas.'
+        : '¡Pago registrado! Tu membresía se activará en breve.';
+
+    if (function_exists('psp_audit_log')) {
+        psp_audit_log('pago_membresia_registrado', ['metodo' => $metodo, 'monto' => $monto], $miembro_id);
+    }
+
+    wp_send_json_success(['mensaje' => $mensaje, 'pago_id' => $pago[0]['id']]);
 }
