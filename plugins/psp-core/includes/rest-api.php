@@ -2,6 +2,9 @@
 /**
  * PSP Core — WP REST API endpoints (namespace: psp/v1)
  *
+ * Autenticación: WordPress nativo (cookie + nonce X-WP-Nonce).
+ * No se usa Supabase JWT para endpoints protegidos.
+ *
  * Endpoints disponibles:
  *   GET  /wp-json/psp/v1/me              → perfil del miembro autenticado
  *   GET  /wp-json/psp/v1/wa-group        → grupo WhatsApp asignado al miembro
@@ -72,21 +75,16 @@ function psp_register_rest_routes(): void {
     ]);
 }
 
-// ── Middleware: requiere JWT de Supabase en Authorization header ──────────────
+// ── Middleware: requiere sesión activa de WordPress ───────────────────────────
 function psp_rest_auth_required(WP_REST_Request $request): bool|WP_Error {
-    $jwt = psp_extract_jwt($request);
-    if (!$jwt) {
-        return new WP_Error('psp_unauthorized', 'Se requiere autenticación. Envía el JWT de Supabase en el header Authorization: Bearer <token>.', ['status' => 401]);
+    if (!is_user_logged_in()) {
+        return new WP_Error(
+            'psp_unauthorized',
+            'Debes iniciar sesión para acceder a este recurso.',
+            ['status' => 401]
+        );
     }
     return true;
-}
-
-function psp_extract_jwt(WP_REST_Request $request): ?string {
-    $header = $request->get_header('Authorization');
-    if ($header && preg_match('/Bearer\s+(.+)/i', $header, $m)) {
-        return sanitize_text_field($m[1]);
-    }
-    return null;
 }
 
 // ── GET /me ───────────────────────────────────────────────────────────────────
@@ -95,32 +93,12 @@ function psp_rest_me(WP_REST_Request $request): WP_REST_Response|WP_Error {
         return new WP_Error('psp_core_missing', 'PSP Core no está inicializado', ['status' => 500]);
     }
 
-    $jwt = psp_extract_jwt($request);
-
-    // Obtener user_id desde Supabase Auth
-    $user_res = wp_remote_get(PSP_SUPABASE_URL . '/auth/v1/user', [
-        'headers' => [
-            'apikey'        => PSP_SUPABASE_KEY,
-            'Authorization' => 'Bearer ' . $jwt,
-        ],
-        'timeout' => 10,
-    ]);
-
-    if (is_wp_error($user_res)) {
-        return new WP_Error('psp_auth_error', 'Error verificando token', ['status' => 401]);
-    }
-
-    $user_data = json_decode(wp_remote_retrieve_body($user_res), true);
-    if (empty($user_data['id'])) {
-        return new WP_Error('psp_unauthorized', 'Token inválido o expirado', ['status' => 401]);
-    }
-
-    $user_id = sanitize_text_field($user_data['id']);
+    $wp_user_id = (int) get_current_user_id();
 
     $miembro = PSP_Supabase::select('miembros', [
-        'user_id' => 'eq.' . $user_id,
-        'select'  => 'id,nombre,celular,email,tipo_miembro,estado,codigo_referido_propio,puntos_total,nivel,provincia_id,distrito_id,corregimiento_id,comunidad_id,pais_id,ciudad,created_at',
-        'limit'   => 1,
+        'wp_user_id' => 'eq.' . $wp_user_id,
+        'select'     => 'id,nombre,celular,email,tipo_miembro,estado,codigo_referido_propio,puntos_total,nivel,provincia_id,distrito_id,corregimiento_id,comunidad_id,pais_id,ciudad,created_at',
+        'limit'      => 1,
     ]);
 
     if (empty($miembro)) {
@@ -163,31 +141,12 @@ function psp_rest_wa_group(WP_REST_Request $request): WP_REST_Response|WP_Error 
         return new WP_Error('psp_core_missing', 'PSP Core no está inicializado', ['status' => 500]);
     }
 
-    $jwt = psp_extract_jwt($request);
-
-    $user_res = wp_remote_get(PSP_SUPABASE_URL . '/auth/v1/user', [
-        'headers' => [
-            'apikey'        => PSP_SUPABASE_KEY,
-            'Authorization' => 'Bearer ' . $jwt,
-        ],
-        'timeout' => 10,
-    ]);
-
-    if (is_wp_error($user_res)) {
-        return new WP_Error('psp_auth_error', 'Error verificando token', ['status' => 401]);
-    }
-
-    $user_data = json_decode(wp_remote_retrieve_body($user_res), true);
-    if (empty($user_data['id'])) {
-        return new WP_Error('psp_unauthorized', 'Token inválido o expirado', ['status' => 401]);
-    }
-
-    $user_id = sanitize_text_field($user_data['id']);
+    $wp_user_id = (int) get_current_user_id();
 
     $miembro = PSP_Supabase::select('miembros', [
-        'user_id' => 'eq.' . $user_id,
-        'select'  => 'id,provincia_id,distrito_id,corregimiento_id,comunidad_id,pais_id',
-        'limit'   => 1,
+        'wp_user_id' => 'eq.' . $wp_user_id,
+        'select'     => 'id,provincia_id,distrito_id,corregimiento_id,comunidad_id,pais_id',
+        'limit'      => 1,
     ]);
 
     if (empty($miembro)) {
@@ -348,25 +307,7 @@ function psp_rest_pago_confirmar(WP_REST_Request $request): WP_REST_Response|WP_
         return new WP_Error('psp_core_missing', 'PSP Core no está inicializado', ['status' => 500]);
     }
 
-    $jwt = psp_extract_jwt($request);
-
-    // Verificar JWT con Supabase
-    $user_res = wp_remote_get(PSP_SUPABASE_URL . '/auth/v1/user', [
-        'headers' => [
-            'apikey'        => PSP_SUPABASE_KEY,
-            'Authorization' => 'Bearer ' . $jwt,
-        ],
-        'timeout' => 10,
-    ]);
-
-    if (is_wp_error($user_res)) {
-        return new WP_Error('psp_auth_error', 'Error verificando token', ['status' => 401]);
-    }
-
-    $user_data = json_decode(wp_remote_retrieve_body($user_res), true);
-    if (empty($user_data['id'])) {
-        return new WP_Error('psp_unauthorized', 'Token inválido o expirado', ['status' => 401]);
-    }
+    $wp_user_id = (int) get_current_user_id();
 
     $metodos_validos = ['yappy', 'clave', 'tarjeta_bg', 'puntopago', 'paypal', 'transferencia_nacional', 'transferencia_internacional', 'efectivo'];
     $metodo      = $request->get_param('metodo');
@@ -383,11 +324,11 @@ function psp_rest_pago_confirmar(WP_REST_Request $request): WP_REST_Response|WP_
         return new WP_Error('psp_validation', sprintf('El monto mínimo de membresía es B/.%.2f', $fee_min), ['status' => 400]);
     }
 
-    // Verificar que el miembro pertenece al usuario autenticado
+    // Verificar que el miembro pertenece al usuario autenticado (por wp_user_id)
     $miembro = PSP_Supabase::select('miembros', [
-        'id'      => 'eq.' . $miembro_id,
-        'user_id' => 'eq.' . $user_data['id'],
-        'limit'   => 1,
+        'id'         => 'eq.' . $miembro_id,
+        'wp_user_id' => 'eq.' . $wp_user_id,
+        'limit'      => 1,
     ]);
 
     if (empty($miembro)) {
