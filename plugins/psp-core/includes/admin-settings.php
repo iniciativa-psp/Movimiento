@@ -21,21 +21,67 @@ function psp_core_settings_page(): void {
         update_option('psp_supabase_service_key', sanitize_text_field($_POST['supabase_service_key']));
         update_option('psp_tenant_id',            sanitize_text_field($_POST['tenant_id']));
         update_option('psp_launch_date',          sanitize_text_field($_POST['launch_date']));
-        echo '<div class="updated"><p>✅ Configuración guardada.</p></div>';
+        update_option('psp_campaign_start',       sanitize_text_field($_POST['campaign_start']));
+        update_option('psp_campaign_end',         sanitize_text_field($_POST['campaign_end']));
+        update_option('psp_membership_fee',       number_format((float)($_POST['membership_fee'] ?? 1.00), 2, '.', ''));
+        update_option('psp_meta_objetivo_miembros', absint($_POST['meta_miembros'] ?? 1000000));
+        update_option('psp_meta_objetivo_monto',    absint($_POST['meta_monto']    ?? 1000000));
+        echo '<div class="updated"><p>&#x2705; Configuraci&oacute;n guardada.</p></div>';
     }
     ?>
     <div class="wrap" style="font-family:sans-serif">
-    <h1>🇵🇦 PSP — Configuración Central</h1>
+    <h1>&#x1F1F5;&#x1F1E6; PSP &mdash; Configuraci&oacute;n Central</h1>
     <form method="post">
     <?php wp_nonce_field('psp_core_settings'); ?>
+    <h2>Supabase</h2>
     <table class="form-table">
-        <tr><th>Supabase URL</th><td><input class="regular-text" name="supabase_url" value="<?= esc_attr(get_option('psp_supabase_url')) ?>"></td></tr>
-        <tr><th>Anon Key</th><td><input class="regular-text" name="supabase_anon_key" value="<?= esc_attr(get_option('psp_supabase_anon_key')) ?>"></td></tr>
-        <tr><th>Service Key</th><td><input class="regular-text" name="supabase_service_key" type="password" value="<?= esc_attr(get_option('psp_supabase_service_key')) ?>"></td></tr>
-        <tr><th>Tenant ID</th><td><input name="tenant_id" value="<?= esc_attr(get_option('psp_tenant_id','panama')) ?>"></td></tr>
-        <tr><th>Fecha Lanzamiento</th><td><input name="launch_date" value="<?= esc_attr(get_option('psp_launch_date','2026-05-12T09:00:00')) ?>"></td></tr>
+        <tr><th scope="row">Supabase URL</th><td><input class="regular-text" name="supabase_url" value="<?php echo esc_attr(get_option('psp_supabase_url')); ?>" placeholder="https://xxxx.supabase.co"></td></tr>
+        <tr><th scope="row">Anon Key (p&uacute;blica)</th><td><input class="regular-text" name="supabase_anon_key" value="<?php echo esc_attr(get_option('psp_supabase_anon_key')); ?>"></td></tr>
+        <tr><th scope="row">Service Role Key <small>(solo servidor)</small></th><td><input class="regular-text" name="supabase_service_key" type="password" value="<?php echo esc_attr(get_option('psp_supabase_service_key')); ?>"></td></tr>
+        <tr><th scope="row">Tenant ID</th><td><input name="tenant_id" value="<?php echo esc_attr(get_option('psp_tenant_id', 'panama')); ?>"></td></tr>
     </table>
-    <p><button class="button button-primary" name="psp_save">💾 Guardar</button></p>
+    <h2>Campa&ntilde;a</h2>
+    <table class="form-table">
+        <tr>
+            <th scope="row">Inicio de Campa&ntilde;a</th>
+            <td>
+                <input type="datetime-local" name="campaign_start"
+                       value="<?php echo esc_attr(str_replace(' ', 'T', get_option('psp_campaign_start', '2026-04-14T00:00:00'))); ?>">
+                <p class="description">Fecha y hora de inicio (UTC). Defecto: 14 de abril 2026, 12:00 am.</p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Fin de Campa&ntilde;a</th>
+            <td>
+                <input type="datetime-local" name="campaign_end"
+                       value="<?php echo esc_attr(str_replace(' ', 'T', get_option('psp_campaign_end', '2026-05-18T23:59:59'))); ?>">
+                <p class="description">Fecha y hora de cierre (UTC). Defecto: 18 de mayo 2026.</p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Cuota de Membres&iacute;a (B/.)</th>
+            <td>
+                <input type="number" name="membership_fee" min="0.01" step="0.01"
+                       value="<?php echo esc_attr(get_option('psp_membership_fee', '1.00')); ?>" style="width:100px">
+                <p class="description">Monto m&iacute;nimo para confirmar membres&iacute;a. Defecto: B/.1.00</p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Meta Miembros</th>
+            <td><input type="number" name="meta_miembros" value="<?php echo esc_attr(get_option('psp_meta_objetivo_miembros', 1000000)); ?>" style="width:140px"></td>
+        </tr>
+        <tr>
+            <th scope="row">Meta Recaudaci&oacute;n (B/.)</th>
+            <td><input type="number" name="meta_monto" value="<?php echo esc_attr(get_option('psp_meta_objetivo_monto', 1000000)); ?>" style="width:140px"></td>
+        </tr>
+        <tr>
+            <th scope="row">Fecha Lanzamiento P&uacute;blico</th>
+            <td><input name="launch_date" value="<?php echo esc_attr(get_option('psp_launch_date', '2026-04-14T00:00:00')); ?>">
+                <p class="description">Formato ISO 8601 (usado por el contador regresivo).</p>
+            </td>
+        </tr>
+    </table>
+    <p><button class="button button-primary" name="psp_save">&#x1F4BE; Guardar configuraci&oacute;n</button></p>
     </form>
     </div>
     <?php
