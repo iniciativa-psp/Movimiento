@@ -28,21 +28,17 @@
 
 En **Supabase Dashboard → SQL Editor**, ejecuta en este orden:
 
-```sql
--- 1. Schema base
-\i sql/01_schema_completo.sql
+1. Abre **Supabase Dashboard → SQL Editor → New query**
+2. Copia y pega el contenido de cada archivo en el orden indicado, ejecutando cada uno antes del siguiente:
 
--- 2. Funciones y triggers
-\i sql/02_functions_triggers.sql
-
--- 3. Membresías y productos
-\i sql/03_membresias_productos.sql
-
--- 4. Configuración de campaña + anti-fraude + ranking
-\i sql/04_campaign_mvp.sql
+```
+1. sql/01_schema_completo.sql    ← Schema base (tablas, índices, RLS)
+2. sql/02_functions_triggers.sql ← Funciones y triggers
+3. sql/03_membresias_productos.sql ← Tablas adicionales
+4. sql/04_campaign_mvp.sql       ← Campaña abr-may 2026, anti-fraude, vistas materializadas
 ```
 
-> **Nota:** Copia y pega el contenido de cada archivo directamente en el SQL Editor de Supabase.
+> **Tip:** Haz clic en "Run" después de pegar cada archivo. Espera el mensaje `Success` antes de continuar con el siguiente.
 
 ---
 

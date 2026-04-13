@@ -803,9 +803,23 @@ function psp_registro_completo_shortcode( $atts = [] ): string {
         },
 
         copiarLink: function() {
+          var link = document.getElementById('psp-rc-reflink').value;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(link).then(function(){
+              alert('¡Enlace copiado al portapapeles!');
+            }).catch(function(){
+              PSPRegComp._copiarFallback(link);
+            });
+          } else {
+            PSPRegComp._copiarFallback(link);
+          }
+        },
+
+        _copiarFallback: function(text) {
           var inp = document.getElementById('psp-rc-reflink');
-          inp.select(); document.execCommand('copy');
-          alert('¡Enlace copiado al portapapeles!');
+          inp.select(); inp.setSelectionRange(0, 99999);
+          try { document.execCommand('copy'); alert('¡Enlace copiado!'); }
+          catch (e) { alert('Copia manualmente: ' + text); }
         },
 
         compartirWA: function() {

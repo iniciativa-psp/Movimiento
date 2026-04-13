@@ -254,7 +254,7 @@ function psp_rest_registro(WP_REST_Request $request): WP_REST_Response|WP_Error 
     }
 
     // Rate limiting básico por IP
-    $ip = sanitize_text_field($_SERVER['REMOTE_ADDR'] ?? '');
+    $ip = psp_get_client_ip();
     if (function_exists('psp_rate_limit') && !psp_rate_limit('rest_registro_' . md5($ip), 3, 300)) {
         return new WP_Error('psp_rate_limit', 'Demasiados intentos. Espera 5 minutos.', ['status' => 429]);
     }
@@ -287,7 +287,7 @@ function psp_rest_registro(WP_REST_Request $request): WP_REST_Response|WP_Error 
         }
     }
 
-    $codigo = function_exists('psp_generar_codigo') ? psp_generar_codigo('PSP') : strtoupper('PSP-' . bin2hex(random_bytes(4)));
+    $codigo = function_exists('psp_generar_codigo') ? psp_generar_codigo('PSP') : strtoupper('PSP-' . bin2hex(random_bytes(6)));
 
     $data = [
         'nombre'              => $nombre,

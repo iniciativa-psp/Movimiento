@@ -164,7 +164,7 @@ function psp_mi_grupo_wa_shortcode(): string {
           return '<p style="color:#888;font-size:13px">&#x26A0;&#xFE0F; A&uacute;n no hay grupos disponibles para tu zona. Vuelve pronto.</p>';
         }
         return grupos.map(function(g) {
-          var badge = g.categoria === 'territorial'
+          var badge = (g.categoria === 'territorial' || g.tipo === 'territorial')
             ? '<span style="background:#0B5E43;color:#fff;padding:2px 8px;border-radius:20px;font-size:11px">Tu zona</span>'
             : '<span style="background:#6B7280;color:#fff;padding:2px 8px;border-radius:20px;font-size:11px">' + (g.tipo || 'general') + '</span>';
           return '<div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #E5E7EB">'
