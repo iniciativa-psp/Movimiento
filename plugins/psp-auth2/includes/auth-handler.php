@@ -202,9 +202,19 @@ function psp2_perfil_shortcode( array $atts = [] ): string {
       function psp2CopyRef() {
         var el = document.getElementById('psp2-ref-link');
         if (!el) return;
-        el.select(); el.setSelectionRange(0, 999);
-        document.execCommand('copy');
+        var txt = el.value;
         var btn = el.nextElementSibling;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(txt).then(function(){
+            if (btn) { btn.textContent = '\u2705 Copiado'; setTimeout(function(){ btn.textContent = '\uD83D\uDCCB Copiar'; }, 2000); }
+          }).catch(function(){ fallbackCopy(el, btn); });
+        } else {
+          fallbackCopy(el, btn);
+        }
+      }
+      function fallbackCopy(el, btn) {
+        el.select(); el.setSelectionRange(0, 999);
+        try { document.execCommand('copy'); } catch(e) { return; }
         if (btn) { btn.textContent = '\u2705 Copiado'; setTimeout(function(){ btn.textContent = '\uD83D\uDCCB Copiar'; }, 2000); }
       }
       </script>

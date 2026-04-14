@@ -64,7 +64,7 @@ function psp2_wa_grupos_shortcode( array $atts = [] ): string {
             'limit'         => 1,
         ] );
         if ( ! empty( $res ) ) {
-            $grupos[] = array_merge( $res[0], [ 'categoria' => 'Territorial' ] );
+            $grupos[] = array_merge( $res[0], [ 'categoria' => 'territorial' ] );
             break;
         }
     }
@@ -79,7 +79,7 @@ function psp2_wa_grupos_shortcode( array $atts = [] ): string {
     ] );
     if ( ! empty( $generales ) ) {
         foreach ( $generales as $g ) {
-            $grupos[] = array_merge( $g, [ 'categoria' => 'General' ] );
+            $grupos[] = array_merge( $g, [ 'categoria' => 'general' ] );
         }
     }
 
@@ -100,7 +100,7 @@ function psp2_wa_grupos_shortcode( array $atts = [] ): string {
             <div>
               <p style="font-weight:700;margin:0 0 4px;font-size:14px"><?php echo esc_html( $g['nombre'] ?? '—' ); ?></p>
               <p style="font-size:12px;color:#6B7280;margin:0">
-                <?php echo esc_html( $g['categoria'] ); ?>
+                <?php echo esc_html( ucfirst( $g['categoria'] ) ); ?>
                 <?php if ( isset( $g['miembros_actual'], $g['miembros_max'] ) ) : ?>
                   &nbsp;&bull;&nbsp; <?php echo esc_html( $g['miembros_actual'] . '/' . $g['miembros_max'] ); ?> miembros
                 <?php endif; ?>

@@ -31,7 +31,13 @@ function psp2_capture_ref_param(): void {
     if ( ! empty( $_GET['ref'] ) ) {
         $codigo = sanitize_text_field( wp_unslash( $_GET['ref'] ) );
         if ( preg_match( '/^[A-Z0-9\-]{5,30}$/', $codigo ) ) {
-            setcookie( 'psp2_ref', $codigo, time() + 86400 * 30, '/', '', is_ssl(), true );
+            setcookie( 'psp2_ref', $codigo, [
+                'expires'  => time() + 86400 * 30,
+                'path'     => '/',
+                'secure'   => is_ssl(),
+                'httponly' => true,
+                'samesite' => 'Lax',
+            ] );
             $_COOKIE['psp2_ref'] = $codigo;
         }
     }

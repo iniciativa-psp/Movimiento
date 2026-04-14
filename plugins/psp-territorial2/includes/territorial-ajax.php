@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_action( 'wp_ajax_nopriv_psp2_terr_get', 'psp2_terr_ajax_get' );
 add_action( 'wp_ajax_psp2_terr_get',        'psp2_terr_ajax_get' );
 function psp2_terr_ajax_get(): void {
-    $nonce = sanitize_text_field( wp_unslash( $_GET['psp2_nonce'] ?? $_POST['psp2_nonce'] ?? '' ) );
+    $nonce = sanitize_text_field( wp_unslash( $_POST['psp2_nonce'] ?? '' ) );
     if ( ! wp_verify_nonce( $nonce, 'psp2_nonce' ) ) {
         wp_send_json_error( [ 'message' => 'Nonce inválido' ] );
     }
 
-    $tipo      = sanitize_key( $_REQUEST['tipo']      ?? '' );
-    $parent_id = sanitize_text_field( wp_unslash( $_REQUEST['parent_id'] ?? '' ) );
+    $tipo      = sanitize_key( $_POST['tipo']      ?? '' );
+    $parent_id = sanitize_text_field( wp_unslash( $_POST['parent_id'] ?? '' ) );
     $json_url  = get_option( 'psp2_territorial_json_url', '' );
 
     if ( empty( $json_url ) ) {

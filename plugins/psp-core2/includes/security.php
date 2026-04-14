@@ -12,9 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return bool  true si la acción está permitida, false si se alcanzó el límite.
  */
 function psp2_rate_limit( string $key, int $max = 10, int $window = 60 ): bool {
-    $ip    = sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0' );
-    $tkey  = 'psp2_rl_' . md5( $key . $ip );
-    $count = (int) get_transient( $tkey );
+    $ip      = sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0' );
+    // Combine IP + user ID (when logged in) to avoid penalizing shared IPs
+    $user_id = is_user_logged_in() ? (string) get_current_user_id() : 'guest';
+    $tkey    = 'psp2_rl_' . md5( $key . $ip . $user_id );
+    $count   = (int) get_transient( $tkey );
     if ( $count >= $max ) {
         return false;
     }
