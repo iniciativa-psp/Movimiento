@@ -1,0 +1,67 @@
+/* PSP v2 — estilos globales */
+.psp2-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    padding: 24px;
+    max-width: 520px;
+    margin: 20px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+.psp2-input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color .2s;
+}
+.psp2-input:focus {
+    outline: none;
+    border-color: #0B5E43;
+}
+.psp2-btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background .2s, opacity .2s;
+}
+.psp2-btn-primary {
+    background: #0B5E43;
+    color: #fff;
+}
+.psp2-btn-primary:hover {
+    background: #094f38;
+}
+.psp2-btn-primary:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+.psp2-btn-secondary {
+    background: #E5E7EB;
+    color: #374151;
+}
+.psp2-alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+.psp2-alert-success { background: #D1FAE5; color: #065F46; }
+.psp2-alert-error   { background: #FEE2E2; color: #991B1B; }
+.psp2-alert-info    { background: #DBEAFE; color: #1E40AF; }
+.psp2-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+.psp2-req { color: #C9381A; }
