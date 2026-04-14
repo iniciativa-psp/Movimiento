@@ -1,6 +1,11 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
+// Asegurar is_plugin_active() (no siempre está cargado)
+if (is_admin() && !function_exists('is_plugin_active')) {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+
 add_action('admin_menu', 'psp_core_admin_menu');
 function psp_core_admin_menu(): void {
     add_menu_page(
