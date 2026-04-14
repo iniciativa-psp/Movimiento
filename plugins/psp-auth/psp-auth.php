@@ -2,8 +2,8 @@
 /**
  * Plugin Name: PSP Auth
  * Plugin URI:  https://panamasinpobreza.org
- * Description: Autenticación de miembros vía OTP (celular o correo) usando Supabase Auth. Registro completo con referidos y selector territorial.
- * Version:     1.0.2
+ * Description: Autenticación de miembros vía WordPress nativo (registro con usuario/contraseña). Registro completo con referidos y selector territorial. Sin Supabase Auth.
+ * Version:     1.1.0
  * Author:      PSP Dev Team
  * Requires PHP: 7.4
  * Text Domain: psp-auth
@@ -40,124 +40,41 @@ function psp_capture_ref_param() {
     }
 }
 function psp_login_shortcode( $atts = [] ) {
-    ob_start(); ?>
-    <div id="psp-auth-wrap" class="psp-card">
-      <div id="psp-auth-step1">
-        <h2>Iniciar sesi&oacute;n</h2>
-        <p style="color:#555;font-size:14px">Ingresa tu celular o correo electr&oacute;nico</p>
-        <input id="psp-auth-id" type="text" placeholder="Celular (507XXXXXXXX) o correo" class="psp-input">
-        <button onclick="PSPAuthUI.sendOTP()" class="psp-btn psp-btn-primary psp-btn-full">
-          Enviar c&oacute;digo
-        </button>
-        <div id="psp-auth-msg1" style="margin-top:8px;font-size:13px"></div>
-      </div>
+    $atts = shortcode_atts( [
+        'redirect' => '',
+    ], $atts );
 
-      <div id="psp-auth-step2" style="display:none">
-        <h2>Verificar c&oacute;digo</h2>
-        <p style="color:#555;font-size:13px">Ingresa el c&oacute;digo de 6 d&iacute;gitos enviado a <span id="psp-auth-dest"></span></p>
-        <input id="psp-auth-otp" type="text" placeholder="000000" maxlength="6"
-               class="psp-input psp-otp" autocomplete="one-time-code">
-        <button onclick="PSPAuthUI.verifyOTP()" class="psp-btn psp-btn-primary psp-btn-full">
-          Verificar
-        </button>
-        <p style="margin-top:8px;font-size:12px">
-          <a href="#" onclick="PSPAuthUI.reset();return false">&#x2190; Cambiar n&uacute;mero</a>
-        </p>
-        <div id="psp-auth-msg2" style="margin-top:8px;font-size:13px;color:#c00"></div>
-      </div>
+    if ( is_user_logged_in() ) {
+        $redirect = $atts['redirect'] ?: home_url( '/mi-cuenta/' );
+        ob_start(); ?>
+        <div id="psp-auth-wrap" class="psp-card" style="text-align:center;padding:24px">
+          <div style="font-size:40px">&#x2705;</div>
+          <p style="font-weight:700;margin-top:8px">&#xa1;Sesi&oacute;n iniciada!</p>
+          <a href="<?php echo esc_url( $redirect ); ?>" class="psp-btn psp-btn-primary" style="margin-top:12px">
+            Ver mi cuenta &rarr;
+          </a>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
 
-      <div id="psp-auth-ok" style="display:none;text-align:center;padding:16px">
-        <div style="font-size:40px">&#x2705;</div>
-        <p style="font-weight:700;margin-top:8px">&#xa1;Sesi&oacute;n iniciada!</p>
-        <a href="#" onclick="PSPAuthUI.logout();return false" style="font-size:13px;color:#888">
-          Cerrar sesi&oacute;n
-        </a>
-      </div>
-    </div>
-
-    <script>
-    var PSPAuthUI = {
-      identifier: '',
-
-      sendOTP: function() {
-        var id = document.getElementById('psp-auth-id').value.trim();
-        if (!id) { PSPAuthUI.msg(1,'Ingresa tu celular o correo'); return; }
-        this.identifier = id;
-        PSPAuthUI.msg(1,'&#x23F3; Enviando...');
-        fetch(PSP_CONFIG.ajax_url, {
-          method: 'POST',
-          body: new URLSearchParams({
-            action: 'psp_send_otp', identifier: id, psp_nonce: PSP_CONFIG.nonce
-          })
-        }).then(function(r){return r.json();}).then(function(d) {
-          if (d.success) {
-            document.getElementById('psp-auth-step1').style.display = 'none';
-            document.getElementById('psp-auth-step2').style.display = 'block';
-            document.getElementById('psp-auth-dest').textContent = PSPAuthUI.identifier;
-            document.getElementById('psp-auth-otp').focus();
-          } else {
-            PSPAuthUI.msg(1,'&#x274C; ' + ((d.data&&d.data.message)?d.data.message:'Error enviando código'));
-          }
-        }).catch(function(){ PSPAuthUI.msg(1,'Error de conexión'); });
-      },
-
-      verifyOTP: function() {
-        var otp = document.getElementById('psp-auth-otp').value.trim();
-        if (otp.length < 6) { PSPAuthUI.msg(2,'El código debe tener 6 dígitos'); return; }
-        PSPAuthUI.msg(2,'&#x23F3; Verificando...');
-        fetch(PSP_CONFIG.ajax_url, {
-          method: 'POST',
-          body: new URLSearchParams({
-            action: 'psp_verify_otp',
-            identifier: this.identifier,
-            otp: otp,
-            psp_nonce: PSP_CONFIG.nonce
-          })
-        }).then(function(r){return r.json();}).then(function(d) {
-          if (d.success) {
-            if (typeof PSPCookie !== 'undefined') {
-              PSPCookie.set('psp_jwt', d.data.jwt, 30);
-              if (d.data.miembro_id) PSPCookie.set('psp_miembro_id', d.data.miembro_id, 30);
-            } else {
-              document.cookie = 'psp_jwt=' + d.data.jwt + '; path=/; SameSite=Strict; max-age=2592000';
-            }
-            document.getElementById('psp-auth-step2').style.display = 'none';
-            document.getElementById('psp-auth-ok').style.display    = 'block';
-            window.dispatchEvent(new CustomEvent('psp:login', {detail: d.data}));
-            if (d.data.redirect) setTimeout(function(){ window.location.href = d.data.redirect; }, 800);
-          } else {
-            PSPAuthUI.msg(2, '&#x274C; Código incorrecto o expirado');
-          }
-        }).catch(function(){ PSPAuthUI.msg(2,'Error de conexión'); });
-      },
-
-      logout: function() {
-        if (typeof PSPCookie !== 'undefined') { PSPCookie.del('psp_jwt'); PSPCookie.del('psp_miembro_id'); }
-        else { document.cookie='psp_jwt=;max-age=0;path=/'; }
-        window.location.reload();
-      },
-
-      reset: function() {
-        document.getElementById('psp-auth-step1').style.display = 'block';
-        document.getElementById('psp-auth-step2').style.display = 'none';
-      },
-
-      msg: function(step, txt) {
-        var el = document.getElementById('psp-auth-msg' + step);
-        if (el) el.innerHTML = txt;
-      }
-    };
-
-    // Auto-detect if already logged in
-    (function(){
-      var jwt = typeof PSPCookie!=='undefined' ? PSPCookie.get('psp_jwt')
-              : (document.cookie.match(/psp_jwt=([^;]+)/)||[])[1];
-      if (jwt) {
-        document.getElementById('psp-auth-step1').style.display = 'none';
-        document.getElementById('psp-auth-ok').style.display    = 'block';
-      }
-    })();
-    </script>
+    $redirect_url = $atts['redirect'] ?: home_url( '/mi-cuenta/' );
+    ob_start();
+    wp_login_form( [
+        'redirect'       => esc_url( $redirect_url ),
+        'form_id'        => 'psp-wp-login-form',
+        'label_username' => __( 'Correo electrónico o usuario' ),
+        'label_password' => __( 'Contraseña' ),
+        'label_remember' => __( 'Recordarme' ),
+        'label_log_in'   => __( 'Iniciar sesión' ),
+        'remember'       => true,
+    ] );
+    ?>
+    <p style="font-size:13px;text-align:center;margin-top:10px">
+      <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>">&#x1F511; &iquest;Olvidaste tu contrase&ntilde;a?</a>
+      &nbsp;&bull;&nbsp;
+      <a href="<?php echo esc_url( home_url( '/registro/' ) ); ?>">Registrarse</a>
+    </p>
     <?php
     return ob_get_clean();
 }
@@ -483,9 +400,14 @@ function psp_registro_completo_shortcode( $atts = [] ): string {
           <input type="tel" id="psp-rc-celular" class="psp-input" placeholder="+50761234567" required>
         </div>
         <div class="psp-field">
-          <label class="psp-label">Correo electr&oacute;nico</label>
-          <input type="email" id="psp-rc-email" class="psp-input" placeholder="tu@correo.com">
-          <span style="font-size:11px;color:#6B7280">Opcional, para recibir link m&aacute;gico de inicio de sesi&oacute;n.</span>
+          <label class="psp-label">Correo electr&oacute;nico <span style="color:red">*</span></label>
+          <input type="email" id="psp-rc-email" class="psp-input" placeholder="tu@correo.com" required>
+          <span style="font-size:11px;color:#6B7280">Necesario para iniciar sesi&oacute;n con tu cuenta.</span>
+        </div>
+        <div class="psp-field">
+          <label class="psp-label">Contrase&ntilde;a <span style="color:red">*</span></label>
+          <input type="password" id="psp-rc-password" class="psp-input" placeholder="M&iacute;nimo 8 caracteres" required minlength="8" autocomplete="new-password">
+          <span style="font-size:11px;color:#6B7280">Usa esta contrase&ntilde;a para iniciar sesi&oacute;n.</span>
         </div>
 
         <!-- Selector territorial (usa psp-territorial si está activo) -->
@@ -699,14 +621,23 @@ function psp_registro_completo_shortcode( $atts = [] ): string {
         },
 
         paso1: function() {
-          var nombre  = document.getElementById('psp-rc-nombre').value.trim();
-          var celular = document.getElementById('psp-rc-celular').value.trim();
-          var email   = document.getElementById('psp-rc-email').value.trim();
-          var ref     = document.getElementById('psp-rc-ref').value;
+          var nombre   = document.getElementById('psp-rc-nombre').value.trim();
+          var celular  = document.getElementById('psp-rc-celular').value.trim();
+          var email    = document.getElementById('psp-rc-email').value.trim();
+          var password = document.getElementById('psp-rc-password').value;
+          var ref      = document.getElementById('psp-rc-ref').value;
 
           var err = document.getElementById('psp-rc-error-0');
           if (!nombre || !celular) {
             err.textContent = 'Nombre y celular son obligatorios.';
+            err.style.display = 'block'; return;
+          }
+          if (!email) {
+            err.textContent = 'El correo electrónico es obligatorio.';
+            err.style.display = 'block'; return;
+          }
+          if (!password || password.length < 8) {
+            err.textContent = 'La contraseña debe tener al menos 8 caracteres.';
             err.style.display = 'block'; return;
           }
           err.style.display = 'none';
@@ -728,6 +659,7 @@ function psp_registro_completo_shortcode( $atts = [] ): string {
           body.append('nombre',           nombre);
           body.append('celular',          celular);
           body.append('email',            email);
+          body.append('password',         password);
           body.append('provincia_id',     provincia_id);
           body.append('distrito_id',      distrito_id);
           body.append('corregimiento_id', corregimiento_id);

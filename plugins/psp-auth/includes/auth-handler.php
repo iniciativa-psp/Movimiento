@@ -1,75 +1,6 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-// AJAX: enviar OTP
-add_action('wp_ajax_nopriv_psp_send_otp', 'psp_ajax_send_otp');
-add_action('wp_ajax_psp_send_otp',        'psp_ajax_send_otp');
-function psp_ajax_send_otp(): void {
-    if (!psp_rate_limit('otp_send', 5, 300)) {
-        wp_send_json_error(['message' => 'Demasiados intentos. Espera 5 minutos.']);
-    }
-    if (!psp_verify_nonce()) wp_send_json_error(['message' => 'Sesión inválida']);
-
-    $identifier = sanitize_text_field($_POST['identifier'] ?? '');
-    if (!$identifier) wp_send_json_error(['message' => 'Identificador requerido']);
-
-    // Llamar Supabase Auth OTP
-    $is_phone = preg_match('/^\+?[0-9]{7,15}$/', $identifier);
-    $url  = PSP_SUPABASE_URL . '/auth/v1/otp';
-    $body = $is_phone
-        ? ['phone' => $identifier]
-        : ['email' => $identifier];
-
-    $res = wp_remote_post($url, [
-        'headers' => ['apikey' => PSP_SUPABASE_KEY, 'Content-Type' => 'application/json'],
-        'body'    => wp_json_encode($body),
-    ]);
-
-    if (is_wp_error($res)) wp_send_json_error(['message' => 'Error enviando OTP']);
-
-    $code = wp_remote_retrieve_response_code($res);
-    if ($code === 200 || $code === 204) {
-        wp_send_json_success(['message' => 'OTP enviado']);
-    } else {
-        wp_send_json_error(['message' => 'Error: ' . wp_remote_retrieve_body($res)]);
-    }
-}
-
-// AJAX: verificar OTP
-add_action('wp_ajax_nopriv_psp_verify_otp', 'psp_ajax_verify_otp');
-add_action('wp_ajax_psp_verify_otp',        'psp_ajax_verify_otp');
-function psp_ajax_verify_otp(): void {
-    if (!psp_verify_nonce()) wp_send_json_error(['message' => 'Sesión inválida']);
-    $identifier = sanitize_text_field($_POST['identifier'] ?? '');
-    $otp        = sanitize_text_field($_POST['otp'] ?? '');
-    if (!$identifier || !$otp) wp_send_json_error(['message' => 'Datos incompletos']);
-
-    $is_phone = preg_match('/^\+?[0-9]{7,15}$/', $identifier);
-    $url  = PSP_SUPABASE_URL . '/auth/v1/verify';
-    $body = $is_phone
-        ? ['type' => 'sms',   'phone' => $identifier, 'token' => $otp]
-        : ['type' => 'email', 'email' => $identifier, 'token' => $otp];
-
-    $res  = wp_remote_post($url, [
-        'headers' => ['apikey' => PSP_SUPABASE_KEY, 'Content-Type' => 'application/json'],
-        'body'    => wp_json_encode($body),
-    ]);
-
-    $data = json_decode(wp_remote_retrieve_body($res), true);
-    if (isset($data['access_token'])) {
-        // Buscar miembro en DB
-        $miembro = PSP_Supabase::select('miembros', ['user_id' => 'eq.' . $data['user']['id'], 'limit' => 1]);
-        wp_send_json_success([
-            'jwt'      => $data['access_token'],
-            'user_id'  => $data['user']['id'],
-            'miembro'  => $miembro[0] ?? null,
-            'redirect' => get_permalink(get_page_by_path('mi-cuenta')) ?: home_url('/mi-cuenta'),
-        ]);
-    } else {
-        wp_send_json_error(['message' => 'Código inválido o expirado']);
-    }
-}
-
 // AJAX: registro
 add_action('wp_ajax_nopriv_psp_registro', 'psp_ajax_registro');
 add_action('wp_ajax_psp_registro',        'psp_ajax_registro');
@@ -77,42 +8,122 @@ function psp_ajax_registro(): void {
     if (!psp_verify_nonce()) wp_send_json_error(['message' => 'Sesión inválida']);
     if (!psp_rate_limit('registro', 3, 300)) wp_send_json_error(['message' => 'Demasiados intentos']);
 
-    $data = psp_sanitize_input([
-        'nombre'          => $_POST['nombre']          ?? '',
-        'celular'         => $_POST['celular']          ?? '',
-        'email'           => $_POST['email']            ?? '',
-        'tipo_miembro'    => $_POST['tipo_miembro']     ?? 'nacional',
-        'provincia_id'    => $_POST['provincia_id']     ?? null,
-        'distrito_id'     => $_POST['distrito_id']      ?? null,
-        'corregimiento_id'=> $_POST['corregimiento_id'] ?? null,
-        'comunidad_id'    => $_POST['comunidad_id']     ?? null,
-        'pais_id'         => $_POST['pais_id']          ?? 'PA',
-        'codigo_referido' => $_POST['codigo_referido']  ?? '',
-    ]);
+    $nombre           = sanitize_text_field($_POST['nombre']           ?? '');
+    $celular          = sanitize_text_field($_POST['celular']          ?? '');
+    $email            = sanitize_email($_POST['email']                 ?? '');
+    $password         = $_POST['password']                             ?? '';
+    $tipo_miembro     = sanitize_text_field($_POST['tipo_miembro']     ?? 'nacional');
+    $provincia_id     = sanitize_text_field($_POST['provincia_id']     ?? '');
+    $distrito_id      = sanitize_text_field($_POST['distrito_id']      ?? '');
+    $corregimiento_id = sanitize_text_field($_POST['corregimiento_id'] ?? '');
+    $comunidad_id     = sanitize_text_field($_POST['comunidad_id']     ?? '');
+    $pais_id          = sanitize_text_field($_POST['pais_id']          ?? 'PA');
+    $ciudad           = sanitize_text_field($_POST['ciudad']           ?? '');
+    $codigo_referido  = sanitize_text_field($_POST['codigo_referido']  ?? '');
 
-    if (!$data['nombre'] || !$data['celular']) {
+    if (!$nombre || !$celular) {
         wp_send_json_error(['message' => 'Nombre y celular son obligatorios']);
     }
-
-    // Verificar si ya existe
-    $existe = PSP_Supabase::select('miembros', ['celular' => 'eq.' . $data['celular'], 'limit' => 1]);
-    if ($existe) wp_send_json_error(['message' => 'Este celular ya está registrado']);
-
-    $codigo = psp_generar_codigo('PSP');
-    $data['codigo_referido_propio'] = $codigo;
-    $data['tenant_id'] = get_option('psp_tenant_id', 'panama');
-    $data['estado'] = 'pendiente_pago';
-
-    // Buscar quién lo refirió
-    if ($data['codigo_referido']) {
-        $referidor = PSP_Supabase::select('miembros', ['codigo_referido_propio' => 'eq.' . $data['codigo_referido'], 'limit' => 1]);
-        if ($referidor) $data['referido_por'] = $referidor[0]['id'];
+    if (!$email) {
+        wp_send_json_error(['message' => 'El correo electrónico es obligatorio']);
     }
-    unset($data['codigo_referido']);
+    if (strlen($password) < 8) {
+        wp_send_json_error(['message' => 'La contraseña debe tener al menos 8 caracteres']);
+    }
 
-    $nuevo = PSP_Supabase::insert('miembros', $data, true);
-    if (!$nuevo) wp_send_json_error(['message' => 'Error al registrar. Intenta de nuevo.']);
+    // Verificar duplicados en Supabase
+    $existe_celular = PSP_Supabase::select('miembros', ['celular' => 'eq.' . $celular, 'limit' => 1]);
+    if ($existe_celular) {
+        wp_send_json_error(['message' => 'Este celular ya está registrado']);
+    }
+    $existe_email = PSP_Supabase::select('miembros', ['email' => 'eq.' . $email, 'limit' => 1]);
+    if ($existe_email) {
+        wp_send_json_error(['message' => 'Este correo ya está registrado']);
+    }
 
-    psp_audit_log('registro', ['tipo' => $data['tipo_miembro']], $nuevo[0]['id']);
-    wp_send_json_success(['codigo' => $codigo, 'miembro_id' => $nuevo[0]['id']]);
+    // Verificar que el email no esté ya en WordPress
+    if (email_exists($email)) {
+        wp_send_json_error(['message' => 'Este correo ya tiene una cuenta. Inicia sesión.']);
+    }
+
+    // Derivar user_login del email (parte antes del @, con sufijo único si ya existe)
+    $at_pos = strpos($email, '@');
+    $user_login_base = $at_pos !== false
+        ? sanitize_user(substr($email, 0, $at_pos), true)
+        : 'miembro';
+    if (empty($user_login_base)) {
+        $user_login_base = 'miembro';
+    }
+    $user_login = $user_login_base;
+    $suffix     = 1;
+    while (username_exists($user_login)) {
+        $user_login = $user_login_base . $suffix;
+        $suffix++;
+    }
+
+    $wp_user_id = wp_create_user($user_login, $password, $email);
+    if (is_wp_error($wp_user_id)) {
+        wp_send_json_error(['message' => 'Error creando cuenta: ' . $wp_user_id->get_error_message()]);
+    }
+
+    // Actualizar nombre para mostrar
+    wp_update_user([
+        'ID'           => $wp_user_id,
+        'display_name' => $nombre,
+        'first_name'   => $nombre,
+    ]);
+
+    // Registrar miembro en Supabase con wp_user_id
+    $codigo = psp_generar_codigo('PSP');
+
+    $tipos_validos = ['nacional','internacional','actor','sector','hogar_solidario','productor','planton',
+                      'comunicador','influencer','embajador','lider','voluntario','coordinador'];
+    $supabase_data = [
+        'nombre'                 => $nombre,
+        'celular'                => $celular,
+        'email'                  => $email,
+        'tipo_miembro'           => in_array($tipo_miembro, $tipos_validos, true) ? $tipo_miembro : 'nacional',
+        'provincia_id'           => $provincia_id ?: null,
+        'distrito_id'            => $distrito_id  ?: null,
+        'corregimiento_id'       => $corregimiento_id ?: null,
+        'comunidad_id'           => $comunidad_id ?: null,
+        'pais_id'                => $pais_id ?: 'PA',
+        'ciudad'                 => $ciudad ?: null,
+        'codigo_referido_propio' => $codigo,
+        'tenant_id'              => get_option('psp_tenant_id', 'panama'),
+        'estado'                 => 'pendiente_pago',
+        'wp_user_id'             => $wp_user_id,
+        'ip_registro'            => function_exists('psp_get_client_ip') ? psp_get_client_ip() : sanitize_text_field($_SERVER['REMOTE_ADDR'] ?? ''),
+    ];
+
+    // Resolver referidor
+    if ($codigo_referido) {
+        $referidor = PSP_Supabase::select('miembros', ['codigo_referido_propio' => 'eq.' . $codigo_referido, 'limit' => 1]);
+        if ($referidor) {
+            $supabase_data['referido_por'] = $referidor[0]['id'];
+        }
+    }
+
+    $nuevo = PSP_Supabase::insert('miembros', $supabase_data, true);
+    if (!$nuevo) {
+        // Revertir creación del usuario WP si Supabase falla
+        wp_delete_user($wp_user_id);
+        wp_send_json_error(['message' => 'Error al registrar. Intenta de nuevo.']);
+    }
+
+    $miembro_id = $nuevo[0]['id'];
+
+    if (function_exists('psp_audit_log')) {
+        psp_audit_log('registro', ['tipo' => $tipo_miembro], $miembro_id);
+    }
+
+    // Auto-login: establecer sesión de WordPress
+    wp_set_current_user($wp_user_id);
+    wp_set_auth_cookie($wp_user_id, true);
+
+    wp_send_json_success([
+        'codigo'     => $codigo,
+        'miembro_id' => $miembro_id,
+        'wp_user_id' => $wp_user_id,
+    ]);
 }

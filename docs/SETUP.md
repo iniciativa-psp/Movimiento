@@ -36,23 +36,32 @@ En **Supabase Dashboard → SQL Editor**, ejecuta en este orden:
 2. sql/02_functions_triggers.sql ← Funciones y triggers
 3. sql/03_membresias_productos.sql ← Tablas adicionales
 4. sql/04_campaign_mvp.sql       ← Campaña abr-may 2026, anti-fraude, vistas materializadas
+5. sql/05_wp_auth_link.sql       ← Columna wp_user_id + índice único (enlace WP ↔ Supabase)
 ```
 
 > **Tip:** Haz clic en "Run" después de pegar cada archivo. Espera el mensaje `Success` antes de continuar con el siguiente.
 
 ---
 
-## Paso 3: Habilitar Supabase Auth
+## Paso 3: Configurar WordPress Auth
 
-En **Supabase Dashboard → Authentication → Providers**:
+La autenticación utiliza **WordPress nativo** (registro público con usuario y contraseña). No se usa Supabase Auth (sin magic link, sin OTP por correo, sin OTP por SMS).
 
-1. **Email** → Activar "Enable email confirmations" = OFF (usamos magic link, no password)
-   - Activar "Enable email OTP" = ON
-2. **Phone** → Activar con Twilio o similar para OTP por SMS
-   - Configurar `Account SID`, `Auth Token`, `Message Service SID`
-3. En **Authentication → URL Configuration**:
-   - Site URL: `https://panamasinpobreza.org`
-   - Redirect URLs: `https://panamasinpobreza.org/mi-cuenta/`
+En **WP Admin → Ajustes → General**:
+
+1. **Membresía** → Activar "Cualquiera puede registrarse" = ✅ ON
+2. **Función predeterminada para nuevos usuarios** → `Suscriptor`
+
+En **WP Admin → Ajustes → Correo electrónico** (o con WP-CLI):
+```bash
+# Desactivar el correo de notificación de nuevo usuario al admin (opcional)
+wp option update blogname "Movimiento Panamá Sin Pobreza"
+wp option update admin_email "admin@panamasinpobreza.org"
+```
+
+Para que los usuarios puedan restablecer su contraseña, WordPress incluye el flujo estándar en `/wp-login.php?action=lostpassword`. Puedes redirigir a esta página desde el perfil.
+
+> **Nota:** El teléfono (celular) es un campo **obligatorio** en el formulario de registro, pero **no se envía ningún SMS**. Solo se almacena para uso interno y comunicaciones coordinadas manualmente.
 
 ---
 
@@ -222,9 +231,19 @@ https://tu-proyecto.supabase.co/functions/v1/webhook-pago
 → Verificar que la URL JSON externo sea accesible
 → Alternativamente, cargar datos desde Supabase (modo `supabase`)
 
-### JWT inválido en REST API
-→ El token debe venir del Supabase Auth (`access_token`)
-→ Los tokens expiran en 1 hora; el cliente debe refrescar con `refresh_token`
+### Error al crear usuario WordPress durante el registro
+→ Verificar que el email no esté ya registrado en WordPress
+→ Verificar que en **WP Admin → Ajustes → General** esté activada la opción "Cualquiera puede registrarse"
+→ Revisar los logs de WordPress en `wp-content/debug.log` (activar `WP_DEBUG_LOG` si es necesario)
+
+### El usuario no inicia sesión automáticamente tras el registro
+→ Verificar que el plugin PSP Auth esté activo
+→ Verificar que no hay plugins de seguridad bloqueando `wp_set_auth_cookie()`
+
+### Los endpoints REST `/me`, `/wa-group`, `/pago-confirmar` devuelven 401
+→ El usuario debe estar autenticado en WordPress (sesión activa con cookie)
+→ Las peticiones AJAX deben incluir el nonce de WP REST: header `X-WP-Nonce: <nonce>` (ver `PSP_CONFIG.rest_nonce`)
+→ Verificar que la sesión de WordPress no haya expirado
 
 ### Pagos no se activan automáticamente
 → Los métodos manuales (transferencia, efectivo) requieren activación manual desde Supabase Dashboard
