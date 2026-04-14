@@ -93,12 +93,15 @@ function psp_core_settings_page(): void {
 }
 
 // ── Sistema Status page ───────────────────────────────────────────────────────
-add_action('admin_menu', 'psp_core_status_menu');
+if (is_admin()) {
+    add_action('admin_menu', 'psp_core_status_menu');
+}
 function psp_core_status_menu() {
     add_submenu_page('psp-core','Estado del Sistema','&#x1F4CB; Estado','manage_options','psp-status','psp_core_status_page');
 }
 
 function psp_core_status_page() {
+    if (!current_user_can('manage_options')) return;
     $plugins_requeridos = [
         'psp-core/psp-core.php'             => 'PSP Core',
         'psp-auth/psp-auth.php'             => 'PSP Auth',
