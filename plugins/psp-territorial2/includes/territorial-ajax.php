@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * params: tipo (provincia|distrito|corregimiento|comunidad), parent_id
  *
  * Modos soportados (opción psp2_territorial_modo):
+ *   bundled    - lee el JSON local incluido en el plugin (por defecto)
  *   json_url   - lee JSON externo configurado en ajustes
  *   pspv2_rest - consulta WP REST API del plugin PSP Territorial V2
  */
@@ -20,14 +21,21 @@ function psp2_terr_ajax_get(): void {
 
     $tipo      = sanitize_key( wp_unslash( $_POST['tipo']      ?? '' ) );
     $parent_id = sanitize_text_field( wp_unslash( $_POST['parent_id'] ?? '' ) );
-    $modo      = get_option( 'psp2_territorial_modo', 'json_url' );
+    $modo      = get_option( 'psp2_territorial_modo', 'bundled' );
 
     if ( $modo === 'pspv2_rest' ) {
         $result = psp2_terr_get_from_rest( $tipo, $parent_id );
         wp_send_json_success( $result );
+        return;
     }
 
-    // Modo json_url (predeterminado)
+    if ( $modo === 'bundled' ) {
+        $result = psp2_terr_get_bundled( $tipo, $parent_id );
+        wp_send_json_success( $result );
+        return;
+    }
+
+    // Modo json_url
     $json_url = get_option( 'psp2_territorial_json_url', '' );
 
     if ( empty( $json_url ) ) {
@@ -43,14 +51,162 @@ function psp2_terr_ajax_get(): void {
         if ( is_wp_error( $response ) ) {
             wp_send_json_error( [ 'message' => 'No se pudo cargar el JSON territorial.' ] );
         }
-        $json_data = json_decode( wp_remote_retrieve_body( $response ), true );
-        if ( ! is_array( $json_data ) ) {
+        $raw = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( ! is_array( $raw ) ) {
             wp_send_json_error( [ 'message' => 'JSON territorial inv&aacute;lido.' ] );
         }
+        // Soportar tanto JSON plano (array) como { data: [...] }
+        $json_data = psp2_terr_extract_rows( $raw );
         set_transient( $cache_key, $json_data, HOUR_IN_SECONDS );
     }
 
     wp_send_json_success( psp2_terr_filter( $json_data, $tipo, $parent_id ) );
+}
+
+/**
+ * Obtiene territorios desde el JSON local integrado en el plugin.
+ * Carga el archivo una vez y almacena el resultado normalizado en un transient (24h).
+ *
+ * El JSON bundled tiene campos en inglés (type/name/parent_id):
+ *   type: province|district|corregimiento|community
+ *
+ * Se mapea a los tipos internos:
+ *   province → provincia, district → distrito,
+ *   corregimiento → corregimiento, community → comunidad
+ *
+ * @param string $tipo       'provincia'|'distrito'|'corregimiento'|'comunidad'
+ * @param string $parent_id  ID del padre (vacío para provincias)
+ * @return array<array{id:string,nombre:string}>
+ */
+function psp2_terr_get_bundled( string $tipo, string $parent_id ): array {
+    $allowed = [ 'provincia', 'distrito', 'corregimiento', 'comunidad' ];
+    if ( ! in_array( $tipo, $allowed, true ) ) {
+        return [];
+    }
+
+    // Mapeo tipo ES → tipo EN del dataset bundled
+    $type_map_es_to_en = [
+        'provincia'     => 'province',
+        'distrito'      => 'district',
+        'corregimiento' => 'corregimiento',
+        'comunidad'     => 'community',
+    ];
+    $eng_type = $type_map_es_to_en[ $tipo ];
+
+    // Caché por tipo + parent_id (24 horas)
+    $cache_key = 'psp2_terr_bundled_' . $tipo . '_' . ( $parent_id !== '' ? md5( $parent_id ) : 'root' );
+    $cached    = get_transient( $cache_key );
+    if ( false !== $cached ) {
+        return $cached;
+    }
+
+    // Cargar el dataset completo desde caché o disco
+    $all_rows = psp2_terr_load_bundled_all();
+
+    // Filtrar por type y parent_id
+    $result = [];
+    foreach ( $all_rows as $row ) {
+        if ( ( $row['type'] ?? '' ) !== $eng_type ) {
+            continue;
+        }
+        $row_parent = isset( $row['parent_id'] ) ? (string) $row['parent_id'] : '';
+        if ( $tipo === 'provincia' ) {
+            // Provincias: parent_id es null en el dataset
+            if ( $row_parent !== '' && $row_parent !== '0' ) {
+                continue;
+            }
+        } else {
+            if ( $row_parent !== $parent_id ) {
+                continue;
+            }
+        }
+        $result[] = [
+            'id'     => (string) $row['id'],
+            'nombre' => (string) ( $row['name'] ?? '' ),
+        ];
+    }
+
+    set_transient( $cache_key, $result, 24 * HOUR_IN_SECONDS );
+    return $result;
+}
+
+/**
+ * Carga y normaliza todos los registros del JSON bundled.
+ * Almacena el array completo en un transient (24h) para evitar
+ * decodificar el archivo en cada request.
+ *
+ * @return array  Array plano de items: [ { id, name, type, parent_id, ... }, ... ]
+ */
+function psp2_terr_load_bundled_all(): array {
+    $cache_key = 'psp2_terr_bundled_all';
+    $cached    = get_transient( $cache_key );
+    if ( false !== $cached ) {
+        return $cached;
+    }
+
+    $file = PSP2_TERR_DIR . 'assets/data/panama_full_geography.clean.json';
+    if ( ! file_exists( $file ) ) {
+        return [];
+    }
+
+    $contents = file_get_contents( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+    if ( false === $contents ) {
+        return [];
+    }
+
+    $decoded = json_decode( $contents, true );
+    if ( ! is_array( $decoded ) ) {
+        return [];
+    }
+
+    // El JSON bundled viene envuelto: { meta: {...}, data: [...] }
+    $rows = psp2_terr_extract_rows( $decoded );
+
+    set_transient( $cache_key, $rows, 24 * HOUR_IN_SECONDS );
+    return $rows;
+}
+
+/**
+ * Extrae el array de registros de un JSON que puede ser:
+ *   - un array plano: [ {...}, ... ]
+ *   - un objeto con clave 'data': { "data": [...], ... }
+ * También normaliza campos en inglés (name, type) a español (nombre, tipo)
+ * para compatibilidad con psp2_terr_filter().
+ *
+ * @param array $raw
+ * @return array
+ */
+function psp2_terr_extract_rows( array $raw ): array {
+    // Si es un objeto envelope { data: [...] }
+    if ( isset( $raw['data'] ) && is_array( $raw['data'] ) ) {
+        $rows = $raw['data'];
+    } else {
+        $rows = $raw;
+    }
+
+    // Normalizar campos: aceptar tanto inglés como español
+    $normalized = [];
+    foreach ( $rows as $row ) {
+        if ( ! is_array( $row ) ) {
+            continue;
+        }
+        // Mantener todos los campos originales y añadir aliases
+        if ( ! isset( $row['nombre'] ) && isset( $row['name'] ) ) {
+            $row['nombre'] = $row['name'];
+        }
+        if ( ! isset( $row['tipo'] ) && isset( $row['type'] ) ) {
+            // Mapear tipos inglés → español para psp2_terr_filter
+            $type_map = [
+                'province'      => 'provincia',
+                'district'      => 'distrito',
+                'corregimiento' => 'corregimiento',
+                'community'     => 'comunidad',
+            ];
+            $row['tipo'] = $type_map[ $row['type'] ] ?? $row['type'];
+        }
+        $normalized[] = $row;
+    }
+    return $normalized;
 }
 
 /**

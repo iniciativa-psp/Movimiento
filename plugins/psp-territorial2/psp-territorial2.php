@@ -18,7 +18,7 @@ define( 'PSP2_TERR_URL', plugin_dir_url( __FILE__ ) );
 register_activation_hook( __FILE__, 'psp2_territorial_activate' );
 function psp2_territorial_activate(): void {
     add_option( 'psp2_territorial_json_url', '' );
-    add_option( 'psp2_territorial_modo',     'json_url' ); // 'json_url' | 'pspv2_rest' | 'inline'
+    add_option( 'psp2_territorial_modo',     'bundled' ); // 'bundled' | 'json_url' | 'pspv2_rest'
 }
 
 // ── Carga de includes ─────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ function psp2_territorial_enqueue(): void {
         'ajax_url' => admin_url( 'admin-ajax.php' ),
         'nonce'    => wp_create_nonce( 'psp2_nonce' ),
         'json_url' => get_option( 'psp2_territorial_json_url', '' ),
-        'modo'     => get_option( 'psp2_territorial_modo', 'json_url' ),
+        'modo'     => get_option( 'psp2_territorial_modo', 'bundled' ),
         'contact'  => 'admin@panamasinpobreza.org',
     ] );
 }

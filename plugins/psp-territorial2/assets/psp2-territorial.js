@@ -66,23 +66,14 @@ var PSP2Terr = (function () {
     }
 
     /**
-     * Filtra el JSON por tipo y parent_id.
+     * Obtiene territorios hijos vía AJAX (el servidor decide la fuente).
+     * Siempre delega al backend para soportar todos los modos (bundled, json_url, pspv2_rest).
      * @param {string} tipo
      * @param {string} parentId
      * @returns {Promise<Array<{id:string,nombre:string}>>}
      */
     async function getChildren(tipo, parentId) {
-        var modo = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR.modo : 'json_url';
-        if (modo === 'pspv2_rest') {
-            return getChildrenRest(tipo, parentId);
-        }
-        var data = await getJson();
-        return data.filter(function (item) {
-            if (tipo === 'provincia') return item.tipo === 'provincia';
-            return item.tipo === tipo && String(item.parent_id) === String(parentId);
-        }).map(function (item) {
-            return { id: item.id, nombre: item.nombre };
-        });
+        return fetchTerr(tipo, parentId);
     }
 
     /**

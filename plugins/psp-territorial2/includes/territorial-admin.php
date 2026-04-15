@@ -40,9 +40,9 @@ function psp2_territorial_admin_page(): void {
 
     if ( isset( $_POST['psp2_terr_save'] ) && check_admin_referer( 'psp2_territorial_settings' ) ) {
         update_option( 'psp2_territorial_json_url', sanitize_url( wp_unslash( $_POST['json_url'] ?? '' ) ) );
-        $modo_new = sanitize_key( wp_unslash( $_POST['modo'] ?? 'json_url' ) );
-        if ( ! in_array( $modo_new, [ 'json_url', 'pspv2_rest', 'inline' ], true ) ) {
-            $modo_new = 'json_url';
+        $modo_new = sanitize_key( wp_unslash( $_POST['modo'] ?? 'bundled' ) );
+        if ( ! in_array( $modo_new, [ 'bundled', 'json_url', 'pspv2_rest' ], true ) ) {
+            $modo_new = 'bundled';
         }
         update_option( 'psp2_territorial_modo', $modo_new );
         // Limpiar caché
@@ -66,7 +66,7 @@ function psp2_territorial_admin_page(): void {
       <form method="post">
         <?php wp_nonce_field( 'psp2_territorial_settings' ); ?>
         <table class="form-table">
-          <tr id="psp2-json-row" <?php echo get_option( 'psp2_territorial_modo', 'json_url' ) !== 'json_url' ? 'style="display:none"' : ''; ?>>
+          <tr id="psp2-json-row" <?php echo get_option( 'psp2_territorial_modo', 'bundled' ) !== 'json_url' ? 'style="display:none"' : ''; ?>>
             <th scope="row">URL del JSON territorial</th>
             <td>
               <input class="regular-text" name="json_url"
@@ -75,6 +75,7 @@ function psp2_territorial_admin_page(): void {
               <p class="description">
                 Solo requerida en modo <strong>JSON externo</strong>.
                 JSON con estructura: <code>[{"id":"1","nombre":"Panam&aacute;","tipo":"provincia","parent_id":""},...]</code>
+                o <code>{"data":[{"id":1,"name":"Panam&aacute;","type":"province","parent_id":null,...},...]}</code>
               </p>
             </td>
           </tr>
@@ -82,11 +83,13 @@ function psp2_territorial_admin_page(): void {
             <th scope="row">Modo de carga</th>
             <td>
               <select name="modo" id="psp2_terr_modo" onchange="document.getElementById('psp2-json-row').style.display=this.value==='json_url'?'':'none'">
-                <option value="json_url"   <?php selected( get_option( 'psp2_territorial_modo', 'json_url' ), 'json_url' ); ?>>JSON externo (URL)</option>
-                <option value="pspv2_rest" <?php selected( get_option( 'psp2_territorial_modo', 'json_url' ), 'pspv2_rest' ); ?>>PSP Territorial V2 (REST local)</option>
-                <option value="inline"     <?php selected( get_option( 'psp2_territorial_modo', 'json_url' ), 'inline' ); ?>>Inline (JS directo)</option>
+                <option value="bundled"   <?php selected( get_option( 'psp2_territorial_modo', 'bundled' ), 'bundled' ); ?>>Integrado (archivo incluido en el plugin)</option>
+                <option value="json_url"   <?php selected( get_option( 'psp2_territorial_modo', 'bundled' ), 'json_url' ); ?>>JSON externo (URL)</option>
+                <option value="pspv2_rest" <?php selected( get_option( 'psp2_territorial_modo', 'bundled' ), 'pspv2_rest' ); ?>>PSP Territorial V2 (REST local)</option>
               </select>
               <p class="description">
+                <strong>Integrado</strong>: usa el archivo <code>panama_full_geography.clean.json</code> incluido en el plugin. No requiere configuraci&oacute;n adicional. Recomendado.<br>
+                <strong>JSON externo</strong>: requiere una URL JSON v&aacute;lida en el campo de arriba.<br>
                 <strong>PSP Territorial V2 (REST local)</strong>: usa los endpoints REST del plugin <em>PSP Territorial V2</em>
                 (<code>/wp-json/psp-territorial/v2/...</code>). No requiere URL JSON. Si ese plugin no est&aacute; instalado,
                 los selectores quedar&aacute;n vac&iacute;os con mensaje de contacto.
