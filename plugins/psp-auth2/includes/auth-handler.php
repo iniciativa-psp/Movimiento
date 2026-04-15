@@ -67,22 +67,15 @@ function psp2_registro_completo_shortcode( array $atts = [] ): string {
         <label class="psp2-label">Contrase&ntilde;a <span class="psp2-req">*</span></label>
         <input name="password" type="password" class="psp2-input" required placeholder="M&iacute;nimo 8 caracteres" minlength="8">
 
-        <label class="psp2-label">Tipo de miembro</label>
-        <select name="tipo_miembro" class="psp2-input">
-          <option value="nacional">Nacional</option>
-          <option value="internacional">Internacional</option>
-          <option value="hogar_solidario">Hogar Solidario</option>
-          <option value="lider">L&iacute;der Comunitario</option>
-          <option value="voluntario">Voluntario</option>
-          <option value="coordinador">Coordinador</option>
+        <label class="psp2-label">Tipo de miembro <span class="psp2-req">*</span></label>
+        <select name="tipo_miembro" class="psp2-input" required>
+          <option value="persona">Persona</option>
+          <option value="empresa">Empresa</option>
+          <option value="organizacion">Organizaci&oacute;n/Organismo</option>
+          <option value="entidad_publica">Entidad o instituci&oacute;n p&uacute;blica</option>
         </select>
 
-        <?php if ( shortcode_exists( 'psp2_territorial_selector' ) ) : ?>
-          <?php echo do_shortcode( '[psp2_territorial_selector]' ); ?>
-        <?php else : ?>
-          <label class="psp2-label">Provincia</label>
-          <input name="provincia_id" class="psp2-input" placeholder="Provincia (opcional)">
-        <?php endif; ?>
+        <?php echo do_shortcode( '[psp2_territorial_selector]' ); ?>
 
         <input type="hidden" name="ref" value="<?php echo esc_attr( $ref_code ); ?>">
         <input type="hidden" name="action" value="psp2_register">
@@ -95,6 +88,7 @@ function psp2_registro_completo_shortcode( array $atts = [] ): string {
 
       <p style="font-size:12px;text-align:center;margin-top:12px;color:#6B7280">
         &#x1F512; Tus datos est&aacute;n protegidos. No compartimos tu informaci&oacute;n.
+        <a href="<?php echo esc_url( home_url( '/privacidad/' ) ); ?>" style="color:#6B7280">Ver pol&iacute;tica de privacidad</a>
       </p>
     </div>
     <?php
@@ -254,7 +248,7 @@ function psp2_ajax_register(): void {
     $celular   = sanitize_text_field( wp_unslash( $_POST['celular']   ?? '' ) );
     $email     = sanitize_email( wp_unslash( $_POST['email']          ?? '' ) );
     $password  = wp_unslash( $_POST['password'] ?? '' );
-    $tipo      = sanitize_text_field( wp_unslash( $_POST['tipo_miembro'] ?? 'nacional' ) );
+    $tipo      = sanitize_text_field( wp_unslash( $_POST['tipo_miembro'] ?? 'persona' ) );
     $prov_id   = sanitize_text_field( wp_unslash( $_POST['provincia_id']      ?? '' ) );
     $dist_id   = sanitize_text_field( wp_unslash( $_POST['distrito_id']       ?? '' ) );
     $corr_id   = sanitize_text_field( wp_unslash( $_POST['corregimiento_id']  ?? '' ) );
@@ -310,8 +304,8 @@ function psp2_ajax_register(): void {
     if ( class_exists( 'PSP2_Supabase' ) ) {
         $codigo = function_exists( 'psp2_generar_codigo' ) ? psp2_generar_codigo( 'PSP' ) : strtoupper( 'PSP-' . bin2hex( random_bytes( 5 ) ) );
 
-        $tipos_validos = [ 'nacional', 'internacional', 'hogar_solidario', 'lider', 'voluntario', 'coordinador', 'actor', 'sector', 'productor', 'planton', 'comunicador', 'influencer', 'embajador' ];
-        $tipo_sanitized = in_array( $tipo, $tipos_validos, true ) ? $tipo : 'nacional';
+        $tipos_validos  = [ 'persona', 'empresa', 'organizacion', 'entidad_publica' ];
+        $tipo_sanitized = in_array( $tipo, $tipos_validos, true ) ? $tipo : 'persona';
 
         $miembro_data = [
             'wp_user_id'             => $user_id,

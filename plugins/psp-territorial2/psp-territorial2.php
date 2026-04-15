@@ -90,14 +90,16 @@ function psp2_territorial_shortcode( array $atts = [] ): string {
       <!-- Selector Panamá -->
       <div class="psp2-terr-panama" id="<?php echo $uid; ?>-panama">
 
-        <label class="psp2-label">Provincia <?php if ( $req ) echo '<span class="psp2-req">*</span>'; ?></label>
-        <select name="<?php echo $p; ?>provincia_id"
-                id="<?php echo $p; ?>psp2_provincia"
-                class="psp2-input psp2-terr-select"
-                <?php echo $req; ?>
-                onchange="PSP2Terr.load(this,'distrito','<?php echo $p; ?>')">
-          <option value="">-- Selecciona provincia --</option>
-        </select>
+        <div id="<?php echo $p; ?>row-provincia">
+          <label class="psp2-label">Provincia <?php if ( $req ) echo '<span class="psp2-req">*</span>'; ?></label>
+          <select name="<?php echo $p; ?>provincia_id"
+                  id="<?php echo $p; ?>psp2_provincia"
+                  class="psp2-input psp2-terr-select"
+                  <?php echo $req; ?>
+                  onchange="PSP2Terr.load(this,'distrito','<?php echo $p; ?>')">
+            <option value="">-- Selecciona provincia --</option>
+          </select>
+        </div>
 
         <div id="<?php echo $p; ?>row-distrito" style="display:none">
           <label class="psp2-label">Distrito <span class="psp2-req">*</span></label>
