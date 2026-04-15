@@ -23,12 +23,40 @@ var PSP2Terr = (function () {
     }
 
     /**
+     * Fetches territory children via WP AJAX (pspv2_rest mode).
+     * The server handles REST calls + transient caching.
+     * @param {string} tipo
+     * @param {string} parentId
+     * @returns {Promise<Array<{id:string,nombre:string}>>}
+     */
+    async function getChildrenRest(tipo, parentId) {
+        var cfg = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR : {};
+        var fd = new FormData();
+        fd.append('action', 'psp2_terr_get');
+        fd.append('psp2_nonce', cfg.nonce || '');
+        fd.append('tipo', tipo);
+        fd.append('parent_id', parentId || '');
+        try {
+            var res = await fetch(cfg.ajax_url || '/wp-admin/admin-ajax.php', { method: 'POST', body: fd });
+            var data = await res.json();
+            if (data.success && Array.isArray(data.data)) {
+                return data.data;
+            }
+        } catch (e) { /* silencioso */ }
+        return [];
+    }
+
+    /**
      * Filtra el JSON por tipo y parent_id.
      * @param {string} tipo
      * @param {string} parentId
      * @returns {Promise<Array<{id:string,nombre:string}>>}
      */
     async function getChildren(tipo, parentId) {
+        var modo = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR.modo : 'json_url';
+        if (modo === 'pspv2_rest') {
+            return getChildrenRest(tipo, parentId);
+        }
         var data = await getJson();
         return data.filter(function (item) {
             if (tipo === 'provincia') return item.tipo === 'provincia';
@@ -36,6 +64,50 @@ var PSP2Terr = (function () {
         }).map(function (item) {
             return { id: item.id, nombre: item.nombre };
         });
+    }
+
+    /**
+     * Muestra un mensaje de "territorio no encontrado" con mailto al admin.
+     * @param {HTMLElement} container  Elemento padre donde insertar el mensaje
+     * @param {string}      nivel      'provincia'|'distrito'|'corregimiento'|'comunidad'
+     * @param {string}      msgId      ID único para el elemento del mensaje
+     */
+    function showMissingMessage(container, nivel, msgId) {
+        var existing = document.getElementById(msgId);
+        if (existing) { existing.style.display = 'block'; return; }
+
+        var cfg      = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR : {};
+        var email    = cfg.contact || 'admin@panamasinpobreza.org';
+        var subject  = encodeURIComponent('Solicitud: agregar ' + nivel + ' faltante');
+        var bodyParts = [
+            'Hola,',
+            '',
+            'No encontré mi ' + nivel + ' en el formulario de registro del Movimiento PSP.',
+            'Por favor agregar:',
+            '',
+            'Nombre del/la ' + nivel + ': [escribe aquí]',
+            'Padre (si aplica): [escribe aquí]',
+            '',
+            'Gracias.'
+        ];
+        var body     = encodeURIComponent( bodyParts.join('\n') );
+        var href     = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+
+        var p = document.createElement('p');
+        p.id = msgId;
+        p.className = 'psp2-terr-missing';
+        p.style.cssText = 'font-size:12px;color:#6B7280;margin:4px 0 0;';
+        p.innerHTML = '¿No encuentras tu ' + nivel + '? <a href="' + href + '" style="color:#1D4ED8">Escríbenos para agregarlo</a>.';
+        container.appendChild(p);
+    }
+
+    /**
+     * Oculta el mensaje de territorio faltante si existe.
+     * @param {string} msgId
+     */
+    function hideMissingMessage(msgId) {
+        var el = document.getElementById(msgId);
+        if (el) el.style.display = 'none';
     }
 
     /**
@@ -59,13 +131,21 @@ var PSP2Terr = (function () {
             var selEl = document.getElementById(prefix + 'psp2_' + cascade[i]);
             if (rowEl) rowEl.style.display = 'none';
             if (selEl) { selEl.innerHTML = '<option value="">-- Cargando... --</option>'; selEl.value = ''; }
+            hideMissingMessage(prefix + 'msg-missing-' + cascade[i]);
         }
 
         if (!parentId) return;
 
         var items = await getChildren(childTipo, parentId);
-        if (!items.length) return;
 
+        if (!items.length) {
+            if (childRow) childRow.style.display = 'block';
+            childSel.innerHTML = '<option value="">-- No disponible --</option>';
+            showMissingMessage(childRow || childSel.parentNode, childTipo, prefix + 'msg-missing-' + childTipo);
+            return;
+        }
+
+        hideMissingMessage(prefix + 'msg-missing-' + childTipo);
         childSel.innerHTML = '<option value="">-- Selecciona ' + childTipo + ' --</option>';
         items.forEach(function (item) {
             var opt = document.createElement('option');
@@ -85,7 +165,11 @@ var PSP2Terr = (function () {
         var sel = document.getElementById(prefix + 'psp2_provincia');
         if (!sel) return;
         var items = await getChildren('provincia', '');
-        if (!items.length) return;
+        if (!items.length) {
+            showMissingMessage(sel.parentNode, 'provincia', prefix + 'msg-missing-provincia');
+            return;
+        }
+        hideMissingMessage(prefix + 'msg-missing-provincia');
         sel.innerHTML = '<option value="">-- Selecciona provincia --</option>';
         items.forEach(function (item) {
             var opt = document.createElement('option');
@@ -128,3 +212,4 @@ var PSP2Terr = (function () {
 
     return { load: load, switchTipo: switchTipo, initProvincias: initProvincias };
 })();
+

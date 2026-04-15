@@ -23,6 +23,7 @@ function psp2_auth_check_core(): void {
 add_action( 'plugins_loaded', 'psp2_auth_load' );
 function psp2_auth_load(): void {
     require_once plugin_dir_path( __FILE__ ) . 'includes/auth-handler.php';
+    require_once plugin_dir_path( __FILE__ ) . 'includes/auth-admin.php';
 }
 
 // ── Capturar ?ref= y guardar en cookie (30 días) ─────────────────────────────
