@@ -50,8 +50,80 @@ function psp2_terr_ajax_get(): void {
         set_transient( $cache_key, $json_data, HOUR_IN_SECONDS );
     }
 
-    $result = psp2_terr_filter( $json_data, $tipo, $parent_id );
-    wp_send_json_success( $result );
+    wp_send_json_success( psp2_terr_filter( $json_data, $tipo, $parent_id ) );
+}
+
+/**
+ * Returns true if the PSP Territorial V2 plugin is active.
+ * Result is cached in a static-like variable after the first call.
+ */
+function psp2_terr_use_pspv2(): bool {
+    static $result = null;
+    if ( null !== $result ) {
+        return $result;
+    }
+    if ( ! function_exists( 'is_plugin_active' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+    $result = is_plugin_active( 'psp-territorial-v2/psp-territorial-v2.php' );
+    return $result;
+}
+
+/**
+ * Fetches territory data from the PSP Territorial V2 REST API via rest_do_request().
+ * Maps interno tipo → endpoint:
+ *   provincia     → /psp-territorial/v2/provincias
+ *   distrito      → /psp-territorial/v2/distritos?parent_id=
+ *   corregimiento → /psp-territorial/v2/corregimientos?parent_id=
+ *   comunidad     → /psp-territorial/v2/comunidades?parent_id=
+ *
+ * PSP Territorial V2 returns: { success: true, data: [ { id, name, ... }, ... ] }
+ *
+ * @param string $tipo      'provincia'|'distrito'|'corregimiento'|'comunidad'
+ * @param string $parent_id Numeric parent ID (empty for provincias)
+ * @return array            [ [ 'id' => ..., 'nombre' => ... ], ... ]
+ */
+function psp2_terr_from_pspv2( string $tipo, string $parent_id ): array {
+    $endpoint_map = [
+        'provincia'     => 'provincias',
+        'distrito'      => 'distritos',
+        'corregimiento' => 'corregimientos',
+        'comunidad'     => 'comunidades',
+    ];
+
+    if ( ! isset( $endpoint_map[ $tipo ] ) ) {
+        return [];
+    }
+
+    $cache_key = 'psp2_terr_v2_' . $tipo . '_' . md5( $parent_id );
+    $cached    = get_transient( $cache_key );
+    if ( false !== $cached ) {
+        return $cached;
+    }
+
+    $rest_path = '/psp-territorial/v2/' . $endpoint_map[ $tipo ];
+    $request   = new WP_REST_Request( 'GET', $rest_path );
+    if ( $parent_id !== '' ) {
+        $request->set_param( 'parent_id', absint( $parent_id ) );
+    }
+
+    $response = rest_do_request( $request );
+    $body     = $response->get_data();
+
+    if ( empty( $body['success'] ) || ! is_array( $body['data'] ) ) {
+        set_transient( $cache_key, [], 5 * MINUTE_IN_SECONDS );
+        return [];
+    }
+
+    $result = array_map( function ( $item ) {
+        return [
+            'id'     => $item['id']     ?? '',
+            'nombre' => $item['name']   ?? $item['nombre'] ?? '',
+        ];
+    }, $body['data'] );
+
+    set_transient( $cache_key, $result, HOUR_IN_SECONDS );
+    return $result;
 }
 
 /**

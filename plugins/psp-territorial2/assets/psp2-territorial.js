@@ -3,23 +3,42 @@
 
 var PSP2Terr = (function () {
 
-    var _json = null; // Datos JSON cacheados en memoria
+    var _cache = {}; // Cache en memoria: 'tipo_parentId' → items[]
+
+    function _cfg() {
+        return (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR : { ajax_url: '', nonce: '' };
+    }
 
     /**
-     * Carga los datos JSON si aún no están en memoria.
-     * @returns {Promise<Array>}
+     * Obtiene territorios vía admin-ajax (action: psp2_terr_get).
+     * El handler PHP decide si usar PSP Territorial V2 o el JSON de fallback.
+     *
+     * @param {string} tipo      'provincia'|'distrito'|'corregimiento'|'comunidad'
+     * @param {string} parentId
+     * @returns {Promise<Array<{id:string,nombre:string}>>}
      */
-    async function getJson() {
-        if (_json) return _json;
-        var url = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR.json_url : '';
-        if (!url) return [];
+    async function fetchTerr(tipo, parentId) {
+        var key = tipo + '_' + (parentId || 'root');
+        if (Object.prototype.hasOwnProperty.call(_cache, key)) return _cache[key];
+
+        var cfg = _cfg();
+        if (!cfg.ajax_url) { _cache[key] = []; return []; }
+
+        var body = new URLSearchParams({
+            action    : 'psp2_terr_get',
+            psp2_nonce: cfg.nonce,
+            tipo      : tipo,
+            parent_id : parentId || '',
+        });
+
         try {
-            var res = await fetch(url);
-            _json = await res.json();
+            var res  = await fetch(cfg.ajax_url, { method: 'POST', body: body });
+            var json = await res.json();
+            _cache[key] = (json.success && Array.isArray(json.data)) ? json.data : [];
         } catch (e) {
-            _json = [];
+            _cache[key] = [];
         }
-        return _json || [];
+        return _cache[key];
     }
 
     /**
@@ -116,6 +135,19 @@ var PSP2Terr = (function () {
      * @param {string} childTipo  'distrito'|'corregimiento'|'comunidad'
      * @param {string} prefix
      */
+    function reportMissing(event, nivel, prefix) {
+        if (event) event.preventDefault();
+        var rowEl = document.getElementById((prefix || '') + 'row-' + nivel);
+        if (!rowEl) return;
+        showMissingHelp(rowEl, nivel, prefix || '');
+    }
+
+    /**
+     * Popula un <select> hijo basado en el cambio de un select padre.
+     * @param {HTMLSelectElement} selectEl
+     * @param {string}            childTipo  'distrito'|'corregimiento'|'comunidad'
+     * @param {string}            prefix
+     */
     async function load(selectEl, childTipo, prefix) {
         var parentId = selectEl.value;
         var childRow = document.getElementById(prefix + 'row-' + childTipo);
@@ -129,7 +161,7 @@ var PSP2Terr = (function () {
         for (var i = idx; i < cascade.length; i++) {
             var rowEl = document.getElementById(prefix + 'row-' + cascade[i]);
             var selEl = document.getElementById(prefix + 'psp2_' + cascade[i]);
-            if (rowEl) rowEl.style.display = 'none';
+            if (rowEl) { rowEl.style.display = 'none'; _removeMissingHelp(rowEl); }
             if (selEl) { selEl.innerHTML = '<option value="">-- Cargando... --</option>'; selEl.value = ''; }
             hideMissingMessage(prefix + 'msg-missing-' + cascade[i]);
         }
@@ -154,7 +186,15 @@ var PSP2Terr = (function () {
             childSel.appendChild(opt);
         });
 
-        if (childRow) childRow.style.display = 'block';
+        if (childRow) {
+            childRow.style.display = 'block';
+            _removeMissingHelp(childRow);
+            if (!items.length) {
+                showMissingHelp(childRow, childTipo, prefix);
+            } else {
+                _addNotFoundLink(childRow, childTipo, prefix);
+            }
+        }
     }
 
     /**
@@ -162,7 +202,8 @@ var PSP2Terr = (function () {
      * @param {string} prefix
      */
     async function initProvincias(prefix) {
-        var sel = document.getElementById(prefix + 'psp2_provincia');
+        var sel   = document.getElementById(prefix + 'psp2_provincia');
+        var rowEl = document.getElementById(prefix + 'row-provincia');
         if (!sel) return;
         var items = await getChildren('provincia', '');
         if (!items.length) {
@@ -177,12 +218,23 @@ var PSP2Terr = (function () {
             opt.textContent = item.nombre;
             sel.appendChild(opt);
         });
+
+        var container = rowEl || sel.parentElement;
+        if (container) {
+            if (!container.id) container.id = prefix + 'row-provincia';
+            _removeMissingHelp(container);
+            if (!items.length) {
+                showMissingHelp(container, 'provincia', prefix);
+            } else {
+                _addNotFoundLink(container, 'provincia', prefix);
+            }
+        }
     }
 
     /**
      * Toggle Panamá / Internacional.
      * @param {HTMLInputElement} radio
-     * @param {string} tipo  'panama'|'internacional'
+     * @param {string}           tipo  'panama'|'internacional'
      */
     function switchTipo(radio, tipo) {
         var wrap = radio.closest('.psp2-terr-wrap');
@@ -201,15 +253,19 @@ var PSP2Terr = (function () {
     // Auto-init en DOMContentLoaded
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.psp2-terr-wrap').forEach(function (wrap) {
-            // Intentar inferir prefix por el ID del first select
             var provSel = wrap.querySelector('[id$="psp2_provincia"]');
             if (!provSel) return;
-            var idStr = provSel.id;
+            var idStr  = provSel.id;
             var prefix = idStr.replace('psp2_provincia', '');
             initProvincias(prefix);
         });
     });
 
-    return { load: load, switchTipo: switchTipo, initProvincias: initProvincias };
+    return {
+        load          : load,
+        switchTipo    : switchTipo,
+        initProvincias: initProvincias,
+        reportMissing : reportMissing,
+    };
 })();
 
