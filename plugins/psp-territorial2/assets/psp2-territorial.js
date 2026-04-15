@@ -166,7 +166,14 @@ var PSP2Terr = (function () {
         p.id = id;
         p.className = 'psp2-terr-notfound';
         p.style.cssText = 'font-size:12px;color:#6B7280;margin:4px 0 0;';
-        p.innerHTML = '¿No encuentras tu ' + nivel + '? <a href="' + href + '" style="color:#1D4ED8">Escríbenos para agregarlo</a>.';
+        // Use DOM text nodes to avoid XSS when composing the message
+        p.appendChild(document.createTextNode('¿No encuentras tu ' + nivel + '? '));
+        var a = document.createElement('a');
+        a.href = href;
+        a.style.color = '#1D4ED8';
+        a.textContent = 'Escríbenos para agregarlo';
+        p.appendChild(a);
+        p.appendChild(document.createTextNode('.'));
         container.appendChild(p);
     }
 
