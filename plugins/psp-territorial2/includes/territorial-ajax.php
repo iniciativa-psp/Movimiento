@@ -24,7 +24,8 @@ function psp2_terr_ajax_get(): void {
     $modo      = get_option( 'psp2_territorial_modo', 'bundled' );
 
     if ( $modo === 'pspv2_rest' ) {
-        $result = psp2_terr_get_from_rest( $tipo, $parent_id );
+        // psp2_terr_from_pspv2() correctly handles the PSP V2 envelope {success,count,data}
+        $result = psp2_terr_from_pspv2( $tipo, $parent_id );
         wp_send_json_success( $result );
         return;
     }
@@ -39,7 +40,10 @@ function psp2_terr_ajax_get(): void {
     $json_url = get_option( 'psp2_territorial_json_url', '' );
 
     if ( empty( $json_url ) ) {
-        wp_send_json_error( [ 'message' => 'JSON territorial no configurado.' ] );
+        // Fallback: si no hay URL configurada, usar el JSON bundled
+        $result = psp2_terr_get_bundled( $tipo, $parent_id );
+        wp_send_json_success( $result );
+        return;
     }
 
     // Obtener JSON con caché 1 hora
