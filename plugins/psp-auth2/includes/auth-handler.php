@@ -71,7 +71,7 @@ function psp2_registro_completo_shortcode( array $atts = [] ): string {
         <select name="tipo_miembro" class="psp2-input" required>
           <option value="persona">Persona</option>
           <option value="empresa">Empresa</option>
-          <option value="organizacion">Organizaci&oacute;n/Organismo</option>
+          <option value="organizacion_organismo">Organizaci&oacute;n/Organismo</option>
           <option value="entidad_publica">Entidad o instituci&oacute;n p&uacute;blica</option>
         </select>
 
@@ -312,7 +312,7 @@ function psp2_ajax_register(): void {
     if ( class_exists( 'PSP2_Supabase' ) ) {
         $codigo = function_exists( 'psp2_generar_codigo' ) ? psp2_generar_codigo( 'PSP' ) : strtoupper( 'PSP-' . bin2hex( random_bytes( 5 ) ) );
 
-        $tipos_validos  = [ 'persona', 'empresa', 'organizacion', 'entidad_publica' ];
+        $tipos_validos  = [ 'persona', 'empresa', 'organizacion_organismo', 'entidad_publica' ];
         $tipo_sanitized = in_array( $tipo, $tipos_validos, true ) ? $tipo : 'persona';
 
         $miembro_data = [
