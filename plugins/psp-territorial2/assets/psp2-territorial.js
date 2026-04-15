@@ -121,6 +121,63 @@ var PSP2Terr = (function () {
     }
 
     /**
+     * Elimina los elementos de ayuda "territorio faltante" de un contenedor.
+     * @param {HTMLElement} container
+     */
+    function _removeMissingHelp(container) {
+        if (!container) return;
+        container.querySelectorAll('.psp2-terr-missing, .psp2-terr-notfound').forEach(function (el) {
+            el.parentNode && el.parentNode.removeChild(el);
+        });
+    }
+
+    /**
+     * Muestra un mensaje de ayuda indicando que no se encontraron territorios.
+     * Equivalente a showMissingMessage para el contenedor de un nivel.
+     * @param {HTMLElement} container
+     * @param {string}      nivel
+     * @param {string}      prefix
+     */
+    function showMissingHelp(container, nivel, prefix) {
+        showMissingMessage(container, nivel, (prefix || '') + 'msg-missing-' + nivel);
+    }
+
+    /**
+     * Añade un enlace pequeño "¿No encuentras tu <nivel>?" al final del contenedor.
+     * @param {HTMLElement} container
+     * @param {string}      nivel
+     * @param {string}      prefix
+     */
+    function _addNotFoundLink(container, nivel, prefix) {
+        if (!container) return;
+        var id = (prefix || '') + 'notfound-' + nivel;
+        if (document.getElementById(id)) return;
+
+        var cfg   = (typeof PSP2_TERR !== 'undefined') ? PSP2_TERR : {};
+        var email = cfg.contact || 'admin@panamasinpobreza.org';
+        var subject = encodeURIComponent('Solicitud: agregar ' + nivel + ' faltante');
+        var bodyText = encodeURIComponent(
+            'Hola,\n\nNo encontré mi ' + nivel + ' en el formulario de registro del Movimiento PSP.\n' +
+            'Por favor agregar:\n\nNombre del/la ' + nivel + ': [escribe aquí]\nPadre (si aplica): [escribe aquí]\n\nGracias.'
+        );
+        var href = 'mailto:' + email + '?subject=' + subject + '&body=' + bodyText;
+
+        var p = document.createElement('p');
+        p.id = id;
+        p.className = 'psp2-terr-notfound';
+        p.style.cssText = 'font-size:12px;color:#6B7280;margin:4px 0 0;';
+        // Use DOM text nodes to avoid XSS when composing the message
+        p.appendChild(document.createTextNode('¿No encuentras tu ' + nivel + '? '));
+        var a = document.createElement('a');
+        a.href = href;
+        a.style.color = '#1D4ED8';
+        a.textContent = 'Escríbenos para agregarlo';
+        p.appendChild(a);
+        p.appendChild(document.createTextNode('.'));
+        container.appendChild(p);
+    }
+
+    /**
      * Popula un <select> con los hijos del territorio seleccionado.
      * @param {HTMLSelectElement} selectEl
      * @param {string} childTipo  'distrito'|'corregimiento'|'comunidad'
