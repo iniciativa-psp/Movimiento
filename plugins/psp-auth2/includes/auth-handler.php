@@ -87,8 +87,16 @@ function psp2_registro_completo_shortcode( array $atts = [] ): string {
       </form>
 
       <p style="font-size:12px;text-align:center;margin-top:12px;color:#6B7280">
-        &#x1F512; Tus datos est&aacute;n protegidos. No compartimos tu informaci&oacute;n.
-        <a href="<?php echo esc_url( home_url( '/privacidad/' ) ); ?>" style="color:#6B7280">Ver pol&iacute;tica de privacidad</a>
+        &#x1F512;
+        <?php
+        $privacy_url = get_option( 'psp2_privacy_url', home_url( '/privacidad/' ) );
+        if ( $privacy_url ) :
+            $privacy_link = '<a href="' . esc_url( $privacy_url ) . '" target="_blank" rel="noopener noreferrer" style="color:inherit">Ver pol&iacute;tica de privacidad</a>';
+        ?>
+          Tus datos est&aacute;n protegidos. No compartimos tu informaci&oacute;n. <?php echo $privacy_link; ?>
+        <?php else : ?>
+          Tus datos est&aacute;n protegidos. No compartimos tu informaci&oacute;n.
+        <?php endif; ?>
       </p>
     </div>
     <?php
