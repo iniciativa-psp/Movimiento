@@ -41,10 +41,9 @@ function psp2_territorial_enqueue(): void {
 
     // Smart effective mode: when PSP Territorial V2 is active always use pspv2_rest.
     // Otherwise respect the saved setting (default pspv2_rest; map legacy 'bundled' → 'pspv2_rest').
-    if ( ! function_exists( 'is_plugin_active' ) ) {
-        require_once ABSPATH . 'wp-admin/includes/plugin.php';
-    }
-    if ( is_plugin_active( 'psp-territorial-v2/psp-territorial-v2.php' ) ) {
+    // Use active_plugins option directly to avoid loading wp-admin/includes/plugin.php on every front-end request.
+    $active_plugins = (array) get_option( 'active_plugins', [] );
+    if ( in_array( 'psp-territorial-v2/psp-territorial-v2.php', $active_plugins, true ) ) {
         $modo = 'pspv2_rest';
     } else {
         $saved = get_option( 'psp2_territorial_modo', 'pspv2_rest' );
