@@ -1,0 +1,2155 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Comarca Ngäbe Buglé			
+			
+	Besiko		
+			
+		Soloy	
+			
+			Alto de Mango
+			Alto de Naranjo
+			Alto Soloy
+			Barriada 2000
+			Boca de Caña
+			Boca de Huso
+			Boca de Jebay
+			Boca de Quebrada de Hacha
+			
+			Boca de Soloy
+			Brazo de Miel 1
+			Brazo de Miel 2
+			Cabecera de Corral
+			Cabecera Miel
+			Cerro Cucaracha
+			Cerro Miel
+			Cerro Venado
+			Cerro Viejo, Israel
+			El Barrero
+			Gasparillo
+			Jaramillo
+			Jebay
+			Moracho
+			Quebrada Caña
+			Quebrada Hacha
+			Quebrada Sueño, Alto Caña
+			Salitre
+			
+		Boca de Balsa	
+			
+			Alto Rey
+			Boca de Balsa
+			Boca de Huso
+			Boca de Quebrada Remedios
+			Cabecera de Ceiba
+			Cabecera de Cogollo
+			Cabecera de Macho de Monte
+			Cabecera de Quebrada Berba
+			Cabecera de Tigre
+			Calabazo
+			Ceiba
+			Cerro Banquillo
+			Cerro Bollo
+			Cerro Caja
+			Cerro Iglesia
+			Cerro Pita
+			Cerro Yuca
+			Cogollo
+			Cogollo 2
+			El Coco
+			El Palmarito
+			Hato Salud
+			Jatote
+			Limoncillo
+			Limón
+			Macho de Monte
+			Pellejo de Agua
+			
+			Plano de Río Huso
+			Quebrada Arena
+			Quebrada Balsita
+			Quebrada Camarón
+			Quebrada Carpintero
+			Quebrada Cementerio
+			Quebrada Chicha
+			Quebrada Corozo 1
+			Quebrada Cucaracha
+			Quebrada El Nance
+			Quebrada Lajita
+			Quebrada Lajita 2
+			Quebrada Molino
+			Quebrada Palma
+			Quebrada Penca
+			Quebrada Perico
+			Quebrada Ñeque
+			Sabana de Huso
+			Salitre
+			
+		Camarón Arriba	
+			
+			 Quebrada Posoy
+			Alto Jacaque, Capacho
+			Boca de Quebrada Camarón
+			Boca de Quebrada Guacamaya
+			Boca de Quebrada Lajas
+			Boca de Quebrada Secuara
+			Boca de Águila
+			Boca Quebrada de Ullama
+			Cabecera de Posoy
+			Cabecera de Quebrada Guacamaya
+			Cabecera de Quebrada Lajas
+			Cabecera de Quebrada Los Peces
+			Cabecera de Quebrada Monito 1
+			Cabecera de Quebrada Monito 2
+			Cabecera de Quebrada Pifa
+			Cabecera de Quebrada Secuara
+			Cabecera de Quebrada Tigra
+			Cabecera de Ullama
+			Cacicón
+			Camarón Abajo
+			Camarón Arriba
+			Cerro Jesús
+			Común
+			Corocito
+			Cucuria
+			Escobal
+			
+			Falda de Cerro Palma
+			Falda de Palma
+			Guacamaya
+			Las Nubes
+			Quebrada Biabá
+			Quebrada Cabuya
+			Quebrada Carpintero
+			Quebrada Los Peces
+			Quebrada Monito
+			Quebrada Palma
+			Quebrada Pifa
+			Quebrada Puerco
+			Quebrada Tigra
+			Quebrada Ullama
+			Quebrada Zapote
+			Secuara
+			Sigoni
+			
+		Cerro Banco	
+			
+			Aguacatillo, Aguacate
+			Alto Bonito
+			Barriada Nueva Generación
+			Boca de Quebrada Lodo
+			Boca de Quebrada Ullama
+			Boca de Quiqui
+			Boquilla de Quiqui
+			Cabecera de Quebrada Gallota
+			Cabecera de Quebrada Lodo
+			Cabecera de Quebrada Piedra
+			Calabacito
+			Cerro Banco
+			Cerro Bolote
+			Cerro Gato 2
+			Cerro Pavón
+			Cerro Pelado
+			Cerro Piña
+			Cerro Sobrino
+			Cerro Tabla
+			Chochori
+			Gasparillo
+			Higueroncito
+			Llano Iglesia
+			Nueva Molena
+			Quebrada Caña Brava
+			Quebrada Corozo
+			Quebrada Corozo 1
+			Quebrada de Hacha
+			
+			Quebrada de Moai
+			Quebrada Olla
+			Quebrada Venado
+			Río Chiquito
+			
+		Cerro de Patena	
+			
+			Ají
+			Bajo Cacicón
+			Bijao
+			Boca de Biabá
+			Boca de Quebrada Guabo
+			Cabecera de Guabo
+			Cerro Balsa
+			Cerro Cuchara
+			Cerro Madera
+			Cerro Paila
+			Cerro Penca
+			Cerro Sol
+			Chichica
+			Chorro de Águila
+			Cocaleca
+			Falda de Patena
+			Filo de Cerro Palma
+			Filo de Mamey
+			Guabal
+			Jengebricito
+			Jengibre
+			Molejón
+			Nance
+			Ojo de Tigre
+			Orilla de Quebrada Biabá
+			Quebrada Ají
+			Quebrada Plata
+			Quebrada Águila
+			San Juan
+			Zona Fría
+			
+		Emplanada de Chorcha	
+			
+			Alto Caña
+			Boca de Mamey
+			Boca del Río Chorchita
+			Cabecera de Chorchita
+			Cerro Aguacate
+			Cerro Cucaracha
+			Cerro Pava
+			Cerro Viejo Abajo
+			
+			Cerro Viejo, Israel
+			Chorcha
+			Chorchita Arriba
+			Junta Many, Miry
+			La Unión
+			Los Pozos
+			Ngubüoni
+			Plan de Chorcha
+			Quebrada Lajas
+			Torore
+			
+		Nämnoni	
+			
+			Alto Algarrobo, Nuevo Cascabel
+			Alto de Piedra
+			Alto Gambú, Alto Peo, Alto Potrero
+			Alto Pavo, Cerro Pavo
+			Barranco
+			Boca de Hacha
+			Cabecera de Hacha, Guayabo
+			Cabecera de Pava
+			Cabecera de Quebrada Guayabo
+			Cabecera de Sigolin
+			Cacicón
+			Cerro Miel
+			Chichica
+			Chorro de Águila
+			Corocito
+			Cortadera
+			Jengibre
+			Lajero
+			Manta
+			Quebrada Hacha
+			Quebrada Pava
+			Quebrada Plata
+			Sienicón, Cenicón
+			Sigolín
+			
+		Niba	
+			
+			Alto Nance
+			Alto Nance de Miraflores, Miraflores
+			Alto Paila, Cerro Carpintero
+			Boca de Sagui
+			Cabecera de Ajo
+			Cabecera de Quebrada de Piedra
+			Cabecera de Quebrada Nigüa
+			Cabecera de Quebrada Salado
+			
+			Cacira
+			Candelilla
+			Caña Blanca
+			Cerro Balsa
+			Cerro Guásimo
+			Cerro Molena
+			Cerro Mosala, Madrid
+			Cerro Muleto, Quebrada de Muleto
+			Cerro Paila
+			Cerro Plata
+			Cerro Sobrino
+			Cruce de Higuerón
+			Cucaracha
+			El Chorro de Cerro Muleto, Cañaza
+			El Nance
+			El Naranjal
+			Espavé
+			Francia
+			Gasparillo
+			Gualaquita
+			Higueroncito
+			Higuerón
+			Java
+			Limoncillo
+			Maíz Tostado
+			Mosquito
+			Nueva Molena
+			Paja Blanca
+			Perdíz
+			Pita
+			Quebrada Bijao, Bijao
+			Quebrada Blanco 1
+			Quebrada Cacao 1
+			Quebrada Calabazal
+			Quebrada Cangrejal
+			Quebrada Capacho
+			Quebrada Caracol
+			Quebrada Corozo
+			Quebrada Gallina
+			Quebrada Mariposa, Mariposa
+			Quebrada Molejón
+			Quebrada Nigüa, Chuve
+			Quebrada Ocho
+			Quebrada Perdíz
+			Quebrada Pita
+			Quebrada Salado
+			Quebrada Sardina 1
+			Quebrada Sardina 2, Boca de Sagui
+			
+			Quebrada Tigre
+			Quebrada Yerba de Ajo
+			Quebrada Ñeque
+			Río Colorado
+			Salitre
+			Visita Flor
+			
+	Mironó		
+			
+		Hato Pilón	
+			
+			Bajo Pilón
+			Boca del Monte, Cerro Vaca
+			Buenos Aires, Cerro Bolo
+			Cerro Caña, Guaraní 2
+			Cerro Corozo
+			Cerro Gato
+			Cerro Majagua
+			Cerro Mesa
+			Cerro Pita
+			Cianca
+			Cocuyo
+			Guaraní
+			Hato Pilón
+			Hormiga, Quebrada Camarón
+			Kuerima
+			Maraca
+			Nancito
+			Quebrada Candela
+			Quebrada Caracol
+			Quebrada Frijoles
+			
+		Cascabel	
+			
+			Alto Oro
+			Bajo de Cerro Pita
+			Barranco
+			Boca de Quebrada Capitán
+			Cabecera de Quebrada Salado
+			Caracol
+			Carrizal
+			Cañazas
+			Cerro Flores
+			Cerro Pita
+			Cerro Puerco
+			Cerro Sagüi
+			Chichica
+			Diente de Cucaracha
+			
+			Gallote
+			Llano Caracol, Cerro Pita
+			Naranjal
+			Plan Chegui, Cascabel
+			Plan Chivo, Quebrada Chiva
+			Quebrada Piedra de Moler
+			Río Capitán
+			Virulí
+			Águila
+			
+		Hato Corotú	
+			
+			Alto Camarón, Queberi
+			Alto Rey
+			Boca de Macho
+			Cabecera de Quebrada Pava
+			Calabazal, Ciogrode
+			Cerro Banco
+			Cerro Piedra
+			Hato Corotú
+			Mamey
+			Maíz Tostado, Higuguandi
+			Potrero de Palma
+			Quebrada Arena
+			
+		Hato Culantro	
+			
+			Bajo Cacicón
+			Bajo Loro
+			Bijao
+			Cabecera de Guabo
+			Cabuya
+			Cacicón
+			Calabazal
+			Carrizal
+			Cerro Ají
+			Cerro Mamita
+			Cerro Otoe
+			Cerro Paila
+			Cerro Piedra
+			Gato
+			Guabo
+			Guayabal
+			Hato Loro
+			Horconcito
+			Limón
+			Llano Culantro
+			Naranjal
+			Plan del Guásimo
+		Hato Jobo	
+			
+			Alto Chombo
+			Alto Mono
+			Bajo Mono
+			Boca de Candela
+			Boca del Monte, Cerro Vaca
+			Cabecera de Juay
+			Caracol
+			Cañazas
+			Cerro Gallina
+			Cerro Mesa
+			Cerro Piedra
+			Cerro Piña
+			Cortadera
+			Cucuya
+			Hato Jobo
+			Hato Pilón
+			Kaboy
+			Pita
+			Quebrada Camarón
+			Quebrada Chácara
+			Quebrada Zapote
+			Salitre
+			
+		Hato Julí	
+			
+			Alto Limón
+			Alto Nancito
+			Bajo Chiviré
+			Bajo Limón
+			Bajo Maíz
+			Calabazal
+			Hato Julí
+			
+		Quebrada de Loro	
+			
+			Aguacatal
+			Cañaza
+			Cerro Brisas
+			Cerro San Miguel
+			Galique
+			Quebrada de Loro
+			Quebrada Juay
+			Tolay
+			Zapote
+			
+		Salto Dupí	
+			
+			Alto Limón
+			Bajo Grande
+			
+			Bisira
+			Cabecera de Dupí
+			Cabecera de Quebrada otoe, Cleva
+			Cañaza
+			Cerro Gallina
+			Cerro Mesa
+			Cerro Mesa Abajo, Cerro Gato, Cerro Tuza
+			Cerro San Miguel
+			Chichica
+			Guayabal, Alto Guayabal
+			Nueva Esperanza, Dupí Arriba
+			Quebrada de Loro
+			Quebrada Otoe
+			Salto Dupí, Dupí Centro
+			
+	Müna		
+			
+		Chichica	
+			
+			Alto Cedro
+			Alto Estrella
+			Cerro Coco
+			Cerro Conejito
+			Cerro Cruz
+			Cerro Grito
+			Cerro Plata
+			Cerro Yuca
+			Chichica
+			Espavé
+			Las Lajitas
+			Los Zurdos
+			Piedra Grande
+			Portorica
+			Quebrada Arena
+			Quebrada Otoe
+			
+		Alto Caballero	
+			
+			Alto Caballero 
+			Alto de Quebrada Pita
+			Buenos Aires
+			Cerro Armado
+			Cerro Mono
+			Cerro Sombrero
+			Melón
+			Potrero de Caña
+			Rincón Moro
+		Bakama	
+			
+			Alto de Cerro Viejo
+			Altoleta
+			Calabacito
+			Cerro Venado
+			Cogle, Cogla
+			Comunidad Humilde
+			Kía
+			Nancito
+			Nueri
+			Nuevo Palomar
+			Piedra Pintada
+			Quebrada Caña
+			Quebrada Honda
+			Quebrada Plata
+			Trato Derecho
+			
+		Cerro Caña	
+			
+			Alto de Las Trancas
+			Alto Meregilda
+			Bajo Cerro Algodón
+			Bajo Cerro Caña
+			Bajo de Las Trancas
+			Bajo Meregilda
+			Barrero, El Pedregoso
+			Cerro Algodón
+			Cerro Caña
+			Cerro La Huaca
+			Cerro Pifa
+			Espavé
+			Llano Horcón
+			Llano Pita
+			Meregilda
+			
+		Cerro Puerco	
+			
+			Alto Cañazas
+			Alto Mango
+			Bajo Cañazas
+			Cabecera de Cerro Puerco
+			Cacao
+			Caña
+			Cenipita 2
+			Cenipita, Cenipita 1
+			Cerro Banco
+			Cerro Ceniza
+			Cerro de Dios
+			Cerro Ortiga
+			
+			Cerro Puerco Abajo
+			Charco Hacha
+			Llano Junco
+			Mamey
+			Quebrada Gato
+			Quebrada Macho
+			Quebrada Mojoso
+			Quebrada Piru
+			Quebrada Pita
+			
+		Krüa	
+			
+			Agua Clara
+			Alto Balsa
+			Alto Cabuya
+			Alto Laguna, Brancebidi
+			Alto Loro u Orete
+			Alto Nube
+			Arena
+			Bajo Cabuya
+			Bajo Congo, Ironde
+			Bajo de Los Reyes
+			Bajo Laguna
+			Bajo Loro
+			Bajo Mira, Cerro Banco
+			Bajo Mono
+			Bajo Nubes
+			Bolango 1
+			Bolango 2
+			Boleridi
+			Briadi
+			Budode
+			Bule
+			Cabuya, Mande
+			Cacicón
+			Cangrejal
+			Canta Gallo
+			Cerro Algarrobo
+			Cerro Bin Bin
+			Cerro Culantro
+			Cerro Humo
+			Cerro Mosquito, Tibidi
+			Cerro Plata
+			Cerro Salinas
+			Cerro Salitre, Mereno
+			Cerro Venado
+			Comuguatate
+			Crodubi
+			
+			Cugri
+			Econorigateo
+			El Pote, Bode
+			Garrita
+			Gelerabidi
+			Grillo, Igri
+			Guabo 1
+			Hacha, Udoguodi
+			Hato Común, Jadode
+			Ibia
+			Jumolinda
+			Krunrindotote
+			Llano Bonito
+			Llano Caballo
+			Llano Camarón
+			Llano Clara
+			Llano Horcón
+			Llano Largo 3
+			Llano Sapo
+			Llano Venado
+			Miraflor
+			Miroduda
+			Nance
+			Nude, Bajo Mosquito
+			Nueva Esperanza
+			Pueblo Nuevo
+			Quebrada Arena, Umonigode
+			Quebrada Conejo
+			Quebrada Guabo
+			Quebrada Lajita
+			Quebrada Piedra, Jodridi
+			Quebrada Ñopo
+			Regaundi, Llano Cedro
+			Toboris, Bajo Cogollo, Tuborigodde
+			Vide
+			Águila
+			
+		Maraca	
+			
+			Bajo Macho
+			Bajo Maraca
+			Bajos de Cacicón
+			Bajos de Fonseca
+			Cabecera de Fonseca
+			Cerro Boba
+			Cerro Cacicón
+			Los Gallardos
+			Maraca, Llano Majagua
+			
+			Marende, Salitre, Congo
+			Perico
+			Peña Prieta
+			Quebrada Cangrejo
+			Quebrada Maquenco
+			Quebrada Sábalo
+			Sabana Grande
+			Tebujo
+			Tebujo Abajo
+			
+		Nibra	
+			
+			Alto Algarrobo
+			Alto Guayabo, Miyaridi
+			Bajo Simet
+			Cañaveral
+			Cerro Balsa, Crunoudi
+			Cerro Bujo
+			Cerro Caballo
+			Cerro Cabuya
+			Cerro Galindo
+			Cerro Iglesia
+			Cerro Mangle
+			Cerro Maíz
+			Cerro Redondo
+			Cerro Vaca, Hibraudi
+			Guabal, Quariri
+			La Changosa, Nudrigot
+			La Lajita
+			Llano Mosca
+			Los Santos, Clebade
+			Macano, Cerro Mosca, Miguiaya
+			Quebrada Algarrobo
+			Quebrada Arena 2
+			Quebrada Flecha
+			Quebrada Puerco
+			
+		Peña Blanca	
+			
+			Agua Salud, Ñurrunde
+			Alto Aguacate
+			Alto Capacho
+			Alto Ciénega
+			Alto Ciénega Mono
+			Alto Culebra
+			Alto Venado, Burabadi, Cerro Venado
+			Bajo Aguacate
+			Bajo Capacho
+			
+			Bajo Guayabal
+			Birotal
+			Cerro Coco
+			Cerro Flores, Sobleidi
+			Cerro Gato de Caña
+			Cerro Miel
+			Cerro Puerco
+			Cima de Cerro Venado
+			Ciénega Mono
+			Corotú
+			Frijoles, Numalin
+			Gavilán
+			Gitderi
+			Guayabal, Alto Guayabal
+			Higuerón
+			Llano Aguacate
+			Llano Avión
+			Llano Grande
+			Llano Limón
+			Llano Venado
+			Peña Blanca, Kinguimbada
+			Piedra Grande
+			Quebrada Caballo
+			Quebrada Casa
+			Quebrada Chicha
+			Quebrada Macho, Jirorigode
+			Río Rey
+			Salitre 2
+			Simglimbada
+			Uninda
+			
+		Roka	
+			
+			Alto Alu
+			Alto Baño
+			Alto Ciénega
+			Alto Conejo
+			Alto Javilla
+			Bajo Baño
+			Bajo Gago
+			Bajo Mono
+			Barranco
+			Cabecera de Quebrada Cama
+			Cabecera de Quebrada Guacamaya
+			Calabazo
+			Cerro Aguacate
+			Cerro Amargo
+			Cerro Bastón
+			
+			Cerro Boba
+			Cerro Concha
+			Cerro Gago
+			Cerro Oreja
+			Conejito
+			Corotú
+			Cristo Rey
+			El Kremlin
+			Guacamaya
+			Javilla
+			Jokläte, Alto Llano
+			Kurodugote
+			Llano Bonito
+			Llano Caballo
+			Llano Carrizo
+			Llano Ciruela
+			Llano de Iguana
+			Llano Espavé
+			Llano Gago
+			Llano Jobo
+			Llano Jujulí, Juglikäte
+			Llano Lodo
+			Llano López
+			Llano Majagua
+			Llano Pita
+			Llano Piñuela
+			Llano Rey
+			Llano Sonso, Vista Alegre
+			Llano Yegua
+			Llano Ñopo
+			Piedra Pintada 2
+			Quebrada Sardina
+			Quebrada Tigla
+			Quebrada Triste
+			Sitio Caña
+			
+		Sitio Prado	
+			
+			Alto Ají
+			Alto Algarrobo
+			Alto Arena, Llano Arena
+			Alto Cobre
+			Alto Llano Venado
+			Alto Perico
+			Bajo Mono, Nomiguia
+			Bajo Mosquito
+			Buena Vista
+			Buenos Aires
+			
+			Cerro Cabuya
+			Cerro Jobo
+			Cerro Mosquito
+			Cerro Nance
+			Cerro Papaya
+			Dubari
+			Dugaguia, Duvariguia
+			Llano Balsa
+			Llano Gato
+			Llano Jején
+			Llano Sina, Llano Banco
+			Llano Zorra
+			México
+			Ojo de Agua
+			Pedregal
+			Pie de Cerro Banco
+			Piedra Grande
+			Quebrada Buenos Aires
+			Quebrada Caraña
+			Quebrada Nance, Nance
+			Quebrada Perico
+			Salitre
+			Sitio Prado
+			
+		Ümani	
+			
+			Bajo Cerro Ñame
+			Bajos de Cacicón
+			Barriada Fonseca, La Palma
+			Cabecera de Quebrada Carrizo
+			Cabecera de Quebrada Plata
+			Cerro Cacicón
+			Cerro Gavilán
+			Cerro Ñame
+			Comunidad Tugrí
+			El Castillo
+			El Salitre
+			Guayabal
+			Guayacán
+			Palma Gira
+			Quebrada Arenas
+			Quebrada Carrizo
+			Quebrada de Plata
+			Quebrada Frijoles
+			Quebrada Loro
+		Dikeri	
+			
+			Alto Arena
+			Bajo Hondo, Quebrada Arena
+			Boca de Quebrada Arena, Bajo Arena
+			Calabacito de Miranda
+			Cerro Algodón
+			Cerro Grande
+			Cerro Tijera
+			Chuzo, Pedregoso
+			Horcón
+			Las Lajitas
+			Llano Mesa
+			Llano Miranda
+			Llano Palma
+			Quebrada Arena
+			Quebrada Cama
+			Quebrada Cañita
+			Tortuga
+			
+		Diko	
+			
+			Bajo Común
+			Bajo Congo
+			Bajo Llano Tugrí
+			Cerro Congo
+			Cerro Gavilán
+			Cerro Iguana
+			Cerro Majagua
+			Lajero
+			Llano Espalda
+			Llano Tugrí
+			Quebrada Caracol
+			Salitre
+			
+		Kikari	
+			
+			Alto Saldaña
+			Cabecera de Pita
+			Cerro Cacicón
+			Cerro Mosquito, Skoria
+			Cerro Ñame de Quebrada Pita
+			Guayabal
+			Llano Iguana
+			
+		Mreeni	
+			
+			Alto Cruz
+			Alto de Quebrada Iguana
+			Alto Higuerón
+		Mreeni	
+			
+			Bajo Higuerón
+			Calabazo
+			Cerro Chuzo
+			Cerro Grande
+			Cerro Jobo
+			Cerro Teta
+			El Piral
+			Gavilán, Jiroguiaudi
+			Llano Clara
+			Llano Largo 1
+			Llano Limón
+			Nuevo Amanecer
+			Nuevo San Cristóbal
+			Pedregoso, Boró
+			Pie de Cerro Banco
+			Quebrada Flecha
+			Salitre 1
+			San Cristóbal
+			Sitio Prado
+			
+	Nole Duima		
+			
+		Cerro Iglesias	
+			
+			Achiote
+			Alto Nube
+			Briguny
+			Cabecera Quebrada Guabo
+			Calabazal
+			Cerro Aguacate
+			Cerro Concha
+			Cerro Iglesias 1 
+			Cerro Iglesias 2
+			Duima
+			Guary
+			Hato Horcón
+			Horcón Arriba
+			Kübima
+			Orema
+			Pavón
+			Quebrada Arena
+			Quebrada Caracol
+			Quebrada Gato
+			Quebrada Guabo
+			Quebrada La Pita
+			Quebrada Pavón
+			Quirate
+		Hato Chamí	
+			
+			Algarrobo
+			Alto Cruz
+			Alto Membrillo
+			Bagla
+			Boca de Hormiga
+			Boca del Monte
+			Bodoco, Bodoca
+			Canoa
+			Capacho
+			Caracol
+			Cebele, Llano Dezeble
+			Cerro Balso
+			Cerro Culantro
+			Cerro Flores
+			Cerro Flores 2
+			Cerro Gavilán
+			Cerro Palma
+			Cerro Plata, Laguna Abajo
+			Cerro Tula
+			Chichica
+			Cogoyo
+			Cugori, Quebrada Caña
+			Entrada de Cerro Tula
+			Guacá
+			Hato Chamí
+			Laguna
+			Lechuza
+			Llano Caña
+			Llano Pozo
+			Maíz Tostado
+			Membrillo
+			Moco
+			Morondo
+			Pedregal
+			Quebrada Cangrejo
+			Quebrada Murciélago
+			Quebrada Salitre
+			
+		Jädaberi	
+			
+			Algarrobo
+			Alto Arriera
+			Alto Gengibre
+			Arriera
+			Bella Vista
+			Buena Vista
+			Cabecera de Río San Félix, Moiguidete
+			Calabazo
+			
+			Campamento Escopeta
+			Caña Brava
+			Cerro Colorado
+			Cuernavaca
+			Hato Rincón
+			Horconcito
+			Jagua
+			Jädaberi, Cerro Balsa
+			La Laguna
+			Las Nubes
+			Llano de Olla
+			Ratón
+			
+		Lajero	
+			
+			Cerro Iglesias 1
+			Cerro Iglesias 2
+			Cerro Maquenque
+			Cerro Vaca
+			El Guayabal, Guayabal
+			Hato Horcón
+			Lajero Arriba
+			Olá
+			Potrero de Olla
+			Quebrada Candela
+			Quebrada Honda
+			Quebrada Honda Abajo
+			Río Santiago
+			Río Santiago Arriba
+			Sabana Chiquita
+			Salado Arriba
+			Sardina, Lajero Abajo
+			
+		Susama	
+			
+			Alto Molejón
+			Cabecera de Quebrada Arenas
+			Cabecera de Quebrada Guabo
+			Cabecera de Río Santiago
+			Cerro Ardilla
+			Cerro Mesa
+			Cerro Negro
+			Jädaberi, Cerro Balsa
+			Oma
+			Quebrada Guabo
+			Quebrada Salado, Boca Salado
+			Sabanitas
+			Sardina
+			
+			Tibide, Alto Rey
+			Valle de La Luna
+			
+	Ñürüm		
+			
+		Buenos Aires	
+			
+			Alto Tolica
+			Bajo Espiral
+			Buenos Aires
+			Cabuya
+			El Bujo, El Búho
+			El Calabazo
+			El Roble
+			Geme
+			La Esterilla, Estrellita
+			Macana, Quebrada Macano
+			Quebrada Mango
+			Tierra Blanca
+			
+		Agua de Salud	
+			
+			Agua de Salud
+			Alto de Batata
+			Alto Lirí
+			Batata
+			Cabecera de Virigüa
+			Corral de Venado
+			El Copé
+			El Cucurucho
+			El Hato Antiguo
+			El Naranjal
+			El Roble
+			Galerita
+			Guacamaya
+			Guayabal
+			Guayabal Arriba
+			Guayabalito
+			Loma Perico
+			Piedra Fogón
+			Piedra Grande
+			
+		Alto de Jesús	
+			
+			Alto de Jesús
+			El Guabo
+			El Murciélago
+			Las Mesitas
+			
+			Llano Bonito 2
+			Los Guabos
+			Mata Redonda
+			Quebrada de Jesús
+			
+		Cerro Pelado	
+			
+			Alto de La Laguna
+			Alto de Las Huacas
+			Alto de Las Mesitas
+			Bajada de La Cruz
+			Bajo de La Mesita
+			Cañazal
+			Cerro Armado
+			Cerro Pelado, Jugrig
+			Cerro Puerco, El Mango
+			El Cedro
+			El Jobo
+			El Naranjo 1
+			El Porvenir
+			El Zancudo
+			La Malagota
+			La Trinidad 
+			Ojo de Agua
+			Palmilla
+			Peniel, Cabrilla
+			
+		El Bale	
+			
+			Alto del Culantro
+			Alto El Bale
+			Alto El Mudo
+			Bella Vista
+			Calabra
+			Cerro Trema
+			El Bajo
+			El Bale
+			El Conejo
+			El Cortezo
+			El Flor
+			El Higuito
+			El Perú, Cocuy
+			La Mata
+			La Misericordia
+			Las Mesitas 1
+			Loma del Naranjo, Los Guarumos
+			Los Lázaros
+			Pueblo Nuevo
+		El Paredón	
+			
+			Cabecera de Quebrada Larga
+			El Hatillo
+			El Papayal
+			La Colorada
+			La Eulalia
+			Las Mesillas
+			Llano Paral
+			Los Guarumos
+			Los Valles
+			Paredón Abajo
+			Paredón Arriba
+			Pedregal
+			Piedra de Agua
+			Quebrada Larga
+			
+		El Piro	
+			
+			Alto del Naranjo
+			Alto del Prado
+			El Piro
+			Piedra Amarilla
+			
+		Guayabito	
+			
+			Agua de Salud
+			Alto Galera
+			Alto Muale
+			Caña Blanca
+			Cerro Ceniza
+			Cerro Tambor
+			Guayabito
+			Las Filipinas
+			Llano de Dios
+			Pedregal
+			Quebrada Batata
+			Quebrada Sábalo, Quebrada Barbú
+			Sabaneta
+			Tabacal, Aguas Claras
+			Tebujo
+			Virotal
+			
+		Güibale	
+			
+			Alto Caña
+			Alto Güibale
+			Boca de Oi
+			Cabecera de San Pablo
+			Cabecera de Virigüa
+			
+			Cerro Arraiján
+			El Macano
+			Guacamaya
+			Güibale
+			Llano Bonito
+			Pedregoso
+			Peña Blanca
+			Piragua
+			Quebrada Honda
+			Quebrada Limón, La Chuerela
+			Virigüa Arriba, Río Virigüa
+			Virigüa Centro
+			
+		El Peñón	
+			
+			Bajo Palo Verde
+			Cerro Casa
+			Corral de Piedra
+			El Barrero
+			El Barrero, Guayabal 1
+			El Cerezo
+			El Jacinto
+			El Peñón
+			El Roble
+			El Rosario
+			El Tigre Centro
+			El Tigre Abajo
+			El Tigre Arriba
+			Guacamaya
+			La Pedregosa
+			La Vigía
+			Llano Guabal
+			Loma Larga
+			Loma Perico
+			Los Bernardinos
+			Monte Silencio
+			Palo Verde
+			Peñón Abajo
+			Peñón Norte
+			Quebrada El Coco
+			Quebrada Honda
+			Quebrada Laguna
+			Quebrada Mojarra, Mojarra
+			San Antonio Abajo
+			San Antonio Arriba
+			Taguera
+			Virigüa 2
+		El Piro 2 (Muakwata Kubu)	
+			
+			Agua Salud
+			Alto Tolica
+			El Chumico
+			El Garril
+			El Piro
+			El Roble
+			Paso Venao
+			Quebrada Bolango
+			Quebrada Grande
+			Quebrada Jagua
+			Quebrada Mojarra
+			Quebrada Mono
+			Quebrada Satra
+			Sitio Viejo
+			Tolica
+			
+	Kankintú		
+			
+		Bisira	
+			
+			Becativí
+			Bisira
+			Boca de Quenani
+			Boca del Río Cricamola
+			Catavela
+			Citate
+			Drigari
+			El Canal
+			El Canal 2
+			Isla de Machapín, Gato Solo
+			Jononi
+			Jurari
+			Manantí Centro
+			Poman Creek
+			Puerto 2
+			Punta Cuaco
+			Punta Estrella
+			Quebrada Manglar Tigre
+			Querami
+			Río Coy
+			Río Tobori
+			Río Tori, Toro
+			Sibin
+			Solaris
+			Ño Tolente
+			Ño Tolente 2
+			Ñuri, Lluvia
+		Guoroni	
+			
+			Anguatari
+			Boca de Caracol
+			Bosalituvite
+			Brurate
+			Buenos Aires, Muriebiti
+			Bueviti
+			Buigote
+			Butuviti
+			Cagoen
+			Caracol
+			Cerro Caballo, Nodorigote
+			Cerro Frijoles
+			Cerro Membrillo
+			Cerro Paloma, Utibite
+			Cleate
+			Coingote, Río Bueno
+			Comunidad Caracol
+			Comunidad de Kute, Quite
+			Coronte
+			Cremantuvite
+			Curate
+			Desembocadura de Canoa
+			Guayacán, Kirerigote
+			Guroniquidete
+			Idrebay
+			Joromundi
+			Membrillo
+			Modote
+			Mubuto
+			Mununi
+			Mununi 2, Mununigoto
+			Mutari, Mutarigote
+			Nuribota
+			Olabota
+			Onante
+			Ororigote
+			Punta Piña
+			Quebrada Frijoles
+			Quebrada Guanábana, Soroni
+			Quebrada Pavo, Iribigote
+			Quebrada Sábalo
+			Quebrada Tigre
+			Tibite
+			Toblate
+			Trenente
+			Truite
+			Tuboniquicete
+			Tubonte
+			
+			Tula, Burute
+			Urinte
+			Ñuboy
+			
+		Kankintú	
+			
+			Becativi
+			Buenos Aires
+			Burote
+			Casa Blanca
+			Chivote
+			Cocoitubide
+			Cumingote
+			Dubute
+			Gobrante
+			Guativi
+			Guayabito
+			Kankintú
+			Loma Palma Arriba
+			Morodoni
+			Nomonoi
+			Nuglite
+			Nutivi
+			Nutivi Occidente
+			Odobate
+			Ororigote
+			Paraíso
+			Poman Quare
+			Quebrada Morodoni
+			Río Viento Arriba
+			Sibin
+			Sibin Abajo
+			Sirain
+			Siraín Abajo
+			Taboin
+			
+		Mününi	
+			
+			Alto Cruz
+			Alto Loro u Oredubiti
+			Bolotubiti
+			Caballero Nuto
+			Cerro Balsa
+			Cerro Loro U orete
+			Cerro Puerco, Alto Comen
+			Divote
+			Gavilán
+			Mayo
+			
+			Mirones, Quebrada Mirones
+			Mununi 3
+			Pedregal
+			Sineti
+			Tibra
+			Trinchera
+			Valle Común
+			
+		Piedra Roja	
+			
+			Bajo Noro
+			Bolonte
+			Bongo, Canadá
+			Briniboto
+			Briniquidete
+			Bulite
+			Cabecera de Quebrada Arena
+			Cementerio, Rugabido
+			Cerro Blanco
+			Cerro Capacho, Tograte
+			Cerro Ceniza
+			Cerro Cuba, Cubate
+			Cerro Escopeta
+			Cerro Homo, Ngäbätubiti
+			Colorao, Nutaingote
+			Cremante, Nirionte
+			Crodobiti
+			Cuiragote
+			Cuorigote
+			Desembocadura de Mununi
+			Divote
+			Dobrote
+			Domingo, Bomoobyti
+			Grute, Cerro Pistola
+			Guayacán, Kirerigote
+			Hacha
+			Isainte
+			Loma Ballena, Trotubiti
+			Loma Caballo, Modote
+			Loma Cerebro
+			Loma Mono
+			Loma Yuca
+			Machete, Jidrate
+			Madote
+			Medingumbota
+			Metote
+			Mirundi
+			Mudobiti
+			
+			Munebidi
+			Munigote
+			Mununi 2, Mununigoto
+			Murute
+			Nimandubiti
+			Niriolete
+			Nivitonte
+			Noborote
+			Nogrigote
+			Nomonoe
+			Norobite
+			Nude 2
+			Nute
+			Ocuate
+			Ogunte
+			Ojo de Agua
+			Oreja de Piedra
+			Piedra Roja, Tataine
+			Quebrada Arena
+			Quebrada Bollo, Sate
+			Quebrada Camarón, Drugadabidi
+			Quebrada Dieta, Winbeda
+			Quebrada Guayaba
+			Quebrada Ida
+			Quebrada Manta
+			Quebrada Mariposa, Malante
+			Quebrada Negra
+			Quebrada Vista, Migaridete
+			Remedio
+			Rinikea
+			Ruibidi
+			Rurigote, Río Guerra
+			Río Piedra u Oreboto
+			Sirote
+			Sitibiriquidete
+			Sugwaikote
+			Trorigote
+			Trorobite
+			Tugradote
+			Turury
+			
+		Calante	
+			
+			Alto Mono
+			Boca de Arena, Humanigote
+			Calante
+			Chivote
+			El Limón
+			
+			Joguatary
+			Loma Arena
+			Notente
+			Olari
+			Puerto Cuite
+			Quicatubite
+			Río Grande
+			Siclete
+			Solaite, Tolaite
+			Verón
+			
+		Tolote	
+			
+			Alto Loro
+			Alto Senia
+			Balmito Suiche
+			Boca de Río Balsa
+			Cabecera de Río Balsa
+			Cabecera de Tolaide
+			Cante Bladibe
+			Cerro Aguacate, Clebaite
+			Cerro Cangrejo
+			Cerro Caña
+			Cerro Conejo, Ñodubidi
+			Cerro Espejo
+			Cerro Gavilán
+			Cerro Huaca, Cruribete
+			Cerro Picante
+			Cerro Puerco
+			Cerro Roble
+			Cerro Tijera
+			Cerro Visita Flor, Millidubiti
+			Cronigote
+			Dolega
+			El Guabo
+			Gavilán, Modubuto
+			Gronigrete
+			Guayabo
+			Guoricote
+			Iyoboto, Cerro Maíz
+			Los Santos
+			Mande Manchiula
+			Negra Roja, Cerro Venado
+			Oriente
+			Piedra Mano, Punta Piedra
+			Quebrada Arena 1, Juaniguidete
+			Quebrada Arena u Omanigote
+			Quebrada Barranco
+			
+			Quebrada Bejuco 2
+			Quebrada Bejuco, Coribodo
+			Quebrada Catarro 1
+			Quebrada Congo
+			Quebrada Flor, Babariguidete
+			Quebrada Hacha Arriba
+			Quebrada Tigre
+			Río Flores
+			Río Tolaide, Madrikote
+			Suiche, Quebrada Suiche
+			Toborigrete
+			Toboriguete
+			Tolote, Ñokotoabite
+			Tunnitubiti
+			Urara, Uraratubidi
+			Uribito, Quebrada Hacha
+			Ñurunde, Agua de Salud
+			
+	Kusapín		
+			
+		Kusapín	
+			
+			Cayo Guante
+			Cayo Paloma, Pigeon Cay
+			Cuarigonte, Quebrada Cacao
+			Ensenada, Quenamoy
+			Ibiari
+			Isla Avispa
+			Isla Tigre
+			Kusapín
+			Loma Tucán, Cueretubiti
+			Miradoe, Quebrada Ayer
+			Nidori
+			Norintuboto
+			Playa Balsa
+			Playa Bastón
+			Punta Alegre
+			Punta Avispa
+			Punta Uva, Guacamaya
+			Punta Valiente
+			Quebrada Hilo
+			Quebrada Nasa
+			
+		Bahía Azul	
+			
+			Agoy
+			Bahía Azul
+			Bahía Grande
+			
+			Bucori
+			Buena Vista
+			Caningote
+			Comunidad Trotman
+			Gallina Chica
+			Jobori
+			Keque Mane
+			Monte Virgen, Bocola
+			Mutari
+			Paticinky, Cayo Patterson
+			Playa Bambú
+			Playa Hermosa
+			Playa Jobo
+			Playa Lorenzo
+			Playa Raya
+			Playa Verde
+			Punta Gallinazo
+			Punta Gallinazo 1
+			Punta Gallinazo 2
+			Quebrada Pez
+			Quebrada Ruari
+			Río Lorenzo Arriba, Franklin
+			Secretario, Palmas Bellas
+			Syrain, Punta Syrain
+			Tabebiti
+			Tabebiti 2, Nibiti
+			Toribiote
+			
+		Río Chiriquí	
+			
+			Arionda
+			Begabudi
+			Bitigaru
+			Boca de Río Chiriquí
+			Bonglon
+			Brorori Abajo
+			Brorori Arriba
+			Bruri
+			Burote
+			Burotoni
+			Cabecera de Río Cayuco
+			Camarón
+			Camarón 2
+			Caña Blanca
+			Cañaveral
+			Caño Colorado Arriba, Valle Rico
+			Caño Lagarto
+			Cerro Capilla, Merabota
+			
+			Cerro Manta
+			Cerro Puerco
+			Cerro Puerco Arriba
+			Cerro Santos, Gorondubeda
+			Cleate
+			Doguarigote
+			Dorori, Brodori Medio
+			Dudoboda
+			Gavilán
+			Guatu
+			Ibari, Quebrada Picante
+			Jodrote
+			Jubidi
+			Juvari
+			Kariguidete
+			Kikarigote, Kigarigote
+			Krugote
+			Kuisote
+			Kully
+			Kurote
+			Librate
+			Loma de Río Cañaveral
+			Mango 2
+			Morori, Norari
+			Muay Abajo
+			Muay Arriba, Cabecera de Muay
+			Nidangote
+			Nudodividi
+			Nurinde
+			Odobari
+			Orori
+			Pantán, Boca de Río Caña
+			Piedra Cruz
+			Piedra Cruz Arriba
+			Quebrada Bambú
+			Quebrada Cayuco, Duñuy
+			Quebrada Cedro, Río Cedro
+			Queliate
+			Rancho
+			Río Piedra
+			Samindi
+			San Pedro Abajo
+			Sardina
+			Sicide
+			Sirote
+			Soroni
+			Sulidu
+			Tiger Head, Playa Tigre
+			
+			Tirite, Tirete
+			Tubitu
+			Umandu
+			Urabidi
+			Vegay
+			Ñodolente
+			Ñoronte
+			Ñurunte
+			
+		Tobobe	
+			
+			Burori, Burari
+			Kuenanigote
+			Mesele
+			Old Best, Playa Old Best
+			Pantan, Boca de Río Caña
+			Playa Roja
+			Potet
+			Pueblo Nuevo 1
+			Punta Escondida
+			Punta Fiebre
+			Punta Icaco, Punta Coco Plom
+			Punta Níspero
+			Quebrada Motomba
+			Quebrada Quenani
+			Quebrada Yuca
+			Río Bonito
+			Shark Hole
+			Tobobe
+			
+		Cañaveral	
+			
+			Birate
+			Cabecera de Río Chico
+			Cabeza de Toro, Nidobidi
+			Cañaveral
+			Clerote
+			Cuglugroy
+			Dobori
+			Essey Arriba
+			Essey Chi
+			Iglete
+			Joglate
+			Jogunte
+			Kiarri
+			Kigañoy
+			Kleay
+			Kurori
+			
+			Manigote, Keke Manicote
+			Mirari
+			Muate
+			Murigote
+			Picara
+			Pueblo Nuevo 2
+			Quebrada Suegro, Uglute
+			Rinconte
+			Ritti
+			Ruitiubiti
+			Río Chico
+			Río Viento
+			Sabiote
+			Sirote
+			Tebatus, Tibaltibuto
+			Toronte
+			Uguerigote
+			Visitubite
+			
+	Jirondai		
+			
+		Samboa	
+			
+			Alto Pita
+			Alto Tigre
+			Arena
+			Cabecera de Almeja
+			Casira
+			Cerro Mono
+			Cerro Penca
+			Cerro Tabaco
+			Chivori Grande
+			Coclesito
+			Guarumo
+			Llanura
+			Loma Tibiti
+			Niguindubata
+			Palma Bella
+			Piña
+			Punta Sirain
+			Quebrada Almeja
+			Quebrada Buri
+			Quebrada Cayuco Arriba
+			Quebrada Cayuco, Samboa
+			Quebrada Chogorro
+			Quebrada Cocuyo, Tobori
+			Quebrada Guanábano
+			Quebrada Tucán
+			
+			Quebrada Venado, Burari
+			Quebrada Zorra, Mina Zorra
+			Saguite
+			Santa Marta
+			Suliari
+			Yolon
+			
+		Büri	
+			
+			Alto Claro
+			Altos del Valle
+			Barranquilla 3
+			Caracol, Guari
+			Cañizo
+			Comunidad de Alto Oriente
+			El Guabo
+			El Valle
+			Guabito, Palmita Arriba
+			Gualaquita, Nutivi
+			Guarumito
+			Guayabal
+			Higuerón
+			Higuerón Mellizos Arriba
+			La Lomita
+			La Palmita
+			La Palmita Arriba
+			La Verrugosa
+			Lajas
+			Mali
+			Medio Oriente
+			Mudrigote
+			Oriente
+			Palmito
+			Palo Seco
+			Pueblo Nuevo
+			Tolote
+			Valle Abajo
+			Zuliari
+			
+		Guariviara	
+			
+			Alto Cedro
+			Alto Zuto
+			Boca de Macho
+			Boca de Macho 2, Quebrada Piedra Ancha
+			Boca de Quebrada Tigre
+			Caño Sucio 1
+			
+			Cerro Paila
+			Cerro Rana, Piedra Roja
+			Cerro Ñeque
+			Chacarero
+			Chalite
+			Coclesito
+			Dudori
+			Grori
+			Jononi
+			Loma Feliz
+			Manantí Centro
+			Melen
+			Muneni
+			Obaotate
+			Odogari
+			Palmira
+			Quebrada Arena
+			Quebrada Armado, Ñuri
+			Quebrada Armao
+			Quebrada Camisa
+			Quebrada Caracol, Druri
+			Quebrada Cedro
+			Quebrada Cocuyo, Tobori
+			Quebrada Druray
+			Quebrada Lagari
+			Quebrada Picante
+			Quebrada Rana
+			Quebrada Roja, Ñutaicote
+			Quebrada Sal
+			Quebrada Sábalo
+			Quebrada Tigre Arriba
+			Quebrada Trene
+			Quebrada Tula
+			Río Coy
+			Río Sábalo
+			Río Grande
+			San Félix
+			San Juan
+			Santa Marta Arriba
+			Santa Marta
+			Silencio
+			Tolote
+			Tula Arriba
+			Ñuitangote, Gualaquita
+		Man Creek	
+			
+			Alto Caña
+			Alto Man Creek
+			Arena
+			Bahía La Ballena
+			Barranquilla 1
+			Barranquilla 2
+			Boca de Man Creek
+			Boca del Río Guariviara
+			Cabecera de Río Piedra
+			Candelilla
+			Caña
+			Cañazas
+			Centro Daira
+			Centro Daira 2, Mumanirote
+			Cerro Penca
+			Chivori Chico
+			Colinas
+			El Limón, Loma Limón
+			El Guabal
+			Loma Piña
+			Man Creek, Pumuna
+			Mecari
+			Monte Lirio
+			Niguindubata
+			Niguinte
+			Nueva Esperanza
+			Playa Caimito
+			Pueblo Mesa
+			Quebrada Buenaventura
+			Quebrada Diablari
+			Quebrada Durari
+			Quebrada Juri, Quebrada Arena
+			Quebrada Limón
+			Quebrada Marcelino
+			Quebrada Pavón
+			Quebrada Pita
+			Quebrada Venado
+			
+		Tuwai	
+			
+			Alto Belén
+			Alto Chorro
+			Alto Chorro Arriba
+			Alto El Burro
+			Alto La Gloria
+			Alto Mayo
+			Alto Norteño
+			Alto Peña
+			
+			Alto Tigre
+			Bajo Cedro Arriba
+			Bajo La Estrella, Nueva Estrella
+			Bajo Mono
+			Boca de Negrita, La Negrita
+			Buena Vista
+			Cabecera de Quebrada Arena
+			Cabecera de Rita Cuba
+			Caño Clarito
+			Cerro Pava
+			Cilico Creek
+			Coclesito
+			Conpe, Con Fe
+			Cuiracote
+			Dos Bocas
+			Filo de Cañaza
+			Filo Verde
+			La Conga
+			La Gloria
+			La Unión
+			Loma Chaparro
+			Loma de Agua
+			Loma Venado, Palmito
+			Los Cedeños
+			Los Molejones
+			Norteño
+			Norteño Arriba
+			Palma Real
+			Pueblo Santo, Santos
+			Quebrada Vargas
+			Quebrada Ardilla, Cundone
+			Quebrada Arena
+			Quebrada Balso
+			Quebrada Conejo, Ñú
+			Quebrada El Lirio
+			Quebrada Laurel
+			Quebrada Macho
+			Quebrada Pita
+			Rita Cuba, La Penca
+			Santa Marta, Cabecera de Quebrada Arena
+			
+	Santa Catalina, Calovévora (Bledeshia)		
+			
+		Santa Catalina, Calovévora (Bledeshia)	
+			
+			Aguacate
+			Aguacate Arriba
+		Santa Catalina, Calovévora (Bledeshia)	
+			
+			Aguacate 2
+			Alto Chonte
+			Alto Cuay
+			Alto Jira
+			Alto Piña
+			Boca Chúcara
+			Boca de Aguacate
+			Boca de Cahuita
+			Boca de Caloveborita
+			Boca de Chonte
+			Boca de Terrón
+			Boca de Toncri, Toncri
+			Boca del Caño
+			Boca del Mango
+			Boquete
+			Cahuita
+			Cahuita Arriba
+			Caño Escondido
+			Cerro Mango
+			Cerro Marañón
+			Cerro Mono
+			Charco El Lagarto, El Lagarto
+			Chumbulun
+			El Cuay
+			El Terrón, Terrón
+			Guagarita
+			La Laja
+			La Pista
+			La Zaragoza
+			Limoncito
+			Limón
+			Llano Piña
+			Loma Chonte
+			Loma de Chelele, Chelele
+			Loma Pava
+			Los Primitivos
+			Paso Hondo
+			Pedregoso
+			Quebrada Ahogada
+			Quebrada Ahogada 2
+			Quebrada Cerca
+			Quebrada Flores
+			Quebrada Hacha
+			Quebrada Sardinilla
+			Raisal
+			Recodo del Mero
+			Remolino
+		Santa Catalina, Calovévora (Bledeshia)	
+			
+			Río Dajao
+			San Soledad
+			Santa Catalina Arriba, Quebrada Catalina
+			Santa Catalina, Calovébora
+			Segunda Corriente
+			Terrón Arriba
+			Zaragoza
+			
+		Alto Bilingüe (Gdogüeshia)	
+			
+			Alto Cedro
+			Alto Jujuca
+			Alto Piña
+			Bajo Cedro
+			Boca de Río Grande, Nueva Esperanza
+			Cabreño
+			Carricillal, Quebrada Carricillal
+			Cerro Pajarito
+			Cerro Pita
+			Dajao, Quebrada Dajao
+			Guacamaya, Río Guacamaya
+			Palmar, Río Palmar, Quebrada Palmar
+			Paso Gatus
+			Río Grande, Pajonal
+			Río Luis
+			Río Luis Bravo
+			Río Luisito
+			Valle Bonito
+			
+		Loma Yuca (Ljuicho)	
+			
+			Bella Cruz
+			Boca de Chonte Arriba
+			Caracol 2, Chelele
+			Cerro Caucho
+			Cerro Cocuyo
+			Cerro Congo
+			Cerro Gloria
+			Cerro Lucero
+			Cerro Piragual
+			Cerro Tulivieja, Cerro Miel
+			El Común
+			Jebule
+			Llano Arena, Llano Arenal
+			Llano Bonito
+			Llano Macho, Llano Caño
+			
+			Llano Morales, Llano Mora
+			Llano Naranjal, Naranjio
+			Llano Piragüa, Jujuque
+			Loma Yuca
+			Paso de Chonte
+			Pensante
+			Piedra Grande
+			Quebrada Jujuna
+			Quebrada Pájaro, Loma Macho
+			Río Corrales, Alto de Corrales
+			Virulí
+			
+		San Pedrito (Jiküi)	
+			
+			Alto de Caña Blanca
+			Alto Guayabo
+			Alto Pita, Cerro Pita
+			Barrancón
+			Boca Chúcara
+			Caracol 1
+			Caña Blanca
+			Caña Visto
+			Cerro Loro
+			Cerro Macho
+			Cerro Molino
+			Cerro Piña
+			Chelele
+			Chelele Arriba
+			El Guabo
+			Guabo Arriba
+			Llano Gato
+			Loma Chucara
+			Mango
+			Miramar
+			Palo Blanco
+			Playa de San Pedro
+			Quebrada Bonita
+			Quebrada Camarón
+			Quebrada Guabo Arriba
+			Quebrada Guinea
+			Quebrada Mono
+			Quebrada Peña
+			Quimpanpan, Quimopan
+			Raisal
+			Ramas del Guabo
+			Río Murciélago
+			Río Piedra
+			San Pedrito Abajo
+			
+			San Pedrito Arriba
+			Segunda Corriente
+			Vegate
+			
+		Valle Bonito (Dogata)	
+			
+			Alto Bilingüe
+			Alto Escobillo
+			Cabuya
+			Cerro Chivo
+			Cerro Papayo
+			Cerro Peñón 2
+			Cerro Piña
+			Chelesito
+			Doguira
+			El Guabal
+			Jujuca
+			Llano Piedra
+			Los Azules
+			Palma de Hilar
+			Paso Gatus
+			Paso Vidrio
+			Pata de Loma Grande
+			Pedregal
+			Quebrada Blanca
+			Quebrada Jujuca
+			Río Camarones
+			Río Chelele, Jirote
+			Río Chico
+			Río Grande, Pajonal
+			Río Negro
+			Río Piedra, Boca de Río Piedra
+			Río Tallo
+			Valle Bonito

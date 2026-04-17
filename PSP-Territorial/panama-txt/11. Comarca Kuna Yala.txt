@@ -1,0 +1,97 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Comarca Kuna Yala			
+			
+	Comarca Kuna Yala		
+			
+		Narganá	
+			
+			Achiote, Achiotal, Maguebgandi
+			Cambombia, Morbepdupu
+			Cartí Mulatupu
+			Cartí Sugtupu
+			Cartí Tupile
+			Corazón de Jesús, Akuanusatupu
+			Corbiski
+			El Porvenir, Murru, Gaigorgirdup
+			Gangandí
+			Isla Coibita, Sadugua
+			Isla del Arroz, Orostupu
+			Isla del Diablo, Tikantiki, Niatupo
+			Isla El Esfuerzo
+			Isla Iguana, Arritupu
+			Isla Misdutup, Isla Gato
+			Isla Momia
+			Isla Máquina, Mor Aketup
+			Isla Piedra, Acuatupu
+			Isla Pino, Nurdup
+			Isla Puerco de Monte, Cartí Yantupu
+			Isla Ratón, Nusatupu
+			Isla Sapo, Nadup
+			Isla Tigre, Digir Dup
+			Llano Cartí
+			Mamartupu
+			Mamitupu
+			Mandi Yala
+			Nalunega
+			Naranjos Chicos 2, Narbagandup Bipi
+			Naranjos Chicos, Narbagandup Bipi
+			Naranjos Grandes, Narbagandup Dummad
+			Narganá, Yandup
+			Niagalubir
+			Nugnutupu
+			Río Azúcar, Uargandup
+			Río Sidra, Urgandí
+			Soledad Mandinga, Mandi Ubigantup
+			Soledad Mirya, Mirya Ubigantupu
+			Tronco de Hicaco, Wichub Uala
+			Tubualá
+			Tup Orocua, Tup Suit Bipi, Tup Suit Chico
+			Tupsuit Bipi
+			
+			Tupsuit Dummat
+			Ukuptupu
+			Wagsailadup
+			Wasirdup
+			Wichub Bipi
+			Wichudup Dumamad
+			
+		Ailigandí	
+			
+			Achutupu, Isla Perro
+			Ailigandí, Manglar
+			Airdirgandí, Piedra de Amolar
+			Irgandí
+			Mamitupu, Isla Mamey
+			Ogobsucun, Ensenada de Coco
+			Playón Chico, Ukupseni
+			Playón Grande, Ukupa
+			San Ignacio de Tupile, Isla Gallina
+			Ustupu, Isla Conejo Pintado, Ñeque
+			Waguitupu, Isla Perico
+			Wichub Mullu
+			
+		Puerto Obaldía	
+			
+			La Boca
+			La Miel
+			Playa Blanca
+			Puerto Obaldía
+			
+		Tubualá	
+			
+			Anachucuna, Aswemullu
+			Armila
+			Caledonia, Coetupu, Goedub
+			Carreto, Yansibdiwar
+			Isla Cuba, Nubadub
+			Isla Pino, Dubbag
+			Isla Puerco, Sindup
+			Isla Ratón, Nusatupu
+			Mansucun, Mamsuggun
+			Mulatupu, Sasardí Muladub
+			Nabagandi
+			Pueblo Nuevo
+			Sasardí, Sasardí Nuevo
+			Tubualá, Dubwalá
+

@@ -1,0 +1,634 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Darién			
+			
+	Chepigana		
+			
+		La Palma	
+			
+			Agua Bendita
+			Arizal
+			Bajo Chiquito
+			Barriada San José
+			Buena Vista
+			Dos Bocas
+			Dos de Enero
+			El Cabima
+			El Encanto
+			El Mirador
+			El Pixvae, El Pifá
+			La Chuscada
+			La India
+			La Palma
+			La Quebrada
+			Las Mercedes
+			Las Palmitas, Vista Alegre
+			Llano Bonito, Bajo Bonito
+			Los Cativos
+			Miraflores
+			Mogocénega
+			Mogocénega Arriba
+			Mogue
+			Monte Lirio
+			Nuevo Paritilla
+			Perrecénega
+			Playa Grande
+			Punta Alegre
+			Punta de Roque, Punta Rocero
+			Punulosa
+			Quebrada Caña
+			Senón
+			
+		Camogantí	
+			
+			Agua Caliente
+			Calle Larga
+			Camogantí
+			El Bacao
+			Los Cinco Hermanos
+			Naranjal
+			Pijibasal
+			Quebrada Bonita
+		Chepigana	
+			
+			Aldea Emberá
+			Barro Colorado
+			Calzada Larga
+			Chepigana
+			Cocobolo
+			La Nupa
+			Pimienta
+			Quebrada del Medio 2
+			Quebrada Grande
+			Río Bagre, Marea
+			Río Colorado
+			Río Colorado Arriba
+			Saína
+			Sol Poniente
+			Tutumate
+			
+		Garachiné	
+			
+			Atalaya
+			Cabecera de Alto de Jesús
+			Cabecera de La Suerte
+			Calle Larga
+			Celorio
+			Celorio Arriba
+			Cerro Naipe
+			Garachiné
+			Jesusito, Río de Jesus
+			La Honda, Quebrada Honda
+			La Raíz
+			Los Tablones
+			Mompo, Bella Vista
+			Naranjal
+			Papayal
+			Pinoguilla
+			Quebrada Barbudero
+			Quebrada Corotú
+			Santa Bárbara
+			Totumo
+			
+		Jaqué	
+			
+			Biroquerá
+			Chado
+			Cocalito
+			Corotú, Villa Nueva
+			El Coco
+			El Mamey
+			Guayabito
+			
+			Icacal
+			Jaqué
+			La Peñita
+			Llano Bonito
+			Lucas
+			Luciano
+			Naranjal
+			Punta Cerrito
+			Quebrada Jira
+			Río Pavarando
+			Valle Alegre, Barrancón
+			Zancudero
+			
+		Puerto Piña	
+			
+			Caracol
+			Playa de Muerto
+			Puerto Piña
+			Tropic Star Lodge, El Molino
+			
+		Sambú	
+			
+			Bella Vista
+			Boca de Nagüala
+			El Salto
+			La Colonia del Valle de Bijagual
+			Sambú
+			
+		Setegantí	
+			
+			El Bajo
+			Estional
+			Jose Paganti
+			La Nupita
+			Los Paisas
+			Quebrada Nupita
+			Quintín
+			Setegantí
+			Urugantí
+			
+		Taimatí	
+			
+			Capena, El Salao
+			Cémaco, Wounam
+			La Chunga
+			Pueblo Nuevo, Taimatí
+			Quebrada García
+		Tucutí	
+			
+			Bella Vista
+			Buenos Aires, Manuca
+			Capitana
+			Chuletí
+			Chumurucuate
+			El Bongo
+			El Palo
+			Galilea
+			Llano Bonito, Caracuchal
+			Manené
+			Pueblo Nuevo, Mapuchica
+			Santo Domingo
+			Tucutí
+			Vuelta El Tamarindo
+			
+	Pinogana		
+			
+		El Real de Santa María	
+			
+			El Comanda
+			El Real de Santa María
+			Guanacatí
+			I.M.A., El Mercadeo
+			La Pala
+			Macho Solo
+			Pijibasal
+			Pirre 1
+			Pirre 2
+			Urrutí
+			Uruseca
+			
+		Boca de Cupé	
+			
+			Bajo Grande
+			Bajo Lepe
+			Boca de Cupé
+			El Balsal
+			El Tamarindo
+			Kamuakiro
+			Loma Naranja
+			Mi Pueblito
+			
+		Paya	
+			
+			Cortitica
+			Maturgantí, Matugantí
+			Paya
+			Quebrada Limón
+			Sobiaquirúa
+		Pinogana	
+			
+			Calle Larga
+			Corozal, Corozales
+			Pinogana
+			
+		Púcuro	
+			
+			Boca de Tolocua
+			Dos Hermanas
+			Púcuro
+			
+		Yape	
+			
+			Aruza
+			Barranco Pelao
+			Boca de Aruza
+			Calle de Oro
+			
+		Yaviza	
+			
+			Aligandí
+			Bella Vista
+			Betzaida
+			Boca de Tupisa
+			Calle Larga
+			Canglón
+			Chorro
+			Corozal, Corozales
+			Cristo Viene, Canglón 2, El Porvenir
+			Cubital
+			El Cerro
+			El Cerro 1, El Cerro de La Doncella
+			El Mamey
+			El Totumo
+			Entrada A El Salto
+			Finca Linader
+			Fruta Panal
+			La Bichua, La Buchua
+			La Boca de Yaviza
+			La Doncella
+			La Estoza
+			La Lagartera
+			La Ollita
+			La Víbora
+			Las Palmeras
+			Llano Bonito
+			Los Mogotes, Bajo Puru
+			Nuevo Bijao
+			Nuevo Progreso
+			
+			Pueblo Nuevo
+			Quebrada Aguacate
+			Quebrada Chayo
+			Quebrada Mamey, Entrada del Mamey
+			Quebrada Mojarra
+			Reversa Grande
+			Santa Librada
+			Totumo Abajo
+			Yaviza
+			
+		Metetí	
+			
+			Agro Riquezas Darién
+			Agua Buena
+			Altos de Piedra Candela
+			Altos del Cristo
+			Asnatí
+			Bajo Bonito
+			Barriada El Nazareno
+			Barriada La Milagrosa
+			Barriada Los Ángeles
+			Bella Vista
+			Boca de Chiatí
+			Boca de Subcurtí
+			Buenos Aires
+			Camino Lajas Blancas
+			Canglón
+			Canglón Arriba
+			Catival
+			Chiatí
+			Chiatí Arriba, Quebrada Macho
+			Chocolatal
+			El Balsal
+			El Guabo
+			El Martirio
+			El Nazareno
+			El oso
+			Finca El Vaquero Azul
+			Finca Ganadera Domínguez
+			Finca Salvamar
+			Finca United Nature
+			La Moneda
+			La Peñita
+			Lajas Blancas
+			Los Miranda
+			Los Pavitos
+			Los Pavitos Abajo
+			Los Pavitos Arriba
+			
+			Metetí
+			Metetí Arriba
+			Nicanor
+			Nicanor Abajo
+			Nuevo Paraíso
+			Nuevo Punuloso
+			Piedra Candela
+			Portuchada Arriba
+			Portuchada, Santa Rosa
+			Puerto Limón
+			Punolocita
+			Punuloso
+			Punuloso Abajo
+			Punuloso Arriba
+			Quebrada Bolsillo, El Refugio
+			Quebrada Espejito
+			Quebrada Espejito 2
+			Quebrada Espejo
+			Quebrada Espejo 2
+			Quebrada Félix
+			Quebrada Félix Abajo
+			Quebrada Grande
+			Quebrada Honda
+			Quebrada Honda 1
+			Quebrada La Estenia
+			Quebrada Relojera
+			Quebrada Salitre
+			Quebrada Tanque
+			San Vicente
+			Sansoncito Arriba
+			Sansoncito, San Francisco
+			Sansón Abajo
+			Sansón Arriba
+			Sansón 2
+			Subcurtí
+			Subcurtí Arriba
+			Villa Darién
+			Villa Darién Arriba
+			Villa Nueva
+			
+		Comarca Kuna de Wargandí	
+			
+			Asnatí
+			Mortí
+			Nurra
+			Walá
+	Santa Fe		
+			
+		Río Congo	
+			
+			Arizona
+			Bajo Bonito
+			Barriales
+			Bijagual
+			Cabecera de Río Cojo
+			Calle Mansa, Santa Bárbara
+			Catival
+			Caña Blanca
+			Cebollagas
+			Chitola
+			Cojito
+			Coroboro, Río Coroboro
+			Dos Bocas Abajo
+			Dos Bocas Grandes
+			El Caoba
+			El Cedro
+			El Grillo, La Unión
+			El Totumito
+			El Totumo
+			Estero Malo
+			Josefa
+			La Cantina, La Playita
+			La Ensorba
+			La Fortuna
+			La Pita
+			La Playita
+			Las Peñitas
+			Maquencal
+			Paritilla
+			Pechito Parao
+			Piedra Candela
+			Piñal
+			Quebrada Arizal
+			Quebrada del Medio
+			Quebrada León
+			Quebrada Limón
+			Quebrada Lirial
+			Quebrada Padilla
+			Quebrada Padillita
+			Quebrada Venao
+			Rancho Quemao
+			Reserva
+			Río Antado
+			Río Antadocito
+			Río Cojo
+			Río Congo, Río Congo La Paz
+			
+			Río Sierpe Abajo
+			Río Sierpe, San Juan de Dios
+			San José
+			Santa Bárbara
+			Santa Bárbara Abajo
+			Santa Isabel
+			Tierra Prometida
+			Tigre Viento Arriba
+			Villa Flor
+			Viso Soso
+			
+		Río Iglesias	
+			
+			Agua Buena
+			Agua Caliente
+			Agua Clara
+			Agua Viva
+			Altos del Cristo
+			Arretí
+			Aruza Abajo
+			Aruza Arriba
+			Aruza del Medio, Pueblo Nuevo
+			Bajos de Iglesia, Bijagual Abajo
+			Bajos de Iglesia, Río Iglesia
+			Bijagual
+			Cabecera de Aruza
+			Cabecera de Ureña
+			Champiocito, Campeoncito
+			Champion
+			El Chorro
+			El Golfo
+			El Lirial
+			El Macho
+			El Pital
+			Entrada de Arretí, La Matoza
+			Finca La Escondida
+			Gregorio Díaz
+			La Cubana
+			La Laguna
+			La Moneda
+			La Revesa
+			Los Mellos
+			Macareño
+			Puerto Quimba
+			Quebrada Chiquero
+			Quebrada Pescado
+			Quebrada Seca
+			Quebrada Teteral
+			
+			Sansón Arriba
+			Santa Cruz
+			Tata José
+			
+		Agua Fría	
+			
+			Agua Fría 2
+			Agua Fría 1
+			Altos de Vista Alegre
+			Arenita
+			Botello
+			Cativá
+			Clarita
+			Clarita Centro
+			El Caoba
+			El Cedro
+			El Tirao
+			Emberá Purú
+			Guayabillo
+			Guayabillo Abajo
+			La Corocita
+			Las delicias
+			Mundito
+			Palmira
+			Paraíso 
+			Pigandí Arriba
+			Quebrada El Cedro
+			Quebrada Grande Abajo
+			Quebrada Grande Arriba
+			Quebrada Grande del Medio
+			Quebrada Grande 1
+			Quebrada Grande 2
+			Quebrada Limón Arriba
+			Quebrada Nevera
+			Río Claro
+			Sabanas Arriba
+			Santa Cruz
+			Santa Marta, Flor de La Laguna
+			Vista Alegre
+			
+		Cucunatí	
+			
+			Bajo Bonito
+			Boca Eusebia
+			Cabecera de Dorotea
+			Calle Limón
+			Candelilla
+			Chanaticito
+			
+			Chanatí
+			Coredo
+			Corozal
+			Cucunatí
+			El Caoba
+			El desmayo
+			El Pixvae, El Pifá
+			Estopillán
+			Eusebia Arriba
+			Eusebia, La Patriota
+			Finca Coredo
+			Guayaquil
+			La Chunga
+			La Gira
+			La Góngora
+			La Lajosa
+			La Soledad
+			Los Nunos
+			Los Tablones
+			Platanillal
+			Primavera
+			Quebrada Aguacate
+			Quebrada Caña Blanca Arriba
+			Quebrada Cuca
+			Quebrada Dorotea, Dorotea
+			Quebrada Más Verde
+			Román
+			Santa Rosa
+			
+		Río Congo Arriba	
+			
+			Buena Vista
+			Cabecera de Quebrada Diabla
+			Cacao
+			Dos Bocas Grandes
+			El Espaveito
+			Higueronal Arriba, Cabecera de Higueronal
+			La Tigra
+			Las Lajitas
+			Monte Rico
+			Nuevo Paraíso
+			Nuevo Tonosí
+			Platanillo
+			Playa de Oro
+			Progreso
+			Quebrada Colorete
+			Quebrada Guinea
+			
+			Río Arenal
+			Río Bonito
+			Río Chiricano
+			Río Gira
+			Río Pedasí
+			Río Venado
+			Río Venado Arriba
+			Salto Tres Piedras
+			San José
+			San Pedrito
+			Santa Bárbara Arriba
+			Santa Marta
+			Santa Rita
+			Tigre Viento
+			Valle Rico
+			
+		Santa Fe	
+			
+			Agua Buena 1
+			Agua Buena 2
+			Agua Clara Arriba
+			Aguas Claras
+			Alto de La Torre
+			Altos de Vista Alegre
+			Arretí
+			Cabecera de Dorotea
+			Caobanerita, Quebrada Caobanera
+			Carrizal
+			Coredo
+			El Tirao
+			Finca Santa Rosa
+			Guayabillo
+			Guayabillo Abajo
+			Higueronal
+			La Cabuya
+			La Cantera
+			La Güajira
+			La Lomita, La Loma
+			La Matosa
+			La Villa
+			Las Colinas
+			Loma La Pava
+			Los Monos, Arimae
+			Los Nunos
+			Paraíso
+			Pueblo Nuevo 1
+			Puerto de Santa Fe
+			Quebrada Cañazas
+			
+			Quebrada Jabón
+			Quebrada La Estenia
+			Quebrada Muerto, Santa Marta
+			Quebrada Tanque
+			Quebrada Tanque Abajo
+			Román
+			Román Centro, Río Román
+			Sabana Centro
+			Sabanas
+			Santa Fe
+			Tamarindo
+			Tamarindo Arriba, Zimba Arriba
+			Tumagantí
+			Valle Alegre
+			Zapallal
+			Zimba
+			
+		Zapallal	
+			
+			Altos del Cristo
+			Betel
+			Cucuzal, Finca Juana Micaela
+			El Castillo
+			El Ciruelito
+			El Manguito
+			Joselito
+			La Lomita, La Loma
+			Las Delicias, Pueblo Nuevo
+			Los Caobos
+			Manantial
+			Pueblo Nuevo 1
+			Pueblo Nuevo 2
+			Puerto Lara
+			Quebrada Honda
+			Quebrada Plácido
+			Quebrada Relojera
+			Quintín
+			San Cristóbal
+			San Miguel
+			Zapallal
+			
+

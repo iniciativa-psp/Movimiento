@@ -1,0 +1,670 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Bocas del Toro			
+			
+	Bocas del Toro		
+			
+		Bocas del Toro	
+			
+			Big Creek
+			Bluff
+			Bocas del Toro
+			Boquet Bay
+			Chimborazo
+			El Bambú
+			Isla Carenero
+			La Carretera
+			La Colonia Santeña
+			La Y Griega
+			Mimitimbi
+			Paunch
+			
+		Bastimentos	
+			
+			Bahía Honda
+			Bahía Roja
+			Bastimentos
+			Cayo Coral, Isla Coral
+			Cedral Creek
+			Dos Aguas
+			Douglas Cay
+			El Palmar
+			German Soldier Cay
+			Isla Zapatilla 1
+			Jack Analy Cays
+			Kaeyan Cal
+			Los Secretos Resort
+			Macca Bite, Ensenada de Espino
+			Ola Chica
+			Punta Bonita
+			Punta Juan Brown
+			Punta Oro
+			Punta Vieja
+			Quebrada Bryan
+			Quebrada Mariano
+			Quebrada Sal
+			Quebrada Álvarez
+			Red Frog Beach
+			Short Cut, Red Frog
+			Solarte
+		Punta Laurel	
+			
+			Cayo de Agua
+			Isla Popa 1
+			Isla Popa 2
+			Isla Tigre
+			Isla Venado
+			Mina de Carbón
+			Playa Caracol
+			Punta Laurel
+			Quebrada Piscina
+			
+		Tierra Oscura	
+			
+			Aguacate
+			Bella Vista, Bay View, Punta Bermúdez
+			Cerro Brujo
+			Hope Well, Buena Esperanza
+			Isla de Bagui
+			Loma Partida
+			Loma Santos
+			Pueblo Nuevo
+			Punta Afuera
+			Shark Hole, Quebrada Marañón
+			Tierra Oscura
+			Tiger Key, Isla Tigre
+			
+		Bocas del Drago	
+			
+			Boca de Drago
+			Bocas del Toro
+			Boquet Bay
+			Caracol Chiquito
+			Ground Creek
+			La Cabaña
+			La Carretera
+			La Colonia Santeña
+			La Y Griega
+			Little Bay
+			Punta Caracol
+			Quebrada Matombal
+			Sunset Point
+			
+		San Cristóbal	
+			
+			Bahía Grande, Big Bay
+			Bella Vista
+			Bella Vista, Bay View, Punta Bermúdez
+			
+			Bocatorito
+			Buena Vista
+			El Refugio
+			Pichini Creek
+			Punta Paloma
+			San Cristóbal
+			San Cristóbal Arriba
+			Selva del Mar
+			Valle Escondido, Bahía Escondida
+			
+	Changuinola		
+			
+		Changuinola	
+			
+			Changuinola
+			
+		Guabito	
+			
+			Barriada 17 de Octubre
+			Barriada El Cangrejo, El Cangrejal
+			El Arenal
+			Entrada de San San
+			Finca 41
+			Finca 42
+			Finca 52
+			Ganadera Bocas
+			Guabito
+			Guameru, Traicionero
+			Isla Arenal
+			La Mona
+			La Victoria
+			Matina
+			Milla 21
+			Nuevo Guabito
+			Puente de San San
+			Puente Negro
+			Quebrada Conejo
+			Rómulo
+			San San
+			Santa Marta de Yorkin
+			Suampito
+			
+		El Teribe	
+			
+			Alto Solón
+			Bondi
+			Bonkin
+			Bonyik
+			
+			Buena Selva
+			Chupsco
+			Cugin
+			Cuiñ, Cuin
+			Diridi
+			Dlueyic, Druey
+			Drunaac, Piedra de Sal
+			Duerpsco
+			Huecso
+			La Mona
+			Loma Bandera
+			Peña Blanca
+			Rancho Quemado
+			San San
+			San San Druy
+			San San Tigra
+			Santa Rosa
+			Siekin
+			Sieyik
+			Solón
+			Sori, Sodi
+			Sorón
+			Struri, Tres Piedras
+			Zegla
+			
+		El Empalme	
+			
+			Balas Pit Rural
+			El Empalme
+			El Silencio
+			La Hortaliza
+			
+		Las Tablas	
+			
+			Alto de Dos Caños
+			Barriada 15 de Diciembre
+			Barriada Las Brisas
+			Dos Caños
+			Dos Caños Adentro, Dos Caños Abajo
+			El Muro
+			Las Tablas
+			Sinostre
+			Tiger Hill
+			
+		Cochigró	
+			
+			Alto de Sori
+			Alto Pedregal
+			
+			Betania
+			Boca Chica
+			Boquisco
+			Buena Selva
+			Buena Vista
+			Campamento Bracha
+			Cochigró
+			Corriente Grande
+			El Bajo de La Esperanza
+			El Guabo, Quebrada Guabo
+			Gavilán
+			Isla Venado
+			La Mina
+			Marco, Cable Guía
+			Quebrada Carbón 2
+			Quebrada de León
+			Quebrada Puerco
+			Santa Rosa
+			Sursuba
+			Tucán
+			
+		La Gloria	
+			
+			Alto Pita
+			Altos de Milla 10, Vista Hermosa
+			Boca de Junco
+			Boca de Selvina
+			El Canal
+			Isla Tigre
+			Junco, San Juan
+			Junquito
+			La Escondida
+			La Gloria
+			Loma Bonita
+			Loma Brava
+			Loma Muleto
+			Milla 10
+			Milla 11
+			Milla 5
+			Milla 6
+			Milla 7
+			Milla 7 1/2
+			Punta Sorostra
+			Selvina
+			Valle Junquito
+		Las Delicias	
+			
+			Agua Salud, Los Pozos de Aguas Termales
+			Boca de Yorkin
+			Bris
+			Dakles, Daclis
+			El Guabo de Yorkin
+			Endi
+			Kapequicha, Alto Yorkin
+			Katsi
+			La Golondrina
+			Las Delicias Abajo
+			Las Delicias Arriba
+			Las Palmas, Las Palmitas de Yorkin
+			Namuwuoki
+			Santa Clara
+			Sanury, Dos Bocas
+			Sibube
+			Sibube Adentro
+			Sinostre
+			Sinostre Adentro
+			Tscui
+			
+		Barriada 4 de Abril	
+			
+			Changuinola
+			Finca 71
+			Finca La Ponderosa
+			Puente de San San
+			
+		El Silencio	
+			
+			Charagre
+			El Silencio
+			La Hortaliza
+			Quebrada Carbón 1
+			Quebrada Carbón 2
+			Quebrada Yorkin
+			Santa Marta de Yorkin
+			
+		Finca 6	
+			
+			Changuinola
+			Finca 43
+			Finca 44
+			San San 1
+		Finca 30	
+			
+			5 de Marzo
+			Barriada Anaconda
+			Barriada Cobana
+			Barriada La Juventud
+			Barriada La Reina
+			Barriada Theobroma
+			Barriada Urracá
+			Charagre
+			El Tecal
+			Finca 24
+			Finca 31
+			Finca 32
+			Finca 33
+			Finca 69
+			La Nueva Esperanza, Cantiflán
+			Lago 4
+			Santa Marta Abajo
+			
+		Finca 60	
+			
+			Barriada 21 de Abril
+			Finca 61
+			Finca 62
+			Finca 62 Rural
+			Finca 63
+			Finca 64
+			Finca 67
+			Finca 67 Abajo
+			La Barra
+			La Poderosa
+			
+		Barranco Adentro	
+			
+			Alto Nance
+			Bajo Nance
+			Barranco Adentro
+			Barranco Medio
+			Barriada 14 de Abril
+			Barriada Cable 90
+			Boinvota
+			Finca 45 Adentro
+			Las Palmitas
+			Santa Clara
+			
+		Finca 4	
+			
+			Alto del Rima
+			Bambú
+			
+			Barriada 20 de Enero
+			Barriada Nazareno
+			Barriada Santa Elena
+			Boca de Junco
+			Buena Vista Abajo, Bambito
+			Finca 1
+			Finca 1 Rural
+			Finca 2
+			Finca 2 Rural
+			Finca 3
+			Finca 3 Rural
+			Finca 4
+			La Escondida
+			Loma Bambú
+			Loma El Bajo
+			Milla 11
+			Milla 12
+			Torres
+			Urbanización Nuevo Amanecer
+			
+		Finca 12	
+			
+			Changuinola
+			
+		Finca 51	
+			
+			Agroganadera Caribe
+			Barriada 20 de Mayo
+			Barriada Nuevo Amanecer
+			California
+			Deborah
+			Finca 51
+			Finca 53
+			Finca Nombre de Dios
+			Guabito
+			Junta Agraria
+			La Barra
+			La Jara
+			La Palma
+			Milla 23, Puente Blanco
+			Nueva California
+			Puente de San San
+			Puente del Medio
+			Puente Negro
+			Río Negro
+			San San 1
+		Finca 66	
+			
+			Changuinola
+			
+		La Mesa	
+			
+			Alto Nance
+			El Arenal
+			Isla Grande
+			La Mesa
+			Quebrada Canela
+			Quebrada Conejo
+			Vicira
+			Washouth
+			
+	Chiriquí Grande		
+			
+		Chiriquí Grande	
+			
+			1 de Noviembre
+			Boca de Man Creek
+			Casas Viejas, Barriada El Campesino
+			Chiriquicito 2
+			Chiriquí Grande
+			El Búfalo
+			El Caimán
+			El Crudo, Aguacate
+			Guariviara, La Playita
+			Juan Cuero
+			Manc Reek, La Mesa
+			Mata Cacao
+			Panagro
+			Piña
+			Platanerito
+			Quebrada Camarón
+			Quebrada El Bajo
+			Quebrada Limón
+			Rambala
+			Árbol de Pan
+			
+		Miramar	
+			
+			Gualaca, Gualaquita
+			La Esperanza
+			La Gloria
+			Los Cedeños
+			Los Chiricanos
+			Los Franceses
+			Miramar
+		Punta Peña	
+			
+			Cañaza
+			Cañazas 2
+			Entrada de Pueblo Nuevo
+			Higuerón
+			Los Alvarados
+			Paso Catalina
+			Punta Peña
+			Quebrada Camarón
+			Rambala
+			
+		Punta Robalo	
+			
+			Alto Zapatero
+			Cilico Creek
+			Las Cañas
+			Los Guayabales
+			Los Molejones
+			Norteño
+			Palma Real
+			Punta Robalo
+			Spanish Town
+			Valle Seco
+			
+		Rambala	
+			
+			Barranquilla 3
+			Boca de Guarumito
+			Chiriquicito 2
+			Chiriquicito, Solate
+			El Guarumo
+			Guarumito
+			Guarumito 2, Chiriquicito 1
+			La Milagrosa
+			Nueva Estrella
+			Rambala
+			
+		Bajo Cedro	
+			
+			Bajo Cedro
+			El Tapao
+			El Escobal
+			El Tamarindo
+			La Conga
+			La Loma, Loma Bonita
+			Loma de Noni
+			Loma Venado, Palmito
+			Puerto del Diablo
+			Quebrada Garza
+			
+			Quebrada Marín
+			Rancho Quemao
+			Traicionera
+			Valle Sarón, Bigote
+			África
+			
+	Almirante		
+			
+		Almirante	
+			
+			Almirante
+			Barriada Nuevo Almirante
+			La Bomba
+			Loma Brava
+			Milla 2
+			Milla 3
+			Residencial Almirante Bay
+			
+		Barrio Francés	
+			
+			Almirante
+			Punta Bella
+			
+		Barriada Guaymí	
+			
+			Almirante
+			Alto Refugio
+			El Caracol, Barrio Guaymí 2
+			La Bomba
+			Loma Quebrada, Los Piñeros
+			Milla 2
+			Milla 3
+			Milla 4
+			Milla 4 1/2
+			Milla 5
+			Miraflores
+			Nuevo Paraíso
+			Quebrada Limón
+			Quebrada Nigua 1
+			
+		Nance del Riscó	
+			
+			Bajo Gavilán
+			Boca Chica
+			Changuinola Arriba
+			Charco La Pava 2
+			Comunidad Lazo
+			Guayabal
+			
+			La Soledad del Riscó
+			Nance del Riscó
+			Punta Peña Blanca
+			Valle El Rey
+			
+		Valle de Agua Arriba	
+			
+			Bahía de Loma Azul
+			Bahía Lomas
+			Cayo Roldán
+			El Carrizal
+			Isla Pastores
+			La Escapada
+			Loma Azul
+			Loma Coco
+			Loma Estrella
+			Loma Estrella Abajo
+			Loma Santos
+			Loma Valiente
+			Nueva Esperanza
+			Palo Seco
+			Punta Gallinazo
+			Punta Pargo
+			Quebrada Bosali
+			Quebrada Cacao
+			Quebrada Cascajo
+			Quebrada Garay
+			Quebrada Pastor
+			Quebrada Pitti
+			Renacimiento
+			Río Oeste Abajo
+			Río Oeste Arriba
+			Valle de Agua Abajo
+			Valle de Agua Arriba
+			Valle de Las Perlas
+			
+		Valle del Riscó	
+			
+			Alto Pineda
+			Alto Refugio
+			Alto Romero
+			Bajo Nieve
+			Barriada 5 Estrellas
+			Barriada Santeña
+			Boca de Culubre, Peña Blanca
+			Cabecera de Culebra
+			Changuinola Arriba
+			Culebra
+			
+			Dos Rios
+			Guayabal
+			Guayabo, Finca Guayabo
+			La Soledad
+			Nachuido, Quebrada Pluma
+			Nirionte 2, Barriada Guerra
+			Nudobiri
+			Ojo de Agua
+			Oregonte
+			Palo Seco
+			Punta Peña
+			Punta Peña Blanca 
+			Quebrada Caracol
+			Quebrada Esperanza de Riscó
+			Quebrada Pita
+			Tolote U oriente del Riscó
+			Valle del Riscó
+			Velorio, Monte Verde
+			
+		Bajo Culubre	
+			
+			Alto Uri, Nueva Zelanda
+			Arcoiris
+			Bajo Culubre
+			Caña Blanca
+			Ceiba Arriba
+			Fábrega
+			Lajas, Sol del Monte
+			Los Naranjos
+			Sitio Flores
+			
+		Cauchero	
+			
+			Alto Caña
+			Bajo Mina
+			Barriada La Fe
+			Boca de Negrita, La Negrita
+			Cauchero
+			Cauchero Arriba
+			Cayo Mono
+			Cerro Palma
+			Dos Escobas
+			El Desierto
+			Loma Azul
+			Loma Cuchilla, Cerro Piedra
+			Loma Estrella
+			Loma Fría
+			Loma Santos
+			
+			Los Higuerones
+			Los Naranjos
+			Pueblo Nuevo
+			Punta Peña
+			Quebrada del Pueblo
+			Quebrada Estrella
+			Quebrada Huaca
+			Quebrada Mina
+			Quebrada Mono
+			Quebrada Pinzón
+			Quebrada Plátano
+			Río Uyama
+			Siloe
+			
+		Ceiba	
+			
+			Bajo Culubre
+			Cedrales
+			Ceiba
+			Ceiba Arriba
+			Culebra
+			Guayacán
+			La Playita
+			Quebrada Caracol
+			Valle Libre
+			Velorio, Monte Verde
+			
+		Miraflores	
+			
+			Bella Vista
+			La Gloria
+			Milla 5
+			Milla 7 1/2
+			Miraflores
+			Ojo de Agua
+			Quebrada Banano
+			Tibite
+			
+

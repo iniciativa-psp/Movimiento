@@ -1,0 +1,88 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Comarca Emberá			
+			
+	Cémaco		
+			
+		Cirilo Guaynora	
+			
+			Calle de Oro
+			Capetí, Capetuira
+			El Puente
+			Unión Chocó
+			Vista Alegre
+			Yapé
+			
+		Lajas Blancas	
+			
+			Alto Playón
+			Bajo Chiquito
+			Boca de Icuanatí
+			Canaán
+			Chiatí Arriba, Quebrada Macho
+			Dozake Puru, Río Sito
+			El Salto
+			La Loma
+			La Olla
+			La Peñita
+			Lajas Blancas
+			Los Mogotes, Bajo Puru
+			Maach Pöbur
+			Marragantí
+			Nuevo Vigía
+			Patisera
+			Peña Bijagual
+			Quebrada Los Cuatro
+			Sinaí
+			Tortuga
+			Villa Caleta
+			
+		Manuel Ortega	
+			
+			Barranquillita, Barranquilla
+			Boca de Chatí
+			Común
+			Corozal
+			El Tigre
+			La Pulida
+			Naranjal
+			Nazareth
+			Nueva Esperanza
+			Nuevo Belén
+			Portorrical
+			
+			Punta Grande
+			Quebrada Muerto
+			Villa Nueva
+			
+	Sambú		
+			
+		Río Sábalo	
+			
+			Aguacatal
+			Bayamón
+			Boca de Naguala
+			Boca de Tigre
+			Boca de Trampa
+			Buena Vista
+			Cabecera de Alto de Jesús
+			Daipuru
+			El Charro
+			La Chunga
+			Puerto Indio
+			Punta Coi
+			San Pablo
+			Sorongo
+			Villa Kedesia, Río Tigre
+			
+		Jingurudó	
+			
+			Boca Güina
+			Churuco
+			Condote, Río Venado
+			Jingurudó
+			Morrovic, Belén, Borroviche
+			Pavarando, Río Clarito
+			Piquigua
+			
+

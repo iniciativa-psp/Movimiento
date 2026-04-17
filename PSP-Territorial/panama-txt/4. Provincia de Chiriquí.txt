@@ -1,0 +1,1644 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Chiriquí			
+			
+	Alanje		
+			
+		Alanje	
+			
+			Alanje
+			Bajo Chirigagüa, Chirigagüa
+			Barriada Buena Vista
+			Barriada Etchelecu
+			Jarquin
+			Jarquincito
+			La Pita
+			La Pita Abajo
+			Mostrenco
+			Posada Berroa
+			
+		Divalá	
+			
+			Changuina
+			Divalá
+			El Jobito
+			La Gurgulla
+			La Laguna
+			La Peña
+			La Picadura
+			
+			Los Limones
+			Los Árbol Panes
+			San Martín Abajo
+			Sioguí Abajo
+			
+		El Tejar	
+			
+			Bajo Chirigagüa, Chirigagüa
+			El Tejar
+			La Lora
+			La Pita
+			Loma de San Pedro
+			Sitio Lázaro
+			Veladero
+			
+		Guarumal	
+			
+			Boca de Hacha
+			Cabreño
+			El Cacao
+			El Jobo
+			Guarumal
+			Guásimo
+			La Barqueta
+			La Martina
+			Las Olas Villa
+			Los Chiriquíes
+			Los Pocitos
+			Membrillal
+			Mostrenco
+			Paja Blanca
+			Sabaneta
+			Urbanización Las Brisas de Alanje
+			
+		Palo Grande	
+			
+			Alto La Playa
+			Barqueta Nice
+			Cornozuelo
+			La Ortega
+			Las Moras
+			Llano Grande
+			Palo Grande, Sabana Bonita
+			
+		Querévalo	
+			
+			Calabazal, Cabezones
+			La Berlina
+			
+			La Lora
+			Orillas del Río
+			Querévalo
+			
+		Santo Tomás	
+			
+			El Jobito
+			Estero Rico
+			La Cucua
+			La Cucua de San Martín
+			La Trinchera
+			Monte Grande
+			San Martín
+			Santo Tomás
+			
+		Canta Gallo	
+			
+			Canta Gallo
+			La Pita
+			La Pita Abajo
+			Llano Grande
+			
+		Nuevo México	
+			
+			Bajo Hondo
+			Barro Blanco
+			Camino Hacia Los Guabos
+			El Chanchito
+			Finca Colcha
+			Finca San Antonio
+			Finca Santa Elena
+			Finca Santa Librada
+			Finca Santa Rita
+			Gariché Abajo
+			Gariché Abajo 2
+			La Gurgulla
+			Las Mercedes
+			Las Tres Bocas
+			Nuevo México
+			Ojo de Agua
+			Paso de Tranquilla
+			Pasos de Los Guabos
+			Quebrada Grande
+			Quebrada Negra Abajo
+			Río Chiriquí Viejo
+	Barú		
+			
+		Puerto Armuelles	
+			
+			Agua Buena
+			Alto de Los Lagos
+			Altos de San Vicente
+			Asentamiento
+			Cabecera Corotú
+			Corotú La Unión
+			El Fraile
+			Guanabanito
+			Guanábano
+			Llano Bonito
+			Manzanillo
+			Margenes de Corotú
+			Melliza Abajo
+			Melliza Arriba
+			Monte Verde
+			Monte Verde Arriba
+			Puerto Armuelles
+			Punta de Piedra
+			Quebrada de Piedra
+			Rabo de Puerco Abajo
+			San Bartolo Arriba
+			San Bartolo Límite
+			
+		Limones	
+			
+			Baco
+			Bella Vista
+			Burica
+			Calabazo
+			Canegua
+			Caña Blanca
+			Corotú
+			Limones
+			Mellicita
+			Puerto Balsa
+			Quebrada del Medio
+			Quebrada Tallo
+			Yerbazales
+			
+		Progreso	
+			
+			Barriada Bello Amanecer
+			Barriada Don Pinto
+			Barriada El Triunfo
+			Canoa Abajo
+			Chuchupate
+			
+			Colorado, Kilómetro 32
+			Cuervito Abajo
+			Cuervito Arriba
+			El Cedro
+			Finca María
+			Paso Canoa Arriba
+			Paso Canoa Internacional
+			Progreso
+			Quebrada Arena
+			Quira
+			Revolución, Colorado Centro
+			Santa María
+			
+		Baco	
+			
+			Berba
+			Chiriquí Viejo
+			Corotú Civil
+			El Salado de Los Guabos
+			Finca Baco
+			Finca Teca
+			Kilómetro 24
+			La Esperanza
+			La Irrigación
+			Las Huacas
+			Los Tecales
+			Madre Vieja
+			Majagual
+			San Pedro
+			San Valentín
+			Santa Rosa de Lima
+			
+		Rodolfo Aguilar Delgado	
+			
+			Acueducto Almendro
+			Asentamiento Almendro
+			Blanco Arriba
+			Bongo Civil
+			Burica Centro
+			Burica Sur
+			Cañazas
+			Cañazas Arriba
+			El Coco
+			El Muro, El Almendro
+			Finca Aguacate
+			Finca Balsa
+			Finca Blanco
+			Finca Bongo
+			
+			Finca Corozo
+			Finca Guayabo
+			Finca Higuerón
+			Finca Palmito 01
+			Finca Palmito Viejo
+			Finca Sigüa
+			Finca Zapatero
+			Higuerón, Topoyiyo
+			La Pista
+			La Unión
+			La Vaquita
+			La Victoria
+			Los Plancitos
+			Nuevo Burica, San Antonio
+			Proyecto 2000
+			Proyecto Caoba
+			Rabo de Gallo
+			Samaria
+			
+		El Palmar	
+			
+			Agua Fría
+			Boquilla
+			Choroca
+			Divisa
+			El Palmar
+			La Unión
+			Los Planes
+			Majagua Civil 1
+			Majagua Civil 2
+			Quebrada Sábalo
+			Río Chiquito
+			San Bartolo
+			San Bartolo Línea
+			San Bartolo Arriba
+			San Bartolo Límite
+			Sangrillo
+			Sangrillo Abajo
+			
+		Manaca	
+			
+			Aguacatón
+			Balaspit
+			Blanco Arriba
+			Brisas de Las Palmeras
+			Ceiba
+			Coco Beach
+			El Jazmín
+			
+			Finca Ceiba
+			Finca Corredor
+			Finca Guayacán
+			Finca Higuito
+			Finca Jagua
+			Finca Jobito
+			Finca Jocote
+			Finca Lechoza
+			Finca Majagua
+			Finca Malagueto
+			Finca Malagueto Adentro
+			Finca Zapote
+			Los Olivos
+			Majagua Civil 1
+			Manaca Civil
+			Manaca Norte
+			Proyecto 20, 422
+			Quebrada Peña
+			Sitrachilco
+			Urbanización Manaca
+			
+	Boquerón		
+			
+		Boquerón	
+			
+			Bocalatum
+			Boquerón
+			Boquerón Arriba
+			Boquerón Viejo
+			La Meseta
+			Macano Abajo
+			Macano Arriba
+			Tijeras
+			
+		Bágala	
+			
+			Bágala
+			Cerro Cabuya
+			Cerro Colorado
+			Las Fuentes
+			Los Lezcano
+			Ojo de Agua
+			Residencial Hacienda del Bosque
+			Residencial Las Villas de Bágala
+			Residencial Salomé
+			Residencial Villa oliva
+			Urbanización Santa María
+		Cordillera	
+			
+			Aguacatal
+			Cordillera
+			Cordillera Arriba
+			Las Vueltas
+			Los Naranjos
+			Tula, Cordillera Arriba
+			
+		Guabal	
+			
+			Aguacate
+			Bonilla
+			El Bajo
+			Guabal
+			Huacas Abajo
+			Huacas Arriba
+			Nance Bonito
+			Palmira del Banco
+			
+		Guayabal	
+			
+			Bocalatum
+			Guayabal
+			La Elvira
+			Las Monjas
+			Macano Arriba
+			Palma Real
+			Santa Rita
+			
+		Paraíso	
+			
+			La Herradura de Paraíso
+			Miraflores
+			Palo Suave
+			Paraíso
+			Santa Marta
+			
+		Pedregal	
+			
+			Bajo Canoa
+			Boquerón Viejo
+			Chiquero
+			La Guinea
+			La Victoria
+			Pedregalito
+			Residencial Hacienda La Victoria
+			Solano
+			Varital
+		Tijeras	
+			
+			Bajo La Arena
+			Barriada La Esperanza
+			Loma San Pedro
+			Mata Gorda
+			Palmera Village
+			Sitio Lázaro
+			Tijeras
+			Urbanización Doña Fela
+			Varital
+			Varital Este
+			Villa Julieth
+			Villa María
+			Virginia Park
+			
+	Boquete		
+			
+		Bajo Boquete	
+			
+			Alto Boquete
+			Bajo Boquete
+			Barriada Divino Niño
+			Camiseta
+			El Huacal
+			El Salto
+			Finca María Eugenia
+			Los Cabezos
+			Santa Lucía, Barriada Santa Lucía
+			Volcancito
+			Volcancito Village
+			
+		Caldera	
+			
+			Alto El Copé
+			Alto Jaramillo
+			Bajo Chiriquí
+			Caldera
+			Calderita
+			Campo Alegre
+			Casita de Piedra
+			Cielo Paraíso
+			El Barrero
+			El Copé
+			El Nancito
+			El Síndigo
+			El Zarziadero
+			Finca Los Valles
+			Hidroeléctrica La Estrella
+			Las Peñas
+			
+			Los Vargas
+			Mague
+			Perico
+			Pueblo Nuevo
+			Quebrada Seca
+			Rancho Caldera
+			
+		Palmira	
+			
+			Cañas Verdes
+			La Colonia
+			Palmira Abajo
+			Palmira Arriba
+			Palmira Centro
+			Río Colga
+			
+		Alto Boquete	
+			
+			Agua Blanca
+			Alta Vista
+			Alto Boquete
+			Alto Tortuga
+			El Francés Arriba
+			El Macano
+			El Peñón
+			El Roble
+			Finca El Socorro
+			Las Huacas
+			Manga Vieja
+			Residencial Montañas de Caldera
+			Tortuga
+			Urbanización Los Amigos
+			Villas Los Altos de Boquete
+			Volcancito
+			
+		Jaramillo	
+			
+			Alta Vista
+			Alto Jaramillo
+			Buenos Aires
+			Jaramillo Abajo
+			Jaramillo Arriba
+			Jaramillo Centro
+			La Cima del Cerro Cabezón
+			La Estrella
+			La India Vieja Abajo
+			La India Vieja Arriba
+		Los Naranjos	
+			
+			Alto Chiquero
+			Alto Lino
+			Alto Quiel
+			Arco Iris
+			Bajo Lino
+			Barriada Las Flores
+			Boquete Plantation
+			Callejón Seco
+			Calograma
+			Camiseta
+			El Huacal
+			El Pianista
+			El Salto
+			El Santuario, Barriada Virgen de Guadalupe
+			Finca Bo Maring
+			Finca Revilla Bonita Spring
+			Jaramillo Arriba
+			La Horqueta U Horqueta
+			La Pandura
+			Los Cabezos
+			Los Ladrillos
+			Los Naranjos
+			Palo Alto, Arco Iris
+			Respingo
+			San Ramón, Bajo Mono
+			The Springs
+			
+	Bugaba		
+			
+		La Concepción	
+			
+			Alto de Escarrea
+			Bajo del Cerro
+			Buena Vista Abajo
+			Buena Vista Arriba
+			Bugaba
+			Bugabita Arriba
+			El Congo, Santa Clara
+			La Concepción
+			Los Robles de San Miguel
+			Praderas de San Miguel
+			Residencial Santa Clara
+			Residencial Villas de San Miguel
+			Residencial Virginia Iv
+			San Miguel del Yuco
+			San Valentín
+			San Vicente
+			Sortová
+		Aserrío de Gariché	
+			
+			Alto de Gariché
+			Aserrío de Gariché
+			Barro Blanco
+			Correntón
+			El Roble
+			Exquisito
+			Exquisito Abajo
+			Frijol de Palo
+			Gariché
+			La Libertad
+			La Unión
+			Los Azules
+			San Miguel
+			
+		Bugaba	
+			
+			Bajo Escarrea
+			Brisas del Río
+			Bugaba
+			La Madroña
+			La Victoria
+			Urbanización Santa Teresa
+			
+		Gómez	
+			
+			Alto de Chiriquí Viejo
+			Alto Jacú
+			Alto Meseta
+			Cimarrón
+			Gómez
+			Gómez Abajo
+			La Meseta
+			Las Planuras
+			San Miguel
+			
+		La Estrella	
+			
+			Alto Los Miranda
+			Changuina
+			La Estrella
+			La Unión
+			Las Adjuntas
+			Las Cruces
+			Las Trancas de Sioguí
+			Los Ángeles
+			Residencial Los Senderos II
+			Residencial Sueño Bonito
+			San Martín
+			
+			Sioguí Abajo
+			Sioguí Arriba
+			
+		San Andrés	
+			
+			Alto de Jacú
+			Buena Vista
+			Cafetal
+			Cueta
+			El Cedro
+			Entrada de Cueta
+			La Esperanza
+			La Olla
+			La Primavera
+			Los Naranjos
+			Palma Real
+			Quebrada Llana
+			Río Negro, La Línea
+			San Andrés
+			San Francisco
+			San Lucas
+			
+		Santa Marta	
+			
+			Alto Divalá, El Búho
+			Bijagual 1
+			Bijagual 2
+			Manchuila
+			Ojo de Agua
+			Santa Marta
+			
+		Santa Rosa	
+			
+			Bajo Frío
+			Bella Vista
+			Camaroncito
+			Camaroncito Arriba
+			Camarón Arriba
+			El Santo
+			La Herradura
+			La Maquenca
+			Las Mercedes
+			Santa Rosa
+			
+		Santo Domingo	
+			
+			Bajo Hondo
+			Barriada San Agustín
+			
+			Gariché
+			Gariché Abajo
+			Manchuila
+			Quebrada Grande
+			Quebrada Negra Arriba
+			Quebrada Negra, Mosca
+			Santa Marta
+			Santo Domingo
+			Santo Domingo Arriba - El Guabo
+			Santo Domingo Arriba - La Laguna
+			Urbanización Los Altos de Gariché
+			
+		Sortová	
+			
+			El Escobal
+			La Colonia
+			Nueva Esperanza, Chatal
+			Residencial Colinas de Sortová
+			Sortová
+			Volante
+			Volante Arriba
+			
+		El Bongo	
+			
+			Bongo Abajo
+			Bongo Arriba
+			Calvario
+			El Mamey
+			Jujucal, Jujucales
+			La Cuchilla
+			Las Tumbas
+			Palma Real
+			
+		Solano	
+			
+			La Concepción
+			
+		San Isidro	
+			
+			Alto Jacú
+			Celmira
+			Correntón
+			Jacú
+			Los Arenales
+			Portón
+			Quebrada Grande
+			San Isidro
+			San Pedro
+			Zueco, San Pedro Abajo
+	David		
+			
+		David	
+			
+			David
+			Portachuelo
+			Villa Natalia
+			
+		Bijagual	
+			
+			Bajo de Las Palmas, Cerrillos Abajo
+			Bijagual
+			Cerrillos
+			El Jobo
+			El Roblillo
+			Finca Guardia
+			Finca Rolando Real
+			La Montera
+			Los Algarrobos, Las Yayas
+			Los Pedernales
+			Los Zambranos
+			Potrero Zambrano
+			
+		Cochea	
+			
+			Angostura de Cochea Arriba
+			Cerrillos
+			Cochea Abajo
+			Cochea Arriba
+			Dos Tigres
+			El Higo
+			El Macano
+			El Roblillo Arriba
+			Guayabal
+			Hato Fiel
+			Los Jiménez
+			Los Papayales
+			Los Piros
+			
+		Chiriquí	
+			
+			Batipa
+			Buena Vista
+			Cañazas
+			Chiriquí
+			Chorcha Abajo
+			Chorchita
+			El Encanto
+			Gallina
+			Hacienda del Río
+			
+			Hato El Hicaco
+			La Barranca
+			La Gloria, La Lajita
+			La Maltes
+			La Mina
+			La Piedra
+			La Pita
+			Las Mercedes
+			Los Naranjos
+			Paja Blanca
+			Río Chiriquí
+			Sabana Bonita
+			San Luis
+			Veladero
+			Zapote
+			
+		Guacá	
+			
+			Alto Majagua
+			Coibita, Nuevo San Carlitos
+			El Hato
+			Guacá Abajo
+			Guacá Arriba
+			Majagua
+			Mata de Piro
+			Nance Bonito
+			Palmira del Banco
+			Rodeo, El Rodeo
+			
+		Las Lomas	
+			
+			El Corro
+			El Jazmín
+			El Quira
+			Hato Viejo, El Valle
+			La Eloisa
+			Las Lomas, Llano del Medio
+			Las Trancas
+			Los Cerritos
+			Mata de Nance
+			Quiteño
+			Residencial Altos de Quiteño
+			Residencial Jardines de Isabella
+			Residencial Santa Catalina
+			Río Chiriquí, Rancho Grande
+		Pedregal	
+			
+			Bejucosa
+			Boquita Centro
+			El Hato, La Galera
+			Guerrero
+			Hicaco
+			Interior
+			Isla Chalapa
+			Isla Muerto
+			Jurel
+			La Pitahaya
+			Los Lajones
+			Los Negros
+			Mata Palo
+			Palma Real
+			Pedregal
+			Playa Blanca
+			Punta Las Pavas
+			Sabino
+			Santa Cruz
+			
+		San Carlos	
+			
+			Buena Vista
+			Campo Alegre
+			La Montañuela
+			Las Marías
+			Nuevo San Carlitos
+			Paso Piñas
+			Pueblo Nuevo
+			Residencial Colinas del Valle
+			Sabana Bonita
+			San Carlitos
+			San Carlos
+			Urbanización Tierras Altas
+			
+		San Pablo Nuevo	
+			
+			Bágala
+			Campamento Corozal
+			Caña Blanca
+			Corotú, Puentes Los Ladrillos
+			Corozal
+			Finca Don Ricardo
+			Palmilla, Finca La Palmilla
+			Residencial Los Ángeles
+			Rincón Grande
+			San Pablo Nuevo Abajo
+			San Pablo Nuevo Arriba
+			Urbanización Santa María
+		San Pablo Viejo	
+			
+			Aguacatal
+			Coquito Abajo
+			Hacienda El Tecal
+			Hacienda Real
+			Hibiscus Villa
+			La Cola de San Pablo Viejo
+			Montilla
+			Ph Villa de Las Rosas
+			Residencial Aqualina
+			Residencial Buenos Aires
+			Residencial Colinas de San Juan
+			Residencial Condado Sur
+			Residencial Coquito Heights
+			Residencial El Dorado
+			Residencial Lomas de Aguacatal
+			Residencial Los Tulipanes
+			Residencial Montilla
+			Residencial Piamonte
+			Residencial Valle de San Pablo
+			Residencial Veranda
+			Residencial Villa Ana
+			San Juan del Tejal
+			San Pablo Viejo Abajo
+			San Pablo Viejo Arriba
+			Valle del Sur
+			Villa Patricia
+			
+		David Este	
+			
+			David
+			Mangote
+			
+		David Sur	
+			
+			David
+			La Yeguada
+			
+	Dolega		
+			
+		Dolega	
+			
+			Cochea
+			Dolega
+			El Cacao
+			El Fifí
+			El Flor
+			Las Acequias
+			Pueblo Nuevo
+			
+			Residencial San Francisco
+			Urbanización Vía Boquete
+			
+		Dos Ríos	
+			
+			Chumical
+			Dos Ríos Arriba
+			Dos Ríos, Dos Ríos Abajo
+			El Naranjal
+			
+		Los Anastacios	
+			
+			Bajo Hondo
+			Caimito
+			Los Anastacios
+			Rincón Largo
+			
+		Potrerillos	
+			
+			Brazo de Cochea
+			Cabecera de Cochea
+			El Burro
+			Finca Olimpo
+			Las Brujas
+			Los Mameyes
+			Potrerillos Arriba
+			Residencial Altos del Naranjal
+			
+		Potrerillos Abajo	
+			
+			Cochea
+			Las Acequias
+			Potrerillos Abajo
+			
+		Rovira	
+			
+			Caña Blanca
+			Cerro del Banco
+			El Banco
+			El Banco de Palmira
+			Loma Alta
+			Palma Real
+			Rovira Abajo
+			Rovira Arriba
+			Santa Elena
+		Tinajas	
+			
+			Balita
+			Cermeño
+			Conventillo
+			Loma Alta
+			Los Guásimos
+			Los Palomos
+			Residencial Los Cántaros
+			Rovira Abajo
+			Tinajas
+			
+		Los Algarrobos	
+			
+			Algarrobos Arriba
+			Bejuco
+			El Jagua
+			El Valle de Santa Rosa
+			Las Cañas
+			Las Cañas Abajo
+			Los Algarrobos
+			Santa Rosa
+			Urbanización Villa Layla
+			
+	Gualaca		
+			
+		Gualaca	
+			
+			Bajo La Peña
+			Barriada Asociación Nuestra Señora de Los Ángeles
+			Bella Vista
+			Brazo de Mono, Bajo Mono
+			Buenos Aires
+			Calle Larga
+			Cerro Sabana
+			Dos Brazos del Estí
+			El Higuerón
+			El Letrero
+			El Raizoso
+			El Roble de Gualaca
+			Finca Las Davelitas
+			Flauta
+			Guagarales
+			Gualaca
+			Gualaquita
+			La Chichicosa
+			La Esperanza
+			La Fila
+			La Pita
+			
+			La Pita 1
+			La Soledad
+			La Vaca
+			Las Colonias, El Palomo
+			Las Guaquitas
+			Loma Alta
+			Loma Grande, Loma Larga
+			Londres
+			Londres Arriba
+			Los Nísperos
+			Los Planes
+			Mamecillal
+			Pan de Azúcar
+			
+		Hornito	
+			
+			Alto de La Mina
+			Alto de Los Pinos
+			Alto Frío
+			Alto Nuevo de Fortuna
+			Bajo Largo
+			Bajo León
+			Cerro Prieto
+			Chiriquicito
+			El Cedro
+			El Letrero
+			El Níspero
+			Entre Ríos
+			Filipinas
+			Fortuna
+			Guayabo Negro
+			La Bamba
+			Las Marías
+			Lavadero
+			Nueva York
+			Pandura
+			Pinola
+			Presión, Chimenea
+			Pueblo Nuevo
+			Quebrada Nueva
+			Sigüa
+			Soledad
+			Valle de Las Minas
+			
+		Los Ángeles	
+			
+			Alto Bonito
+			Bajo Bonito
+			
+			Caña Blanca
+			Chorchita
+			Chorchita Arriba
+			Cordillera
+			El Higo
+			El Macho
+			Galerita, Cerro Galerita
+			Las Huacas
+			Los Bongos
+			Los Ladrillos
+			Los Ángeles
+			Los Ángeles Arriba
+			Sardina
+			
+		Paja de Sombrero	
+			
+			Bajo El Mango
+			Bajo Méndez
+			Barrial, Arco Iris
+			Buenos Aires
+			Calabazal
+			Cerro Cacho
+			Chalapa
+			Chalapita
+			Cuchilla
+			Cucua
+			El Amarillo
+			Guabal
+			La Palma
+			Los Pozos
+			Macanito
+			Paja de Sombrero
+			
+		Rincón	
+			
+			Bajo Chorcha
+			Bajo Gualaca
+			Galerita, Cerro Galerita
+			La Huaca
+			La Victoria
+			Mata Rica
+			Perú
+			Plan de La Galera
+			Quebrada Laja
+			Redondito
+			Rincón
+			Veladero
+	Remedios		
+			
+		Remedios	
+			
+			Boca Vieja
+			El Puerto
+			Finca Miraflores
+			Isla Cangrejo
+			La Playa
+			Llano Correa
+			Remedios
+			
+		El Nancito	
+			
+			Boquibajo
+			Boquibajo Arriba
+			El Lirio
+			El Nancito
+			La Isleta
+			La Peña
+			Naranjal
+			Olá
+			Potrero de Olla
+			Río Santiago Abajo
+			Río Santiago Arriba
+			Salado Abajo
+			Sardina, Lajero Abajo
+			
+		El Porvenir	
+			
+			Cerro Pelado
+			El Porvenir
+			Escodu
+			Finca Santa Lucía, Loma del Viento
+			Guabal
+			La Bruja
+			San Ignacio del Cucuy
+			
+		El Puerto	
+			
+			El Puerto
+			Hato Antioquía
+			Isla Jarascosa, La Joroscosa
+			Isla La Palma
+			Isla Pan de Azúcar
+			Isla Santa Catalina
+			
+		Santa Lucía	
+			
+			El María
+			Escodu
+			
+			Finca Ricardo Barría
+			Finca Santa Lucía, Loma del Viento
+			Hato Ruíz
+			Hato San José
+			La Mina
+			Orema
+			Río Salao
+			
+	Renacimiento		
+			
+		Río Sereno	
+			
+			Altamira
+			Alto Cerrón
+			Bajo Cerrón
+			Bajo La Unión
+			Bella Vista
+			Copal
+			Jurutungo
+			La Unión
+			Los Pinos
+			Miraflores
+			Pantanal
+			Piedra Candela
+			Río Sereno
+			Zambrano
+			
+		Breñon	
+			
+			Alto Brujo
+			Alto Pavón
+			Bajo Hornito
+			Bajos de Zapatero
+			Brazo Seco
+			Breñón
+			Entrada de Salsipuedes
+			La Potra
+			Limoncito
+			Mamey
+			Ojo de Agua
+			Quebrada de Vueltas
+			Salsipuedes
+			
+		Cañas Gordas	
+			
+			Alto Quiel
+			Bajos de Chiriquí
+			Cañas Gordas
+			
+			Copal
+			Las Delicias
+			Los Planes
+			Mosquito, Porvenir
+			Nueva Delhi
+			Quebrada de Vueltas
+			
+		Monte Lirio	
+			
+			Campo Alegre
+			El Valle del Centinela, Bajo Chitra
+			La Fuente
+			Monte Lirio
+			Pacora
+			San Antonio
+			San Antonio Arriba, Chiquero
+			Santa Clara Abajo
+			Villa Lourdes
+			
+		Plaza Caisán	
+			
+			Alto Chiriquí
+			Alto de La Mina
+			Bajo Fila de Caisán
+			Caisán Centro
+			Caisán Primavera
+			El Cruce de Caisán
+			El Valle de La Mina
+			Guabito
+			La Fila de Caisán
+			Las Lagunas
+			Plaza Caisán
+			
+		Santa Cruz	
+			
+			Agua Fría
+			Baitún Abajo
+			Baitún Arriba
+			La Bonita
+			Mamey Abajo
+			Mamey Arriba
+			Palmas Bellas
+			Salitral
+			Santa Cruz
+			
+		Dominical	
+			
+			Alto Bonito
+			Cañas Blancas
+			
+			Cañas Blancas Abajo
+			Cañas Blancas Arriba
+			Cañas Blancas Centro
+			Cerro de Paja
+			Dominical
+			La Divisa
+			Las Planuras
+			Pavón Arriba
+			
+		Santa Clara	
+			
+			Cotito
+			Palmarito
+			Río Guisado
+			Río Guisado Arriba
+			Santa Clara
+			
+	San Félix		
+			
+		Las Lajas	
+			
+			Boca de San Félix
+			Entrada A Playa Lajas
+			Hato del Rosario
+			Higo Mocho, Nueva Florida
+			La Divisa
+			Las Lajas
+			Playa Jobo, Las Lajas
+			Rincón Largo, Buenos Aires
+			
+		Juay	
+			
+			Boca de Macho
+			Cachele
+			Cerro Brisas
+			Chumicoso
+			Finca Marucci
+			Juay
+			Juay Arriba
+			Juay, Las Mareas
+			Mangote
+			
+		Lajas Adentro	
+			
+			Bajo Jacoy
+			Higo Mocho, Nueva Florida
+			Juan Vaca, Las Delicias
+			Lajas Adentro
+			
+			Silimín
+			Urbanización El Carrizal
+			
+		San Félix	
+			
+			Barriada Coronel
+			El Corocito
+			Entrada de Guayabal
+			Finca La Esmeralda
+			Finca Méndez
+			Galique
+			Hato Julí
+			Juay, Las Mareas
+			Kuerima
+			La Esmeralda
+			Las Matas
+			Los Ángeles
+			Pozos de Galique
+			Sabanitas
+			San Félix
+			Silimín
+			
+		Santa Cruz	
+			
+			Finca Quirozca
+			Santa Cruz
+			
+	San Lorenzo		
+			
+		Horconcitos	
+			
+			Cangrejal
+			El Salaito
+			Horconcitos
+			La Garita
+			Marañón
+			
+		Boca Chica	
+			
+			Bajo Calabazal
+			Boca Chica
+			Cuchara, Las Yayas
+			El Mogote de Nicho
+			Estero de La Montaña, Abraham
+			Estero del Bongo
+			Finca Villalobos
+			Gone Fishing Panama Resort
+			Guacalito, Finca Guacalito
+			
+			Isla Boca Brava
+			Isla de Cedro
+			Isla Torta
+			Los Bajos
+			Palenque
+			Playa Gavilla
+			Playa Hermosa
+			Playa Rincón
+			Proyecto de Reforestación Planeta Verde
+			Pueblito, Muertito
+			Punta Bejuco
+			Residencial ocean Front
+			
+		Boca del Monte	
+			
+			Alambique
+			Alto Chumico
+			Alto Corrales
+			Alto Jazmín
+			Bajo Chorcha
+			Bajo Corrales
+			Bajo Hato Corrales
+			Balita
+			Barro Blanco
+			Boca de Quebrada de Hacha
+			Boca del Monte
+			Boca del Río Chiquito
+			Brazo Grande de Corrales
+			Cañafístulo
+			Cerro Pavón
+			El Barrero
+			El Garrote
+			El María
+			El Piral
+			El Recodo
+			Finca Corrales
+			Finca Ganadera El Sol
+			Jazmín
+			La Catalina
+			La Guadalupe
+			La Isidora
+			La Isla, Puerto Escondido
+			Las Huacas, Altos de Las Huacas
+			Las Tres Bocas
+			Las Vueltas
+			Llano Cecilia
+			Llano del Nance
+			Llano Martín
+			
+			Llano San Martín
+			Los Castillos
+			Madroñal, Las Vueltas
+			Pasmo
+			Paso Ganado
+			Perico
+			Plan de La Galera
+			Puerto Victoria, Las Vueltas
+			Quebrada Hacha
+			Quebrada Honda
+			Quebrada Pita
+			Río Chiquito
+			Sábalo
+			Tierras Negras
+			
+		San Juan	
+			
+			Cieneguita
+			Coquillo
+			Guineal
+			La Isleta
+			Potrero de Palma
+			Pueblito
+			San Juan, Cerrillos
+			
+		San Lorenzo	
+			
+			Barriada Belén
+			Barriada Nuevo Rocío
+			Cabecera de Quebrada Monito 2
+			El Burro
+			El Jobo
+			El Rincón
+			Entrada de Horconcitos, Chira
+			Entrada del Burro, Finca El Espinal
+			Finca Istmeña
+			Fonseca
+			Horconcitos
+			Islas Secas
+			La Sana
+			Llano Grande
+			Llano Horcón
+			Peces
+			Playa Nanzal
+			Playa Zapotal
+			Proyecto de Reforestación Planeta Verde
+			Pueblo Nuevo
+			San Antonio
+			
+			San Lorenzo
+			Villa Dora
+			
+	Tolé		
+			
+		Tolé	
+			
+			Barniz
+			Caña Blanca
+			Cerro Yuca
+			Chame
+			El Común
+			Guabalá
+			Jacube
+			Las Filas, La Fila
+			Peñascal
+			Potrero Redondo
+			Quebrada Marta
+			Río Santiago
+			Tolé
+			
+		Bella Vista	
+			
+			Bella Vista
+			Boca de Río Viguí
+			Desembocadura de Ule
+			La Corocita
+			La Fila
+			Quebrada Arena
+			Quebrada Yegua
+			Santa Rosa
+			Tabasará
+			Tabasará Abajo
+			Ule
+			
+		Cerro Viejo	
+			
+			Alto de Cerro Viejo
+			Calabacito
+			Calderón
+			Cerro Brujo
+			Cerro Caballo
+			Cerro Galindo
+			Cerro Iglesia
+			Cerro Mangle
+			Cerro Pipa, Quebrada Escoba
+			Cerro Plata
+			Cerro Redondo
+			
+			Cerro Viejo 1
+			El Capacho
+			El Gallote
+			El Llano
+			El Viguí
+			La Isleta
+			La Trinidad
+			Llano Bonito
+			Los Castillo
+			Nancito
+			Nueri
+			Nueva Esperanza
+			Piedra Pintada
+			Quebrada Arena, Villa Arena
+			Quebrada Común
+			Quebrada Honda
+			San Miguel
+			Tabasará Abajo
+			
+		El Cristo	
+			
+			Bajo Corozal
+			Bajo de Cerro Negro
+			Bajo Hondo de Culebra
+			Bajo León
+			Bajo Marañón
+			Bajo Meregilda
+			Bella Vista
+			Cerro Bollo
+			Cerro Caña
+			Cerro Clarín
+			Cerro Gallote
+			Cerro La Huaca
+			Cerro Negro
+			Guayabal
+			La Bramona
+			Llano Culebra
+			Pedregosa
+			Quebrada Flecha
+			Tambor, Ruguarigot
+			
+		Justo Fidel Palacios	
+			
+			Algarrobo, Nomogudiesi
+			Alto Algarrobo
+			Alto Guayabo, Miyaridi
+			Bajo Solís
+			Cerro Chuzo
+		Lajas de Tolé	
+			
+			Alto de Macho
+			Caña Blanca de Guabino
+			Chacarero
+			El Guabino
+			El Hato de Guabino
+			Jibira
+			La Albina
+			La Gorgona
+			Lajas de Tolé
+			Pedregoso
+			Quebrada Lajas
+			Santa Rosa
+			
+		Potrero de Caña	
+			
+			Alto Caballero
+			Buenos Aires
+			Cerro Armado
+			Cerro Caballo
+			Cerro Sombrero
+			Cerro Vaca
+			Guayabal
+			Potrero de Caña
+			Quebrada Caña
+			Quebrada Escoba
+			Quebrada Loro
+			
+		Quebrada de Piedra	
+			
+			Alto de Panamá
+			Alto Laguna
+			Camarón
+			El Morro Negrito, Morro Negro
+			Isla Silva Adentro
+			La Arena
+			La Popa
+			Mamey
+			Nata de Tolé
+			Pelón
+			Quebrada de Piedra
+			Tinta Abajo
+			Tinta Arriba
+			Tres Hermanos
+			Yurre
+			
+		Veladero	
+			
+			Alto La Arena
+			Bella Vista
+			
+			Buenos Aires, Cherro Chato
+			Cabecera de Quebrada Grande
+			El Retiro
+			Llano Limón
+			Monte Silencio
+			Veladero
+			
+	Tierras Altas		
+			
+		Volcán	
+			
+			Barriles
+			Bella Vista
+			Bijao
+			Brazos de Gariché
+			Cerro Gordo
+			Finca Ceba
+			Finca Guardia
+			La Laguna
+			Laguna Chica
+			Las Lagunas
+			Las Vueltas
+			Los Pinos
+			Mague
+			Mirador
+			Ojo de Agua
+			Quebrada Arena
+			Quebrada de Agua
+			Volcán
+			
+		Cerro Punta	
+			
+			Alto de Guadalupe
+			Alto Pineda
+			Bajo Grande
+			Barrio Guadalupe
+			Cerro Punta
+			El Desierto
+			Entre Ríos
+			La Amenaza
+			La Filipina
+			La Garita
+			Las Cumbres
+			Las Mirandas, Alto Las Nubes
+			Las Nubes
+			Los González, Vietnam
+			Monte Azul, La Montaña
+			Nueva Suiza
+		Cuesta de Piedra	
+			
+			Bijao
+			Buena Vista Arriba
+			Cuesta de Piedra
+			Escarrea
+			La Planta
+			Los Pinos
+			Macho de Monte
+			Quebrada de Agua
+			
+		Nueva California	
+			
+			Agua Blanca
+			Alto Tisingal
+			Barriles
+			Colorado
+			Cotito
+			Cotito 2
+			Finca Carmen Estate Coffe
+			Finca El Palomar
+			Finca La Florentina
+			Finca Los Cantares
+			Finca Paulo Vargas
+			Finca San Isidro
+			La Fila de Caisán
+			Los Pozos
+			Mague
+			Palo Santo
+			Silla de Pando
+			Tisingal
+			Volcán
+			
+		Paso Ancho	
+			
+			Alto Los Guerras
+			Alto Los Rubios
+			Alto Tribaldo
+			Bambito
+			Bella Vista
+			Finca Eureca
+			La Amenaza
+			Nueva Suiza
+			Nuevo Bambito
+			Paso Ancho
+

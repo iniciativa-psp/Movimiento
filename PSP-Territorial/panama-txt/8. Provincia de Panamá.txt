@@ -1,0 +1,950 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Panamá			
+			
+	Balboa		
+			
+		San Miguel	
+			
+			Casaya
+			Rancho Grande
+			San Miguel
+			Sirena
+			Viveros
+			
+		La Ensenada	
+			
+			La Ensenada
+			
+		La Esmeralda	
+			
+			La Esmeralda
+			Playa Gorgona
+			
+		La Guinea	
+			
+			La Guinea
+			
+		Pedro González	
+			
+			Pearl Island
+			Pedro González
+			
+		Saboga	
+			
+			Contadora
+			El Encanto Bay
+			Isla Pacheca
+			Saboga
+			
+	Chepo		
+			
+		Chepo	
+			
+			Alto de Cerro Carbunco
+			Alto del Lago
+			Alto del Nance
+			Altos de Chichebre
+			Altos de Espavé
+			Altos de La Gloria
+			Altos de Tanara
+			Altos del Bayano
+			Asentamiento Superación Campesina
+			
+			Barriada Microproductores de Tanara
+			Barriada Santa Eduviges
+			Bollo Adentro
+			Bonete
+			Bosques de Tanara
+			Brisas de Bajo Chichebre
+			Brisas del Naranjal
+			Cabecera de Culebra
+			Calobre Abajo
+			Calobre Arriba
+			Calobre Piedra
+			Cerro Carbunco
+			Chepo
+			Chichebre
+			Colinas del Naranjal
+			Coquira
+			Cuarenta Bollos
+			Culebra Adentro
+			Culebra Afuera
+			Dos Brazos
+			Duermisolo, Escobal
+			El Tigre Abajo
+			El Tigre Arriba
+			Escobal
+			Espavé
+			Espavé 2
+			Finca Las Colinas
+			Garrapata
+			Guarumal
+			Juan Bañón
+			La Bendición de Tanara
+			La Veta
+			Las Lajitas
+			Limonada Abajo
+			Limonada Arriba
+			Malambo
+			Naranjal
+			Nuevo Jesús María
+			Platanares
+			Praderas del Valle
+			Pueblo Nuevo
+			Puerto Melo, Vía Melo
+			Quebrada Aguacate
+			Quintas de Tanara
+			Residencial Tanara
+			San Isidro
+			San Joaquín
+			San Juan de Dios
+			
+			San Judas
+			Seis Reales
+			Tanara
+			Tapagra
+			Tierra Prometida
+			Tranquilla
+			Trapiche Abajo
+			Trapiche Arriba
+			Unión de Azuero
+			Unión Palmeña
+			Unión Tableña
+			Urbanización La Floresta
+			Valle Próspero
+			Viejo Jesús María
+			Villa China
+			Villa Monte
+			Villa Yazmín
+			Villas de Tanara
+			Vía Panamericana
+			
+		Cañita	
+			
+			Alto del Ciclo
+			Barriada 20 de Diciembre
+			Barriada Nuevo Horizonte
+			Brazos
+			Brazos de Playita
+			Buenos Aires
+			Cabecera del Río Paja
+			Campo Alegre
+			Cañita
+			Cerillos
+			Chulungantí
+			El Ceibo
+			El Silencio
+			Flor de Laguna
+			Guayabal
+			Jenené
+			La Florida
+			Los Guayacanes
+			Nuevo Mundo
+			Playita
+			Quebrada Chicho
+			Quebrada del Medio
+			Residencial Cañita
+			Rompe Olas
+			Río Paja
+			Río Piedra
+			
+			San Francisco
+			Tagua
+			Viejo Pedro, Akuasibudian
+			
+		Chepillo	
+			
+			Chepillo
+			
+		El Llano	
+			
+			Agua Buena 1
+			Altos del Naranjo, Canchigüa
+			Bajo Bonito
+			Bejuco Real
+			Bejuco Real Arriba
+			Betel
+			Bolaños
+			Buena Vista
+			Cabecera de Río Pava
+			Calobre Arriba
+			Calobre Ciénega Abajo
+			Calobre Ciénega Arriba
+			Calobre Piedra
+			Chimborazo
+			Cuarenta Bollos
+			Cuarenta Bollos Adentro
+			Don Diego, San Judas Tadeo
+			El Cedro, El Ceibo
+			El Cruce de Majecito
+			El Gorgas
+			El Llano
+			El Silencio
+			Flor Bonita
+			Isla Irhe, Isla Guayabo
+			Isla Pato
+			Juan Pelón U Hondura
+			La Loma
+			La Nicora
+			La Palma
+			Las Lajitas
+			Las Praderas de Llano Cartí
+			Llano Cartí
+			Loma del Naranjo
+			Los Planes
+			Majecito Arriba
+			Membrillal, Membrillal Arriba
+			Mongora Torró
+			Nueva York
+			
+			Palmas Bellas
+			Palo Seco, La Pista
+			Piedras Blancas
+			Plan Bonito
+			Platanares
+			Pueblo Nuevo 1
+			Pueblo Nuevo 2
+			Quebrada Bonita
+			Río Playita, Río Pavita
+			Río Polín
+			Río Seco 3
+			Río Tigre Arriba
+			Río Tigre, Río Tigre Abajo
+			San Agustín, Canchigüa
+			Soledad
+			Tardecita Alegre
+			Terable Arriba
+			Terable, La Puente
+			Tigrón
+			Tres Quebradas
+			Uni
+			Unicito
+			Urbanización Altos de El Llano
+			Valle Rico, Vallerriquito
+			Villa Rica
+			Vista Alegre
+			Zanja de Macho
+			
+		Las Margaritas	
+			
+			Bonete
+			Camarón
+			Caracol
+			Cerrillo, Paragüito
+			Chararé
+			Corpus Christi Abajo
+			Corpus Christi Arriba
+			El Guabo, Los Guabos
+			El Madroño
+			El Salto, Los Saltos
+			El Tecal
+			El Valle de Madroño
+			Gaspar Sabana
+			La Tronosa
+			La Zahína
+			Las Margaritas
+			Mamoní Abajo
+			Mamoní Arriba
+			
+			Quebrada Bonita
+			Real del Gato
+			Río Bonito
+			Río Indio
+			San José de Madroño
+			San Lázaro
+			Unión Santeña
+			
+		Santa Cruz de Chinina	
+			
+			Bajo Bonito
+			Bajo Limpio
+			Barbudera
+			Chinina Abajo, Pueblo Nuevo
+			Dos Bocas
+			El Jagüito
+			El Tigre Abajo
+			El Tigre Arriba
+			El Valle de La Unión
+			Ensenada Rica
+			Ensenada Rica Abajo
+			Ensenada Rica Arriba
+			La Cocinera
+			La Coquera, El Cerro
+			La Lajosa
+			La Pitoza
+			Lagarto
+			Lagarto Arriba
+			Manuel Antonio
+			Manuel Santos
+			Marchena Abajo
+			Marchena Arriba
+			Martinambo Abajo
+			Martinambo Arriba
+			Martinambo Medio
+			Playa Martín, Playa Martínez
+			Potrerillos
+			Pásiga Arriba
+			Quebrada El Macho
+			Quebrada Félix
+			Quebrada La Pita
+			Quebrada Seca 1
+			Río Nazareno Abajo
+			Río Nazareno Arriba
+			Río Nazareno, La Placita
+			Río Sereno Arriba
+			Río Zaíno, Patio Bonito
+			San José
+			
+			Santa Ana, Los Vegas
+			Santa Fe
+			Soriano
+			Torín
+			Tranca
+			Tres Brazos
+			Unión Herrerana
+			
+		Comarca Kuna de Madungandí	
+			
+			Aguas Claras, Kikagandi
+			Akuayala, Puente Bayano
+			Asentamiento Campesino El Milagro
+			Cañazas, Nargandi
+			Curtí
+			Diwarsicua, Chicula Chicula
+			Ipetí Kuna, Ibegadi
+			Isla Gavilana, Ibesuid
+			La Trocha de Tortí Abajo
+			Loma Bonita Abajo, Los Bajos
+			Naca u Ogobnawila
+			Pintupu, Iguayala
+			Piria, Biria
+			Puerto Limón, Narasgandi
+			Río Cañazas, Akanwila
+			Río Diablo, Aidirgandi
+			Río Piragua, Arguidi, Tabardí
+			Río Rubén, Quidmorgandi
+			Río Sábalo, Kuinubdi
+			Usnundi, Kapandi
+			Viejo Pedro, Akuasibudian
+			Wacuco, Dianwardumad
+			Wagandí
+			
+		Tortí	
+			
+			Agua Buena
+			Agua Fría
+			Agua Fría 1
+			Aguas Azules
+			Alcatriz
+			Ambroya
+			Boca de Majé
+			Brazo de Piriatí
+			Cabecera de Río Pava
+			Catrigandí
+			Catrigandí Arriba
+			Cañazas
+			
+			Cerro Plano
+			Cerro Vigía, Tres Huecos
+			Charco Rico
+			Clarita
+			Colonia Santeña
+			Cueva del Zorro
+			Curticito
+			Curticito Arriba
+			Curtí
+			El desierto
+			El Valle de Majé
+			Guágara
+			Higueronal
+			Higueronal Arriba, Cabecera de Higueronal
+			Higueronal Centro
+			Homenaje
+			Hueco Frío
+			Hueco Frío 1
+			Ibir, Quebrada Ibir
+			Ipetí Arriba, Peña Blanca
+			Ipetí Chocó, Ipetí Emberá
+			Ipetí Colono
+			La ocho
+			La Zumbona
+			Loma Bonita
+			Nazareno
+			Nuevo Tonosí
+			Palmas Bellas
+			Palmita
+			Partí Arriba
+			Partí, Río Partí
+			Pedregoso
+			Peñas Blancas
+			Pigandicito
+			Pigandí Arriba
+			Pigandí Grande
+			Piriatí Arriba
+			Piriatí Colono
+			Piriatí, Piriatí Emberá
+			Playa Chuzo
+			Quebrada Cali
+			Quebrada de Piedra
+			Quebrada del Macho
+			Quebrada Fría
+			Quebrada Grande
+			Quebrada Grande Arriba
+			Quebrada La Palma
+			
+			Quebrada Laja
+			Quebrada Venado
+			Quebrada Verde
+			Quijada de Los Puercos, Las Colinas
+			Renacimiento
+			Río Cucuyal
+			Río Indio
+			Río Majé, Majé Cordillera
+			Río Nilo
+			Río Nuevo
+			Río Rubén, Quidmorgandi
+			Río Seco Arriba 1
+			Río Seco 1
+			Río Sereno
+			Río Sereno 2
+			San Francisco Piriatí
+			San José de Loma Bonita
+			Santa Cruz
+			Santa Librada
+			Segundo Brazo de Piriatí
+			Tortí
+			Tortí Abajo
+			Tortí Arriba, San José
+			Unión Emberá
+			Urtí
+			Villa del Carmen, La Playita
+			Wacuco, Dianwardumad
+			
+	Chimán		
+			
+		Chimán	
+			
+			Aguadilla
+			Cerro Plano
+			Charco Mero
+			Chimán
+			Francisco Ruíz
+			Licenciado
+			Majagual
+			Majé, Barriada Buenos Aires
+			Miramar, Cerro Humo
+			Playa Colorada
+			San José
+			Santa Rita
+			
+		Brujas	
+			
+			Brujas
+			El Totumo
+			
+			La Espigadilla
+			Marco, Río Marco
+			Moreno, Villarreal
+			Pedro Lauriano
+			Pilones
+			Río Jesús
+			San Buenaventura
+			Trinidacito
+			Trinidad
+			Unión Veragüense, Colonia Veragüense
+			
+		Gonzalo Vásquez	
+			
+			El Totumo
+			Gonzalo Vásquez
+			La Punta, Pueblo Nuevo
+			Playa Blanca
+			Playa Colorada, Boca de Jesús
+			Unión Ocueña
+			
+		Pásiga	
+			
+			Cabecera de La Mina
+			Cabecera de La Pita
+			El Jagüito
+			El Pedregoso
+			El Pedregoso Arriba
+			La Maestra
+			La Maestra Arriba
+			La Pita
+			Miraflores
+			Oquendo
+			Pásiga
+			Quebrada del Medio
+			Quebrada del Medio Arriba
+			Río Las Minas
+			Río Platanares
+			
+		Unión Santeña	
+			
+			Corotú, Corotú Abajo
+			El Hato
+			Francisco Ruíz
+			Guagaral
+			Las Lomas
+			Quebrada Grande 2
+			Río Hondo
+			Unión Santeña
+			
+			Unión Santeña Abajo
+			Unión Santeña Arriba
+			
+	Panamá		
+			
+		San Felipe	
+			
+			San Felipe
+			
+		El Chorrillo	
+			
+			El Chorrillo
+			
+		Santa Ana	
+			
+			Santa Ana
+			
+		La Exposición, Calidonia	
+			
+			Calidonia, La Exposición
+			
+		Curundú	
+			
+			Curundú
+			
+		Betania	
+			
+			Betania
+			Dos Mares
+			Edison Park
+			Miraflores
+			Santa María
+			Urbanización Condado del Rey
+			Villa de Las Fuentes
+			
+		Bella Vista	
+			
+			Bella Vista
+			
+		Pueblo Nuevo	
+			
+			Pueblo Nuevo
+			
+		San Francisco	
+			
+			Carrasquilla
+			Paitilla
+			Punta Pacífica
+			San Francisco
+		Parque Lefevre	
+			
+			Parque Lefevre
+			
+		Río Abajo	
+			
+			Río Abajo
+			
+		Juan Díaz	
+			
+			Costa del Este
+			Juan Díaz
+			Urbanización Santa María
+			
+		Pedregal	
+			
+			Ciudad Miami
+			El Mirador
+			El Naranjal
+			La Bendición
+			Pedregal
+			Rana de Oro
+			San Martín
+			San Joaquín
+			Santa Cruz
+			Villalobos
+			
+		Ancón	
+			
+			Altos de Villa Cárdenas
+			Ancón
+			Barriada Gunguiler Nega
+			Barriada Kunanega
+			Barriada La Paz
+			Calle 50
+			Clayton
+			Colinas del Progreso
+			El Valle de San Francisco
+			Gamboa
+			La Bendición
+			La Cotorra
+			La Invasión
+			La Isla
+			Mata Redonda
+			Mocambo Abajo
+			Mocambo Arriba
+			Paraíso
+			Pedro Miguel
+			Urbanización Condado del Rey
+			Urbanización Génesis
+			Villa Nueva Esperanza
+		Chilibre	
+			
+			Alcalde Díaz Rural
+			Altos de Ñajú
+			Cerro Bachiche
+			Chilibre Centro
+			Ciudad Atenas
+			El Triángulo, El Piñal
+			El Ñajú Adentro
+			El Ñajú, Sabanas de Chilibre
+			La Cabima Arriba, El Cedro
+			Las Cumbres
+			Manteca
+			Quebrada El Gallo
+			Quebrada Ñajú
+			Sabanas de Chilibre
+			San Vicente
+			Villa Unida
+			
+		Las Cumbres	
+			
+			Altos de Las Nubes
+			Las Cumbres
+			Manteca
+			Mocambo Arriba
+			
+		Pacora	
+			
+			Altos de Pacora
+			Altos de Tataré
+			Altos de Utivé
+			Altos del Tecal
+			Barriada Arnulfo Arias Madrid
+			Barriada Caminos de Omar
+			Barriada Los Ángeles
+			Barriada San Juan
+			Betagrama
+			Brisas de Tataré
+			Cabra 1
+			Cerro Azul
+			Ciudad de Las Américas
+			Ciudad Santa Fe
+			Colinas de Tataré
+			Condado Real Rural
+			El Bajo
+			Entrada de Los Lotes
+			La Boca de Tocumen
+			La Cabanga
+			La Cabaña
+			La Estancia
+			
+			La Mesa Arriba, La China
+			La Piñuelita
+			La Quebradita de Cerro Azul
+			Las Cañazas
+			Llano de Cerro Azul
+			Los Bravos de Utivé
+			Los Lotes
+			Malengue
+			Nuevo Sitio
+			Pacora
+			Pueblo Nuevo
+			Puertas de Galicia
+			Residencial El Trébol
+			Residencial Los Jardines del Este
+			Residencial Los Portales
+			Residencial Santa Rita
+			Sacramento
+			San Rafael
+			Santa Clara
+			Tres Brazos
+			Urbanización Alto de Colinas Campestres
+			Urbanización Condado Real
+			Urbanización Santa Clara
+			Utivé
+			
+		San Martín	
+			
+			Bajo El Piro
+			Cabobré de San Martín
+			Carriazo
+			Caña Blanca
+			Cerro El Tigre
+			El Tigre
+			El Valle de San Martín
+			Juan Gil
+			La Batata
+			La Chapa
+			La Iguana
+			La Mesa
+			La Mesa Arriba, La China
+			La Zaína
+			Las Vegas
+			Loma Bonita
+			Pueblo Nuevo
+			Pueblo Nuevo 1
+			Río Indio
+			San Miguel
+			
+			Tres Brazos
+			Zanja de Arena
+			
+		Tocumen	
+			
+			Caraño
+			Finca Domingo Díaz
+			Finca Mario Galindo
+			Finca Ricardo Arosemena
+			Finca Río Lago
+			Nuevo Belén
+			Tocumen
+			
+		Las Mañanitas	
+			
+			Barriada Génesis
+			Barriada Los Nogales
+			Barriada Santa Mónica
+			Ciudad Jardín Las Mañanitas
+			El Valle de La Colorada
+			La Colorada
+			Residencial Las Américas
+			Río Tapia Arriba
+			Urbanización Parque Real
+			Villa Daniela
+			
+		24 de Diciembre	
+			
+			Alto de Cabuya, Cabuyita
+			Altos de Cerro Azul
+			Altos de Utivé
+			Barriada 24 de Diciembre
+			Barriada Rubén Dario Paredes
+			Buena Vista 1
+			Cerro Azul
+			El Lago
+			Felipillo, Flor de Caña
+			Finca Felipillo
+			Las Nubes
+			Las Vistas
+			Monte Rico
+			Nueva Esperanza
+			Pradera Azul
+			Praderas de Cerro Azul
+			Rancho Café
+			San Pedro
+			Urbanización Nuevo Tocumen
+			Villa Belén
+			Vista Hermosa
+		Alcalde Díaz	
+			
+			Alcalde Díaz
+			Bachiller, Parque Alegre
+			Ciudad del Lago
+			La Cabima
+			La Laguna, El Tecal
+			Las Cumbres
+			María Henríquez Rural
+			San Francisco de Padua, El Chungal
+			San Lorenzo
+			
+		Ernesto Córdoba Campos	
+			
+			Altos de Pedregal
+			Altos del Lirio
+			Ciudad del Lago
+			Gonzalillo
+			Las Cumbres
+			Paseo del Norte
+			Urbanización Brisas del Golf Norte
+			
+		Caimitillo	
+			
+			Agua Fría
+			Altos de Cerro Azul
+			Altos de La Albina
+			Altos de Utivé
+			Altos del Vigía
+			Ancore Purú
+			Boquerón Abajo
+			Cabecera de Quebrada Tranquilla
+			Cabecera de Río Piedra
+			Caimitillo Centro
+			Calle del Idaan
+			Calle del Idaan 2
+			Calzada Larga
+			Candelaria Arriba
+			Cerro Bachiche
+			Ciudad El Amanecer
+			Comunidad Emberá, Dos Sesenta
+			Cumbre Azul
+			El Pantanal
+			El Triángulo, El Piñal
+			Emberá Purú
+			Filo de Mamey
+			La Bonga, 260
+			La Laguna, El Tecal
+			La Palmita
+			La Policía
+			
+			La Puente
+			La Puente Arriba
+			La Reforma
+			La Venta
+			Las Albinas
+			Las Praderas de San Lorenzo
+			Llano Bonito
+			Los Portales
+			Mauro, Santa Librada
+			Nuevo Caimitillo
+			Paraná Purú, Pueblo Maquenque
+			Peluca
+			Piñal del Río
+			Purú Biakirú, Pueblo Bonito
+			Quebrada Ancha 2
+			Quebrada Benítez
+			Quebrada Cucharita
+			Quebrada Cándido
+			Quebrada Fea
+			Quebrada Mono Congo
+			Quebrada Oscura
+			Quebrada Peña Blanca
+			Quebrada San Antonio
+			Quebrada San Francisco
+			Quebrada Tranquilla
+			Río Indio
+			San Cristóbal
+			San Juan de Pequení
+			Santa Librada
+			Tusipono
+			Urbanización San Lorenzo
+			Victoriano Lorenzo
+			
+		Las Garzas	
+			
+			Alto del Nance
+			Barriada Mireya
+			Buena Vista 2
+			El Guarumal, Chumical
+			El Hato de San José
+			Hugo Henríquez
+			La Cabanga
+			Las Garzas
+			Las Vegas
+			Los Lagos
+			Mandinga
+			Nueva Israel
+			Oderchico
+			
+			Paso Blanco
+			Paso Blanco 2
+			Residencial La Foresta
+			Río Chico
+			Río Chico 2
+			Río Chico Urbano
+			San Diego
+			
+		Don Bosco	
+			
+			Altos de Las Acacias
+			Costa Linda
+			Costa Sur
+			Juan Díaz
+			Residencial Versalles
+			Urbanización Don Bosco
+			Urbanización Los Robles
+			
+	San Miguelito		
+			
+		Amelia Denis de Icaza	
+			
+			Altos de Panamá
+			Altos de Santamaría
+			Horizontes
+			Los Andes 1
+			Pan de Azúcar
+			Urbanización Condado del Rey
+			Urbanización Limajo
+			
+		Belisario Porras	
+			
+			Cerro Batea
+			Don Bosco
+			Mallorca Park
+			Pan de Azúcar
+			Samaria
+			San Isidro
+			
+		José Domingo Espinar	
+			
+			Nuevo Belén
+			Urbanización Colinas del Golf
+			Urbanización Colinas Dorasol
+			Urbanización El Crisol
+			Urbanización La Pulida
+			Villa Guadalupe
+			Villa Lucre
+		Mateo Iturralde	
+			
+			Pan de Azúcar
+			Paraíso
+			Villa Guadalupe
+			
+		Victoriano Lorenzo	
+			
+			Monte Oscuro
+			Pan de Azúcar
+			Urbanización Industrial
+			
+		Arnulfo Arias	
+			
+			Altos del Valle de Urracá
+			Barriada La Felicidad
+			Barriada Torrijos Carter
+			Club de Golf
+			Golf Gardens
+			Nuevo Belén
+			Urbanización Colinas Dorasol
+			
+		Belisario Frías	
+			
+			Altos del Valle de Urracá
+			Barriada Torrijos Carter
+			Cerro Batea
+			San Isidro
+			Santa Marta
+			
+		Omar Torrijos	
+			
+			Horizontes
+			Las Cumbres
+			San Isidro
+			Sonsonate
+			Urbanización Limajo
+			Urbanización Los Andes 2
+			
+		Rufina Alfaro	
+			
+			Ciudad Jardín San Antonio
+			Club de Golf
+			Urbanización Brisas del Golf
+			Urbanización Cerro Viento
+			
+	Taboga		
+			
+		Taboga	
+			
+			Taboga
+		Otoque Occidente	
+			
+			Otoque Occidente
+			
+		Otoque Oriente	
+			
+			Otoque Oriente
+			
+

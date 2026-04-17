@@ -1,0 +1,1077 @@
+﻿Provincia	 Distrito	Corregimiento	Comunidad
+			
+Colón			
+			
+	Colón		
+			
+		Barrio Norte	
+			
+			Barrio Norte
+			
+		Barrio Sur	
+			
+			Barrio Sur
+			
+		Buena Vista	
+			
+			Alto de La Gloria 2
+			Alto La Gloria
+			Altos de Divisa
+			Barriada Nueva Esperanza 1
+			Barriada Nueva Esperanza 2
+			Buena Vista
+			Campo Alegre
+			Dos Ríos
+			El Bosque
+			El Giral
+			El Valle del Giral
+			Frijolito, Frijolito Abajo
+			La Bonga
+			La Coclesana
+			Las Colinas, Las Amazonas
+			Las Tablitas
+			Los Lotes de Buena Vista, Brisas de Peñas Blancas
+			Los Playones
+			
+			Nuevo Veraguas, La Escandalosa
+			Peñas Blancas
+			Pueblo Grande 2
+			Pueblo Grande, Entrada de Sardinilla
+			Quebrada Ancha
+			Quebrada Bonita
+			Quebrada Bonita Adentro
+			Quebrada Bonita Arriba
+			Rincón Caliente
+			Río Duque
+			Río Gatún
+			Sardinilla
+			
+		Cativá	
+			
+			Cativá
+			Costa de Oro
+			El Laguito
+			La Represa
+			Las Colinas
+			
+		Ciricito	
+			
+			Arañagatal
+			Caña Brava
+			Caña Brava 1
+			Caño de Ciricito
+			Caño de Viviano
+			Caño Quebrado Arriba
+			Chorrillo
+			Ciricito
+			Cuipo
+			El Congal
+			El Pepino
+			Frente de Ciricito
+			La Cauchera
+			La Humildad
+			Los Cedros del Lago
+			Los Chorros de Cirí Grande
+			Los Laguitos
+			Marañoncito
+			Nueva América
+			Nuevo Ciricito
+			Nuevo Porvenir
+			Pablón
+			Palmira
+			Trinidad de Los Lagos
+		Cristóbal	
+			
+			Alfagia
+			Arañagatal
+			Barriada Juan Demóstenes Arosemena, El Veinte
+			Barriada San Andrés
+			Barriada San José
+			Boquerón Abajo
+			Campana
+			Campo Alegre
+			Cartagenita
+			Caña Brava
+			Caño de Viviano
+			Caño Victorio
+			Chorrillo
+			Ciudad Arco Iris
+			Cristóbal
+			Cuipo
+			El Limón
+			El Valle de Santa Cruz
+			Ella Purú Emberá
+			Emberá Cimarrón Paraíso
+			Escobal
+			Flor del Café
+			Frente de Ciricito
+			Fuerte Sherman
+			Gamboa
+			Gatún, Río Gatún
+			Granja Nueva Jerusalén
+			Guayabalito
+			Isla Calvo
+			Isla Marañón
+			Isla Verde
+			La Estrella
+			La Gallinita
+			La Humildad
+			La Treintaicinco, Batería 35
+			La Ullama
+			Loma Bracho
+			Loma Flores
+			Los Cedros del Lago
+			Los Chorros de Cirí Grande
+			Los Laguitos
+			Madroñal
+			Margarita
+			Nepono Purú Emberá
+			Nueva Italia
+			Nueva Providencia
+			Nuevo Vigía
+			
+			Pablón
+			Piña
+			Pueblo Viejo
+			Punta La Mora
+			Quebrada Domingo
+			Quebrada Pato
+			Quebrada Plata 2
+			Residencial José Dominador Bazán
+			Río Piña
+			Salamanca
+			Salamanquita
+			San Antonio
+			Santa Rosa
+			Tanque Negro
+			Trapichito
+			Vino Tinto
+			
+		Escobal	
+			
+			Campo Alegre
+			Caño Quebrado
+			El Arriero
+			El Bracito
+			El Portachuelo
+			Escobal
+			La Escoba
+			La Estrella
+			La Humildad
+			La Ullama
+			Las Cruces
+			Los Negros
+			Quebraón
+			Trinidad de Los Lagos
+			Vino Tinto
+			
+		Limón	
+			
+			Agua Sucia
+			Aguas Claras
+			Alfagia
+			Altos de La Bandera
+			Bella Vista
+			Cabecera de Quebrada Pato
+			Cartagenita
+			Cerro Azul
+			El Limón
+			El Valle de Quebrada Ancha
+			Emberá Cimarrón Paraiso
+			
+			Emberá Querá
+			Estación Ciento
+			Gatún, Río Gatún
+			Gusanillo
+			Quebrada Ancha
+			Quebrada Ancha Arriba
+			Quebrada Grande
+			Quebrada Mamey
+			Quebrada Norberto
+			Quebrada Plata 1
+			Río del Jobo
+			Salud
+			Tres Quebradas, El Silencio
+			Villa Limón
+			
+		Nueva Providencia	
+			
+			Altos de Guayacanes
+			Caracolín
+			La Barriada de Níspero
+			Las Acacias
+			Los Pinos
+			Nueva Italia
+			Nueva Providencia
+			Río Rita Arriba, Río Rita Norte
+			Río Rita, Río Rita Sur
+			Villa Linda
+			
+		Puerto Pilón	
+			
+			Aguas Claras 2, Aguas Claras Arriba
+			Alto El Chorro, Ella Drue Emberá
+			Puerto Pilón
+			Quebrada Mocho, Quebrada La Pava
+			Río Alejandro
+			Río Gatún Grande
+			Río Gatún Sector 1
+			Río Viejo
+			Santa Rita Arriba
+			Sierra Llorona
+			Urbanización Las Perlas de Pilón
+			Villa Alondra
+			Villa Catalina
+			
+		Sabanitas	
+			
+			Barriada San Andrés
+			Barriada San José
+			
+			Campeón
+			Complejo Habitacional de Nueva Providencia
+			La Planta de Agua
+			Puerto El Caño
+			Quebrada López
+			Río Rita Arriba, Río Rita Norte
+			Sabanitas
+			Villa Catalina
+			
+		Salamanca	
+			
+			Boquerón Abajo
+			Boquerón Arriba
+			Cabecera de Gatuncillo
+			Corozal
+			El Bajo
+			El Valle de Santa Cruz
+			Gatuncillo Arriba
+			La Bandera
+			Los Planes
+			Nuevo Ocú
+			Nuevo Paraíso
+			Nuevo San José
+			Pueblo Viejo
+			Río Gatún, Bonga
+			Salamanca
+			Salamanquita
+			Santa Librada
+			Santo Domingo
+			Sardinilla
+			Trapichito
+			
+		San Juan	
+			
+			Barriada Juan Demóstenes Arosemena, El Veinte
+			Campana
+			El Tecal
+			El Valle de La Unión
+			Entrada de Nuevo San Juan
+			Gatuncillo
+			Isla Verde
+			Madroñal
+			Nuevo Paraíso
+			Nuevo San Juan
+			Nuevo Vigía
+			Nuevo Vigía 2
+			
+			Quebrada Ancha
+			Sardinilla
+			
+		Santa Rosa	
+			
+			Aguas Claras
+			El Giral
+			Frijolito, Frijolito Abajo
+			Guayabalito
+			Palenque
+			Santa Rosa
+			
+		Cristóbal Este	
+			
+			Altos de Los Lagos
+			Barriada Villa del Carmen
+			Cativá
+			Cielo Azul, Brisas del Caribe
+			La Represa
+			Margarita
+			Puerto Escondido, Urbanización El Esfuerzo
+			Residencial José D. Bazán
+			Urbanización El Lago, La Feria
+			Urbanización Villa del Caribe
+			
+	Chagres		
+			
+		Nuevo Chagres	
+			
+			Nuevo Chagres
+			Punta Grande, Punta del Medio
+			
+		Achiote	
+			
+			Achiote
+			Alto del Congal
+			Caño Quebrado
+			Dos Hermanas
+			El Campamento
+			El Gallo
+			Frijolito
+			La Chunga
+			La Escoba
+			La Gloria
+			La Pajosa
+			La Providencia
+			La Tagua
+			
+			Las Cuarenta y Cinco
+			Las Tablitas
+			Llano Bonito
+			Mono Macho
+			Paulino
+			Tagua Arriba
+			Tagualito
+			
+		El Guabo	
+			
+			Caña Blanca
+			Caño Quebrado Abajo
+			Caño Quebrado Arriba
+			Cerro Colina
+			Chorrillo
+			El Congal
+			El Guabo
+			El Pepino
+			El Plátano
+			Héctor Gallegos
+			La Gloria
+			La Primitiva
+			Las Escobas
+			Limón
+			Loma del Gasparillal
+			Los Fardales
+			Piedra Candela, Las Palmitas
+			Requenez
+			Río Lagarto
+			Santa Fe Abajo, 1
+			Santa Fe Arriba
+			Tagualito
+			
+		La Encantada	
+			
+			Alcarreto
+			Alto Membrillar
+			Batatilla
+			Bateal
+			Boca Chica, Nueva Esperanza
+			Cabecera del Jobito
+			Cerro Benito
+			Cerro Pelao
+			Charcón, El Charcón
+			Chilar
+			El Berraco
+			El Cabimo
+			El Cajón
+			
+			El Castillo, Quebrada Guarapo
+			El Congo
+			El Dominical
+			El Estillero
+			El Hinojal
+			El Jobito
+			El Jordan
+			El Limón 1
+			El Limón 2
+			El Micho
+			El Nancito
+			El Tigre
+			El Tornito
+			El Torno
+			El Árbol
+			Encantadita Arriba
+			La Candilera
+			La Conga
+			La Encantada
+			La Encantadita
+			La Jota
+			La Puerca
+			La Pólvora
+			La Tigra
+			La Tortuga
+			La Tusa
+			Lagartero, El Lagartero
+			Las Cruces
+			Las Delicias
+			Las Vigas
+			Loma Cucua
+			Los Cedros
+			Los Frailes
+			Los olivos
+			Los Santos
+			Los Uveros
+			Los Órganos
+			Nueva Arenosa
+			Nueva Unión
+			Palmira
+			Piedra Amarilla
+			Piedrota
+			Quebrada Bejuco
+			Quebrada Bonita
+			Quebrada Cruz
+			Quebrada El Pepito
+			Quebrada Los Cedros
+			Ranguillero
+			
+			Santa Rosa
+			Torna Guinea
+			Torno Abajo
+			Tres Hermanas
+			Ventura
+			
+		Palmas Bellas	
+			
+			Brillante
+			Cacao
+			Cardenillo
+			Cerro Tute
+			Clemencia
+			Dos Hermanas 1
+			Guafe
+			Jimenito
+			Jiménez
+			La Cuchara
+			La Gloria
+			La Loma
+			La Loma El Panamá
+			Las Margaritas
+			Limón
+			Los Algarrobos
+			Mateo
+			Mateo Arriba
+			Nuevo Paraíso
+			Palmas Bellas
+			Puerto Escondido
+			Requenez
+			
+		Piña	
+			
+			La Unión, Unión de Piña
+			Las Nubes
+			Piña
+			Pueblo Nuevo
+			Punta del Medio
+			Río Piña
+			Tarascón
+			
+		Salud	
+			
+			Alto Membrillar
+			Baila Monos
+			Bajo Bonito
+			Barnizal
+			Barnizal Arriba
+			
+			Caño Claro
+			Caño Claro Arriba
+			Cerro Barbacoa
+			El Brillante
+			El Congal
+			El Coquillo
+			El Espavé
+			El Estillero
+			El Guayacán
+			Entrada de Gandona
+			Escobalito
+			Gandona
+			Icacal
+			Icacal Arriba
+			Jimenito
+			Jiménez
+			La Encantadita
+			La Hicotea
+			Las Palmitas
+			Las Palmitas de Icacal, Las Palmeras
+			Los Camarones
+			Nueva Sevilla
+			Pixvae Arriba
+			Pixvae, El Pixvae
+			Pueblo Viejo
+			Punta Margarita
+			Quebrada León
+			Rancho Malo
+			Salsipuedes
+			Salud
+			Salud Arriba
+			
+	Donoso		
+			
+		Miguel de La Borda	
+			
+			Aguacate
+			Arriba del Chorro
+			Boca de Pixvae
+			Boquilla del Mango
+			Buenos Aires
+			Cabecera de Aguacate
+			Cabecera de Iguanerito
+			Cabecera de Iguanero
+			Cabecera de Majagual
+			Cabecera del Caño del Medio
+			Caleta Tanque
+			Camacho
+			
+			Camarón, Quebrada Camarón
+			Campo Alegre
+			Caño del Medio
+			Caño del Rey, Las Mercedes
+			Caño Rey Arriba
+			Cerro Mono
+			Cerro Mono 2
+			Cerro Pelado
+			Cirí
+			Cirí Arriba
+			Diego
+			Diego Arriba
+			El Bongo del Cruce
+			El Cedro 2, El Iguanero
+			El Cedro 1
+			El Cerillo, Quebrada El Cerillo
+			El Chorro de Caño del Rey
+			El Chorro 1
+			El Chorro 2
+			El Conejo, Boca del Conejo
+			El Copé
+			El Cruce, Loma del Saíno
+			El Escobalito
+			El Granadino
+			El Iguanerito
+			El Manguito
+			El Mono
+			El Nazaret, El Calabazo
+			El Quebraón, Caño del Rey
+			El Vallecito
+			Icaco
+			Iguanerito Arriba
+			La Compuerta
+			La Fortaleza
+			La Jejena
+			La Palma
+			La Pedregosa
+			La Tagüita
+			La Zaragoza
+			Las Lajas
+			Las Minas
+			Las Minas
+			Las Negritas
+			Las Tres Palmitas
+			Limón
+			Los Dos Brazos de Platanal
+			Los Farallones
+			Los Laureles 1
+			
+			Los Laureles 2
+			Los Naranjales de Iguanerito
+			Madre Vieja
+			Mansueto
+			Miguel de La Borda
+			Moja Pollo
+			Molejón
+			Mónica, Quebrada Mónica
+			Nueva Victoria
+			Nuevo Copé
+			Nuevo Cristóbal
+			Nuevo San Juan
+			Nuevo Veraguas
+			Platanal
+			Pontoncito
+			Pontón
+			Punta Platanal
+			Quebrada Grande
+			Quebrada La Coca
+			Quebrada La Tagua
+			Quebrada Los Tallos
+			Quebrada Venao
+			Quebradita
+			San José
+			Shalón, Llano Verde
+			Ñaño
+			
+		Coclé del Norte	
+			
+			Alto de Yangüez
+			Bateal
+			Belencillo
+			Belencito
+			Belorizar 1
+			Belén
+			Boca Chica
+			Boca de Escribano
+			Boca de La Encantada
+			Boca de Toabré
+			Boca de Tulú
+			Boca de U
+			Boca del Caño
+			Boca del Río Calzonez
+			Caletón
+			Caletón Arriba
+			Calle Larga
+			Camaroncito
+			Camarón
+			
+			Caño del Rey
+			Cañón
+			Cerro Pelado
+			Cerro Verde
+			Coclé del Norte
+			Cuatro Callecitas
+			Cuatro Calles
+			El Cedro
+			El Chorrillo
+			El Collao
+			El Desfiladero
+			El Guabo
+			El Madril
+			El Mogollón
+			El Ortigal
+			El Papayo
+			El Pontón
+			Gallina
+			Isleta
+			Isleta Rinconcito
+			La Boca de Río Claro
+			La Bruja, Quebrada La Viejita
+			La Conga
+			La Conga 1
+			La Encantada Arriba
+			La Engostura
+			La Gloria
+			La Macha
+			La Peña
+			La Sardinosa
+			La Sargenta
+			La Tabida
+			La Tomasa
+			Los Almendros
+			Los Castillos
+			Los Cedros
+			Los Cocos
+			Los Oros de Cuatro Calles
+			Los Tarros
+			Los Ticocles
+			Los Tres Caños
+			Manatí
+			Manguesal
+			Media Playa
+			Miguelito
+			Monte Virgen
+			Nuevo Edén
+			Nuevo Sinaí
+			
+			Palenque
+			Palmilla
+			Petaquilla
+			Petaquilla Nueva Lucha
+			Pinta Moso
+			Pueblo Viejo
+			Quebrada de Los Nietos
+			Quebrada Las Nicaragua
+			Quebrada Los Indios
+			Quebrada Tortuga
+			Río Caimito, Caimito
+			Río Hoja
+			Río Santiaguito
+			Sabanita Verde
+			San Lucas
+			San Luis
+			San Luis Cuatro Calles
+			San Pablo
+			San Roque
+			Santa Elena
+			Tres Brazos de Turbe
+			Tucuesito
+			Vista Alegre
+			
+		El Guásimo	
+			
+			Agua Buena
+			Agua Fresca
+			Alto de La Chasla
+			Alto de Tierra Buena
+			Alto El Panamá
+			Belorizar 1
+			Belorizar 2
+			Boca del Bateal
+			Boca del Caño Sucio
+			Boca del Congal
+			Boquilla de Escobal
+			Cabecera Congal
+			Cabecera de Caño Sin Pescao
+			Cabecera de Yunet
+			Cabecera del Jobo
+			Cacique
+			Camarón
+			Caña Blanca
+			Cerro de La Ullama
+			Cerro Miguel de Donoso
+			Cerro Viejo
+			Chiribatal, El Chivirital
+			
+			Chorrerita
+			El Ají
+			El Alto de Santa Cruz
+			El Barrero
+			El Bateal
+			El Bongo
+			El Caimito
+			El Castillo, Santa Lucía
+			El Caño del Guásimo
+			El Cutarro
+			El Estillero
+			El Guanábano
+			El Moreno
+			El Patriota
+			El Ponchoso
+			El Resumidero
+			El Rondón
+			El Torno del Jobo
+			Escobal Arriba
+			Guayacán
+			Guesital
+			Hinojal
+			Jobo Centro
+			La Baldomera
+			La Boca del Guásimo
+			La Coca
+			La Encantada Arriba
+			La Felicidad
+			La Hondura
+			La Mantequilla
+			La Miel de Donoso
+			La Palizada
+			La Palma Real
+			La Palmita de Donoso
+			La Pedregosa
+			La Peñalosa
+			La Raspadura
+			La Sardinosa
+			La Tagüita
+			La Teja
+			La Tortuga
+			Las Corrientes
+			Las Cruces
+			Las Maravillas
+			Las Margaritas
+			Las Mañanitas
+			Las Minas
+			Las Minas 2
+			
+			Llano Bonito
+			Loma Bonita
+			Loma Villa del Carmen
+			Los Bajitos
+			Los Blancos
+			Los Chorritos
+			Los Chorritos de Santa María
+			Los Elegidos
+			Miguelito
+			Miguelito Arriba
+			Nombre de Dios
+			Nueva Concepción
+			Nuevo Horizonte
+			Nuevo San José
+			Ortigal
+			Paso Carnal
+			Patriota Arriba
+			Quebrada Belorizar
+			Quebrada El Tulú
+			Quebrada Germán
+			Quebrada La Chasla
+			Quebrada La Tigra
+			Quebrada Mono
+			Río Claro
+			Sabanitas del Jobo
+			San José, El Cedro
+			Unión Coclesana
+			Valle Escobal
+			Villa del Carmen
+			
+		Gobea	
+			
+			Bambito
+			Cañafístulo
+			Caño Mamey
+			El Bongo
+			El Cacique
+			El Cedro
+			El Golfo
+			El Salto
+			Gobea
+			Gobeita 1
+			Gobeita 2
+			La Andriona
+			La Coca
+			La Hormigosa
+			La Raizosa
+			La Sardinosa
+			
+			La Vigía
+			Las Negritas, El Viejito
+			Las Tres Bocas
+			Limón
+			Loma Alta
+			Loma de Gobea
+			Los Brujos, Las Negritas
+			Los Espaveces
+			Piloncito
+			Pilón
+			Punta Gavilán
+			Quebrada Jagua
+			Quebrada Macho
+			Uvero
+			Viet Com
+			
+		Río Indio	
+			
+			Boca de Río Indio
+			Brisas del Mar
+			Castillito
+			Cerro Pelao
+			Charcón, El Charcón
+			Chilar
+			El Guásimo
+			El Iguano
+			El Jobito
+			El Papayo
+			Gandona
+			Guayabalito
+			La Candelaria
+			La Cañaza
+			La Cerdeña
+			La Jejena
+			La Montañuela
+			La Pólvora
+			Las Minas
+			Loma de Piloncito, Alto Piloncito
+			Mi Campo
+			Miraflores
+			Pilón
+			Sancuderito
+			Ventura
+	Portobelo		
+			
+		Portobelo	
+			
+			Al Otro Lado
+			Altos de La Cruz
+			Bajo Mesa
+			Buenaventura
+			Cambongo, Cabongo
+			Can Can
+			Cascajal Arriba
+			Cascajal, Dos Bocas
+			El Guanche
+			Emberá Errebache-Brindar
+			Iguanita
+			Isla del Padre
+			La Angosta, Playa La Angosta
+			La Escucha
+			María Soto
+			Mechi
+			Nuevo Tonosí
+			Peña Blanca, Peñas Blancas
+			Portobelo
+			Punta Gorda
+			Quebrada El Macho
+			Residencial San Marino
+			Río Claro
+			Río Piedra 1
+			San Agustín
+			Santa Elena
+			Valle de La Media Luna
+			
+		Cacique	
+			
+			Boca de La Quebrada
+			Cacique
+			Finca Tesoro Verde
+			Finca Yvaga
+			José Pobre, José del Mar
+			Majagual
+			More
+			More Arriba
+			Playa Blanca
+			Playa Blanca Arriba, Malena de Playa Blanca
+			Pueblo Nuevo
+			Villa del Cortezo
+		Puerto Lindo, Garrote	
+			
+			Ballestilla
+			Bartolito, Bahía Linton
+			Cacique
+			Cangüe
+			Isla Cabra
+			La Cucaracha
+			La Jagua
+			La Macana
+			Los Yunques
+			Puerto Lindo, Garrote
+			Puerto Nuevo
+			San Antonio
+			
+		Isla Grande	
+			
+			Caño Ciego
+			Isla Grande
+			Juan Gallego
+			La Guaira
+			Manzanillo
+			Quebrada Grande
+			San Antonio
+			
+		María Chiquita	
+			
+			Coco Solo, La Tablita
+			El Aserrío
+			El Portete
+			Las Mercedes, Villa Laura
+			Las Merceditas
+			María Chiquita
+			Playa Escondida
+			Río Brazo Chico
+			Río Madre Vieja
+			Río Manga Indio, Manga Indio
+			Río Piedra 2
+			Sierra Llorona
+			
+	Santa Isabel		
+			
+		Palenque	
+			
+			Palenque
+			Río Suave
+			Villarreal
+			Villarreal Adentro
+		Cuango	
+			
+			Cuango
+			Mocoso
+			Quebrada La Pita
+			Río San José
+			San Juan
+			San Juan Arriba
+			
+		Miramar	
+			
+			Boquilla del Hoyito
+			La Escondida
+			La Loma
+			La Piedrecita
+			Llerena
+			Miramar
+			San Antonio
+			Tamarindo
+			
+		Nombre de Dios	
+			
+			Agua Muerta
+			Albondiga, Río Sucio
+			Bajo Corral, Río Fato
+			Bella Vista
+			Brazo de Cedro
+			Caño Coco
+			Dos Bocas
+			Golondrino
+			Hoyo Mesa
+			La Huaca
+			La Línea
+			Las Guabas
+			Las Margaritas
+			Las Pavas
+			Los Pavos
+			Mariano
+			Mostrencosa
+			Nombre de Dios
+			Peña Blanca
+			Playa Alta
+			Quebrada Canoa
+			Quebrada La Prieta
+			Quebrada Perdí
+			Raicero
+			Río Indio
+			San Antonio
+			Viento Frío
+		Palmira	
+			
+			Brazo Ignacio
+			Diandí
+			Guágara
+			Las Malditas
+			Palmira
+			Rangallosa, El Progreso
+			Río Culebra
+			Río Negro
+			Río Tumba
+			
+		Playa Chiquita	
+			
+			Culebra, Boca de Culebra
+			Fute
+			Loma Bonita
+			Playa Chiquita
+			Puerto Pava
+			Quebrada El Totumo
+			Ronsuavo, Bajo Grande
+			Río Matanza
+			
+		Santa Isabel	
+			
+			Chitra
+			Las Malditas
+			Los Caletones
+			Santa Isabel
+			
+		Viento Frío	
+			
+			El Bongo
+			El Cruce
+			La Unión Santeña
+			Nuevo Flores, Saíno
+			Picy, El Marañón
+			Río Saíno
+			Viento Frío
+			
+	Omar Torrijos Herrera		
+			
+		San José del General	
+			
+			Alto de La Cruz
+			Canoa
+			Coclesito
+			Gallinero
+			Nazareno
+			Santa Lucía
+			Victoria
+		Nueva Esperanza	
+			
+			Botija
+			Broma
+			El Pifá
+			Nueva Esperanza
+			Nuevo Sinaí
+			Pera
+			San Benito
+			
+		San Juan de Turbe	
+			
+			Alto de La Cruz
+			Boca de Limón, Nuevo San José
+			Botija
+			Higuerones
+			Jamaica
+			La Ceiba
+			Las Quebradas de Turbe
+			Molejón, Los Molejones
+			Nazareno
+			San Benito
+			San Juan de Turbe
+			
+
