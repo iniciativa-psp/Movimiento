@@ -21,7 +21,12 @@ function psp2_terr_ajax_get(): void {
 
     $tipo      = sanitize_key( wp_unslash( $_POST['tipo']      ?? '' ) );
     $parent_id = sanitize_text_field( wp_unslash( $_POST['parent_id'] ?? '' ) );
-    $modo      = get_option( 'psp2_territorial_modo', 'bundled' );
+    $modo      = get_option( 'psp2_territorial_modo', 'pspv2_rest' );
+
+    // Auto-upgrade: when PSP Territorial V2 is active, always use pspv2_rest regardless of saved setting.
+    if ( psp2_terr_use_pspv2() ) {
+        $modo = 'pspv2_rest';
+    }
 
     if ( $modo === 'pspv2_rest' ) {
         // psp2_terr_from_pspv2() correctly handles the PSP V2 envelope {success,count,data}
