@@ -165,22 +165,33 @@ function psp2_territorial_shortcode( array $atts = [] ): string {
 }
 
 /**
- * Genera las <option> de países.
+ * Genera las <option> de países a partir de la lista ISO 3166-1 alpha-2 completa.
+ * Panamá (PA) aparece primero; Otro (ZZ) aparece al final.
+ * El resto se ordena alfabéticamente por nombre en español.
  */
 function psp2_terr_opciones_paises(): string {
-    $paises = [
-        'PA' => 'Panam&aacute;', 'US' => 'Estados Unidos', 'ES' => 'Espa&ntilde;a', 'MX' => 'M&eacute;xico',
-        'CO' => 'Colombia',      'VE' => 'Venezuela',       'CR' => 'Costa Rica',   'GT' => 'Guatemala',
-        'DO' => 'Rep. Dominicana','EC' => 'Ecuador',        'PE' => 'Per&uacute;',   'AR' => 'Argentina',
-        'CL' => 'Chile',         'CU' => 'Cuba',            'HN' => 'Honduras',     'NI' => 'Nicaragua',
-        'SV' => 'El Salvador',   'BO' => 'Bolivia',         'PY' => 'Paraguay',     'UY' => 'Uruguay',
-        'BR' => 'Brasil',        'CA' => 'Canad&aacute;',   'GB' => 'Reino Unido',  'FR' => 'Francia',
-        'DE' => 'Alemania',      'IT' => 'Italia',          'PT' => 'Portugal',     'NL' => 'Pa&iacute;ses Bajos',
-        'AU' => 'Australia',     'JP' => 'Jap&oacute;n',    'ZZ' => 'Otro',
-    ];
+    $todos = require PSP2_TERR_DIR . 'includes/countries.php';
+
+    // Separar PA (primero), ZZ (último) y el resto.
+    $panama = isset( $todos['PA'] ) ? [ 'PA' => $todos['PA'] ] : [];
+    $otro   = isset( $todos['ZZ'] ) ? [ 'ZZ' => $todos['ZZ'] ] : [];
+
+    $resto = $todos;
+    unset( $resto['PA'], $resto['ZZ'] );
+
+    // Ordenar el resto alfabéticamente por nombre.
+    uasort( $resto, function ( string $a, string $b ): int {
+        return strcmp(
+            mb_strtolower( $a, 'UTF-8' ),
+            mb_strtolower( $b, 'UTF-8' )
+        );
+    } );
+
+    $paises = $panama + $resto + $otro;
+
     $html = '';
     foreach ( $paises as $code => $name ) {
-        $html .= '<option value="' . esc_attr( $code ) . '">' . $name . '</option>';
+        $html .= '<option value="' . esc_attr( $code ) . '">' . esc_html( $name ) . '</option>';
     }
     return $html;
 }
