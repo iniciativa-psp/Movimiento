@@ -18,7 +18,7 @@ define( 'PSP2_TERR_URL', plugin_dir_url( __FILE__ ) );
 register_activation_hook( __FILE__, 'psp2_territorial_activate' );
 function psp2_territorial_activate(): void {
     add_option( 'psp2_territorial_json_url', '' );
-    add_option( 'psp2_territorial_modo',     'bundled' ); // 'bundled' | 'json_url' | 'pspv2_rest'
+    add_option( 'psp2_territorial_modo',     'pspv2_rest' ); // 'json_url' | 'pspv2_rest'
 }
 
 // ── Carga de includes ─────────────────────────────────────────────────────────
@@ -38,11 +38,24 @@ function psp2_territorial_enqueue(): void {
         '2.0.0',
         true
     );
+
+    // Smart effective mode: when PSP Territorial V2 is active always use pspv2_rest.
+    // Otherwise respect the saved setting (default pspv2_rest; map legacy 'bundled' → 'pspv2_rest').
+    if ( ! function_exists( 'is_plugin_active' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+    if ( is_plugin_active( 'psp-territorial-v2/psp-territorial-v2.php' ) ) {
+        $modo = 'pspv2_rest';
+    } else {
+        $saved = get_option( 'psp2_territorial_modo', 'pspv2_rest' );
+        $modo  = ( $saved === 'bundled' || $saved === '' ) ? 'pspv2_rest' : $saved;
+    }
+
     wp_localize_script( 'psp2-territorial', 'PSP2_TERR', [
         'ajax_url' => admin_url( 'admin-ajax.php' ),
         'nonce'    => wp_create_nonce( 'psp2_nonce' ),
         'json_url' => get_option( 'psp2_territorial_json_url', '' ),
-        'modo'     => get_option( 'psp2_territorial_modo', 'bundled' ),
+        'modo'     => $modo,
         'contact'  => 'admin@panamasinpobreza.org',
     ] );
 }
@@ -114,21 +127,23 @@ function psp2_territorial_shortcode( array $atts = [] ): string {
         </div>
 
         <div id="<?php echo $p; ?>row-corregimiento" style="display:none">
-          <label class="psp2-label">Corregimiento</label>
+          <label class="psp2-label">Corregimiento <?php if ( $req ) echo '<span class="psp2-req">*</span>'; ?></label>
           <select name="<?php echo $p; ?>corregimiento_id"
                   id="<?php echo $p; ?>psp2_corregimiento"
                   class="psp2-input psp2-terr-select"
+                  <?php echo $req; ?>
                   onchange="PSP2Terr.load(this,'comunidad','<?php echo $p; ?>')">
             <option value="">-- Selecciona corregimiento --</option>
           </select>
         </div>
 
         <div id="<?php echo $p; ?>row-comunidad" style="display:none">
-          <label class="psp2-label">Comunidad / Barrio</label>
+          <label class="psp2-label">Comunidad / Barrio <?php if ( $req ) echo '<span class="psp2-req">*</span>'; ?></label>
           <select name="<?php echo $p; ?>comunidad_id"
                   id="<?php echo $p; ?>psp2_comunidad"
-                  class="psp2-input psp2-terr-select">
-            <option value="">-- Selecciona (opcional) --</option>
+                  class="psp2-input psp2-terr-select"
+                  <?php echo $req; ?>>
+            <option value="">-- Selecciona comunidad --</option>
           </select>
         </div>
 
