@@ -26,6 +26,14 @@ function psp2_admin_menu(): void {
         'psp2-status',
         'psp2_status_page'
     );
+    add_submenu_page(
+        'psp-core2',
+        'Estado del Sistema (Legacy)',
+        '&#x1F4CB; Estado (Legacy)',
+        'manage_options',
+        'psp-status-legacy',
+        'psp2_legacy_status_page'
+    );
 }
 
 // ── Página de configuración ──────────────────────────────────────────────────
@@ -202,6 +210,121 @@ function psp2_status_page(): void {
         var d = await r.json();
         el.innerHTML = d.success
           ? '&#x2705; Conexi&oacute;n exitosa.'
+          : '&#x274C; Error: ' + (d.data && d.data.message ? d.data.message : 'Sin respuesta');
+      } catch(e) {
+        el.textContent = '&#x274C; Error de red: ' + e.message;
+      }
+    }
+    </script>
+    <?php
+}
+
+// ── Página de estado del sistema (Legacy) ────────────────────────────────────
+function psp2_legacy_status_page(): void {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'No autorizado', 'psp-core2' ) );
+    }
+
+    // Legacy slugs → display name + optional v2 equivalent slug
+    $plugins_legacy = [
+        'psp-core/psp-core.php'                     => [ 'PSP Core',          'psp-core2/psp-core2.php' ],
+        'psp-auth/psp-auth.php'                     => [ 'PSP Auth',          'psp-auth2/psp-auth2.php' ],
+        'psp-territorial/psp-territorial.php'       => [ 'PSP Territorial',   'psp-territorial2/psp-territorial2.php' ],
+        'psp-payments/psp-payments.php'             => [ 'PSP Payments',      'psp-payments2/psp-payments2.php' ],
+        'psp-membresias/psp-membresias.php'         => [ 'PSP Membresías',    'psp-membresias2/psp-membresias2.php' ],
+        'psp-productos/psp-productos.php'           => [ 'PSP Productos',     'psp-productos2/psp-productos2.php' ],
+        'psp-dashboard/psp-dashboard.php'           => [ 'PSP Dashboard',     'psp-dashboard2/psp-dashboard2.php' ],
+        'psp-ranking/psp-ranking.php'               => [ 'PSP Ranking',       'psp-ranking2/psp-ranking2.php' ],
+        'psp-referidos/psp-referidos.php'           => [ 'PSP Referidos',     'psp-referidos2/psp-referidos2.php' ],
+        'psp-erp/psp-erp.php'                       => [ 'PSP ERP',           'psp-erp2/psp-erp2.php' ],
+        'psp-facturacion/psp-facturacion.php'       => [ 'PSP Facturación',   'psp-facturacion2/psp-facturacion2.php' ],
+        'psp-whatsapp/psp-whatsapp.php'             => [ 'PSP WhatsApp',      'psp-whatsapp2/psp-whatsapp2.php' ],
+        'psp-notificaciones/psp-notificaciones.php' => [ 'PSP Notificaciones','psp-notificaciones2/psp-notificaciones2.php' ],
+        'psp-pwa/psp-pwa.php'                       => [ 'PSP PWA',           'psp-pwa2/psp-pwa2.php' ],
+    ];
+
+    // JSON Territorial: configured if legacy option set OR if territorial2 is active (REST mode)
+    $terr_legacy_ok = ! empty( get_option( 'psp_territorial_json_url' ) )
+                   || ! empty( get_option( 'psp_territorial_json_path' ) );
+    $terr_v2_ok     = is_plugin_active( 'psp-territorial2/psp-territorial2.php' );
+    $terr_ok        = $terr_legacy_ok || $terr_v2_ok;
+
+    // Configuration checks using legacy option names; Supabase falls back to v2 options when legacy are absent
+    $checks = [
+        'Supabase URL'      => ! empty( get_option( 'psp_supabase_url' ) ) || ! empty( get_option( 'psp2_supabase_url' ) ),
+        'Supabase Anon Key' => ! empty( get_option( 'psp_supabase_anon_key' ) ) || ! empty( get_option( 'psp2_supabase_anon_key' ) ),
+        'Supabase Svc Key'  => ! empty( get_option( 'psp_supabase_service_key' ) ) || ! empty( get_option( 'psp2_supabase_service_key' ) ),
+        'RUC (Facturación)' => ! empty( get_option( 'psp_ruc' ) ),
+        'JSON Territorial'  => $terr_ok,
+        'Yappy configurado' => ! empty( get_option( 'psp_yappy_numero' ) ),
+        'PagueloFacil key'  => ! empty( get_option( 'psp_paguelofacil_key' ) ),
+    ];
+
+    $terr_note = ( ! $terr_legacy_ok && $terr_v2_ok )
+        ? wp_kses( ' <em style="font-size:11px;color:#166534">(psp-territorial2 REST activo)</em>', [ 'em' => [ 'style' => [] ] ] )
+        : '';
+    ?>
+    <div class="wrap">
+      <h1>&#x1F4CB; Estado del Sistema PSP</h1>
+      <p style="color:#555;font-size:13px">Vista de compatibilidad con el ecosistema PSP v1. Los plugins v2 activos cuentan como equivalentes legacy.</p>
+
+      <h2>Plugins PSP</h2>
+      <table class="wp-list-table widefat" style="max-width:640px">
+        <thead><tr><th>Plugin</th><th>Estado</th></tr></thead>
+        <tbody>
+          <?php foreach ( $plugins_legacy as $legacy_file => $info ) :
+              [ $name, $v2_file ] = $info;
+              $legacy_active = is_plugin_active( $legacy_file );
+              $v2_active     = ! empty( $v2_file ) && is_plugin_active( $v2_file );
+          ?>
+          <tr>
+            <td><?php echo esc_html( $name ); ?></td>
+            <td>
+              <?php if ( $legacy_active ) : ?>
+                <span style="color:#166534;font-weight:700">&#x2705; Activo</span>
+              <?php elseif ( $v2_active ) : ?>
+                <span style="color:#166534;font-weight:700">&#x2705; Activo</span>
+                <em style="font-size:11px;color:#166534">(v2)</em>
+              <?php else : ?>
+                <span style="color:#991b1b">&#x274C; No activo</span>
+              <?php endif; ?>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:24px">Configuraci&oacute;n</h2>
+      <table class="wp-list-table widefat" style="max-width:640px">
+        <thead><tr><th>Elemento</th><th>Estado</th></tr></thead>
+        <tbody>
+          <?php foreach ( $checks as $label => $ok ) : ?>
+          <tr>
+            <td>
+              <?php echo esc_html( $label ); ?>
+              <?php if ( 'JSON Territorial' === $label ) echo $terr_note; // safe: constructed with wp_kses() ?>
+            </td>
+            <td><?php echo $ok
+                ? '<span style="color:#166534;font-weight:700">&#x2705; Configurado</span>'
+                : '<span style="color:#EF9F27">&#x26A0;&#xFE0F; Pendiente</span>'; ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:24px">Test conexi&oacute;n Supabase</h2>
+      <button onclick="pspLegacyTestSupabase()" class="button button-primary">&#x1F9EA; Probar conexi&oacute;n</button>
+      <div id="psp-legacy-supa-res" style="margin-top:8px;font-size:13px"></div>
+    </div>
+    <script>
+    async function pspLegacyTestSupabase() {
+      var el = document.getElementById('psp-legacy-supa-res');
+      el.textContent = '\u23F3 Probando\u2026';
+      try {
+        var r = await fetch(ajaxurl + '?action=psp2_test_supabase&psp2_nonce=<?php echo esc_js( wp_create_nonce( 'psp2_nonce' ) ); ?>', { method: 'POST' });
+        var d = await r.json();
+        el.innerHTML = d.success
+          ? '&#x2705; Conexi&oacute;n exitosa. Supabase responde correctamente.'
           : '&#x274C; Error: ' + (d.data && d.data.message ? d.data.message : 'Sin respuesta');
       } catch(e) {
         el.textContent = '&#x274C; Error de red: ' + e.message;
