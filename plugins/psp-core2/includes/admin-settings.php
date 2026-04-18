@@ -147,14 +147,20 @@ function psp2_status_page(): void {
 
     // ── PSP v2 plugins ────────────────────────────────────────────────────────
     $plugins_v2 = [
-        'psp-core2/psp-core2.php'               => 'PSP Core 2',
-        'psp-auth2/psp-auth2.php'               => 'PSP Auth 2',
-        'psp-territorial2/psp-territorial2.php' => 'PSP Territorial 2',
-        'psp-payments2/psp-payments2.php'       => 'PSP Payments 2',
-        'psp-referidos2/psp-referidos2.php'     => 'PSP Referidos 2',
-        'psp-ranking2/psp-ranking2.php'         => 'PSP Ranking 2',
-        'psp-whatsapp2/psp-whatsapp2.php'       => 'PSP WhatsApp 2',
-        'psp-dashboard2/psp-dashboard2.php'     => 'PSP Dashboard 2',
+        'psp-core2/psp-core2.php'                     => 'PSP Core 2',
+        'psp-auth2/psp-auth2.php'                     => 'PSP Auth 2',
+        'psp-territorial2/psp-territorial2.php'       => 'PSP Territorial 2',
+        'psp-dashboard2/psp-dashboard.php'            => 'PSP Dashboard 2',
+        'psp-payments2/psp-payments.php'              => 'PSP Payments 2',
+        'psp-ranking2/psp-ranking.php'                => 'PSP Ranking 2',
+        'psp-referidos2/psp-referidos.php'            => 'PSP Referidos 2',
+        'psp-whatsapp2/psp-whatsapp.php'              => 'PSP WhatsApp 2',
+        'psp-erp2/psp-erp.php'                        => 'PSP ERP 2',
+        'psp-notificaciones2/psp-notificaciones.php'  => 'PSP Notificaciones 2',
+        'psp-membresias2/psp-membresias.php'          => 'PSP Membres&iacute;as 2',
+        'psp-productos2/psp-productos.php'            => 'PSP Productos 2',
+        'psp-facturacion2/psp-facturacion.php'        => 'PSP Facturaci&oacute;n 2',
+        'psp-pwa2/psp-pwa.php'                        => 'PSP PWA 2',
     ];
 
     // ── Legacy / compatibility plugin list ───────────────────────────────────
@@ -176,38 +182,38 @@ function psp2_status_page(): void {
         ],
         'psp-payments/psp-payments.php'     => [
             'name'     => 'PSP Payments',
-            'v2'       => 'psp-payments2/psp-payments2.php',
+            'v2'       => 'psp-payments2/psp-payments.php',
             'settings' => null,
         ],
         'psp-membresias/psp-membresias.php' => [
             'name'     => 'PSP Membres&iacute;as',
-            'v2'       => 'psp-membresias2/psp-membresias2.php',
+            'v2'       => 'psp-membresias2/psp-membresias.php',
             'settings' => null,
         ],
         'psp-productos/psp-productos.php'   => [
             'name'     => 'PSP Productos',
-            'v2'       => 'psp-productos2/psp-productos2.php',
+            'v2'       => 'psp-productos2/psp-productos.php',
             'settings' => null,
         ],
         'psp-dashboard/psp-dashboard.php'   => [
             'name'     => 'PSP Dashboard',
-            'v2'       => 'psp-dashboard2/psp-dashboard2.php',
+            'v2'       => 'psp-dashboard2/psp-dashboard.php',
             'settings' => null,
         ],
         'psp-ranking/psp-ranking.php'       => [
             'name'     => 'PSP Ranking',
-            'v2'       => 'psp-ranking2/psp-ranking2.php',
+            'v2'       => 'psp-ranking2/psp-ranking.php',
             'settings' => null,
         ],
         'psp-referidos/psp-referidos.php'   => [
             'name'     => 'PSP Referidos',
-            'v2'       => 'psp-referidos2/psp-referidos2.php',
+            'v2'       => 'psp-referidos2/psp-referidos.php',
             'settings' => null,
         ],
         'psp-erp/psp-erp.php'               => [
             'name'     => 'PSP ERP',
-            'v2'       => 'psp-erp2/psp-erp2.php',
-            'settings' => null,
+            'v2'       => 'psp-erp2/psp-erp.php',
+            'settings' => 'psp-erp',
         ],
         'psp-facturacion/psp-facturacion.php' => [
             'name'     => 'PSP Facturaci&oacute;n',
@@ -216,8 +222,8 @@ function psp2_status_page(): void {
         ],
         'psp-whatsapp/psp-whatsapp.php'     => [
             'name'     => 'PSP WhatsApp',
-            'v2'       => 'psp-whatsapp2/psp-whatsapp2.php',
-            'settings' => null,
+            'v2'       => 'psp-whatsapp2/psp-whatsapp.php',
+            'settings' => 'psp-whatsapp',
         ],
         'psp-notificaciones/psp-notificaciones.php' => [
             'name'     => 'PSP Notificaciones',
@@ -242,6 +248,14 @@ function psp2_status_page(): void {
             'label'    => 'Supabase URL',
             'ok'       => ! empty( get_option( 'psp2_supabase_url' ) ) || ! empty( get_option( 'psp_supabase_url' ) ),
             'uso'      => 'Core 2, Auth 2, Payments 2, Referidos 2, Ranking 2',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
+        ],
+        [
+            'label'    => 'Supabase Anon Key',
+            'ok'       => ! empty( get_option( 'psp2_supabase_anon_key' ) ) || ! empty( get_option( 'psp_supabase_anon_key' ) ),
+            'uso'      => 'Core 2 (lecturas p&uacute;blicas, front-end)',
             'prioridad'=> 'Cr&iacute;tica',
             'prio_num' => 1,
             'link'     => admin_url( 'admin.php?page=psp-core2' ),
@@ -288,7 +302,9 @@ function psp2_status_page(): void {
             'uso'      => 'Payments 2 (Yappy)',
             'prioridad'=> 'Alta',
             'prio_num' => 2,
-            'link'     => admin_url( 'admin.php?page=psp-core2' ),
+            'link'     => is_plugin_active( 'psp-payments2/psp-payments.php' )
+                       ? admin_url( 'plugins.php?s=psp-payments2' )
+                       : admin_url( 'plugins.php' ),
         ],
         [
             'label'    => 'PagueloF&aacute;cil key',
@@ -296,7 +312,9 @@ function psp2_status_page(): void {
             'uso'      => 'Payments 2 (PagueloF&aacute;cil)',
             'prioridad'=> 'Alta',
             'prio_num' => 2,
-            'link'     => admin_url( 'admin.php?page=psp-core2' ),
+            'link'     => is_plugin_active( 'psp-payments2/psp-payments.php' )
+                       ? admin_url( 'plugins.php?s=psp-payments2' )
+                       : admin_url( 'plugins.php' ),
         ],
         [
             'label'    => 'Twilio SID (SMS)',
