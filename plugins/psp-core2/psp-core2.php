@@ -62,8 +62,9 @@ function psp2_sync_legacy_options(): void {
         'psp_campaign_end'         => 'psp2_campaign_end',
     ];
     foreach ( $map as $legacy_key => $v2_key ) {
-        $v2_val = get_option( $v2_key, '' );
-        if ( ! empty( $v2_val ) && empty( get_option( $legacy_key, '' ) ) ) {
+        $v2_val     = get_option( $v2_key, '' );
+        $legacy_val = get_option( $legacy_key, '' );
+        if ( ! empty( $v2_val ) && empty( $legacy_val ) ) {
             update_option( $legacy_key, $v2_val );
         }
     }

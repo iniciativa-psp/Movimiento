@@ -241,6 +241,11 @@ function psp2_status_page(): void {
     $territorial_rest_ok = is_plugin_active( 'psp-territorial2/psp-territorial2.php' )
         && is_plugin_active( 'psp-territorial-v2/psp-territorial-v2.php' );
 
+    // Payments 2 "Configurar" link (reused for Yappy and PagueloFácil rows).
+    $payments_link = is_plugin_active( 'psp-payments2/psp-payments.php' )
+        ? admin_url( 'plugins.php?s=psp-payments2' )
+        : admin_url( 'plugins.php' );
+
     // ── Centralized configuration items (ordered by priority) ────────────────
     // prioridad: 1 = Crítica, 2 = Alta, 3 = Media
     $config_central = [
@@ -302,9 +307,7 @@ function psp2_status_page(): void {
             'uso'      => 'Payments 2 (Yappy)',
             'prioridad'=> 'Alta',
             'prio_num' => 2,
-            'link'     => is_plugin_active( 'psp-payments2/psp-payments.php' )
-                       ? admin_url( 'plugins.php?s=psp-payments2' )
-                       : admin_url( 'plugins.php' ),
+            'link'     => $payments_link,
         ],
         [
             'label'    => 'PagueloF&aacute;cil key',
@@ -312,9 +315,7 @@ function psp2_status_page(): void {
             'uso'      => 'Payments 2 (PagueloF&aacute;cil)',
             'prioridad'=> 'Alta',
             'prio_num' => 2,
-            'link'     => is_plugin_active( 'psp-payments2/psp-payments.php' )
-                       ? admin_url( 'plugins.php?s=psp-payments2' )
-                       : admin_url( 'plugins.php' ),
+            'link'     => $payments_link,
         ],
         [
             'label'    => 'Twilio SID (SMS)',
