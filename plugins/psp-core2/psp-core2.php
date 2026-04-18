@@ -19,10 +19,56 @@ define( 'PSP2_REST_NS',    'psp/v2' );
 
 // ── Cargar dependencias ──────────────────────────────────────────────────────
 require_once PSP2_PLUGIN_DIR . 'includes/api-client.php';
+
+// ── Compatibilidad legacy: exponer PSP_Supabase como alias de PSP2_Supabase ──
+// Muchos plugins v2 y legacy aún validan PSP Core con class_exists('PSP_Supabase').
+// Este shim hace que esas comprobaciones pasen sin modificar esos plugins.
+if ( class_exists( 'PSP2_Supabase' ) && ! class_exists( 'PSP_Supabase' ) ) {
+    // phpcs:ignore Generic.Files.OneClassPerFile.MultipleFound
+    class PSP_Supabase extends PSP2_Supabase {}
+}
+
+// ── Constantes legacy para plugins que las leen directamente ─────────────────
+if ( ! defined( 'PSP_SUPABASE_URL' ) ) {
+    define( 'PSP_SUPABASE_URL', get_option( 'psp2_supabase_url', get_option( 'psp_supabase_url', '' ) ) );
+}
+if ( ! defined( 'PSP_SUPABASE_KEY' ) ) {
+    define( 'PSP_SUPABASE_KEY', get_option( 'psp2_supabase_anon_key', get_option( 'psp_supabase_anon_key', '' ) ) );
+}
+if ( ! defined( 'PSP_SUPABASE_SVC' ) ) {
+    define( 'PSP_SUPABASE_SVC', get_option( 'psp2_supabase_service_key', get_option( 'psp_supabase_service_key', '' ) ) );
+}
+if ( ! defined( 'PSP_TENANT_ID' ) ) {
+    define( 'PSP_TENANT_ID', get_option( 'psp2_tenant_id', get_option( 'psp_tenant_id', 'panama' ) ) );
+}
+
 require_once PSP2_PLUGIN_DIR . 'includes/helpers.php';
 require_once PSP2_PLUGIN_DIR . 'includes/security.php';
 require_once PSP2_PLUGIN_DIR . 'includes/admin-settings.php';
 require_once PSP2_PLUGIN_DIR . 'includes/rest-api.php';
+
+// ── Sincronizar opciones psp2_* → psp_* (solo si legacy está vacío) ──────────
+// Esto permite que plugins que aún leen psp_* obtengan la configuración v2
+// sin necesidad de modificarlos. Nunca sobreescribe opciones legacy no vacías.
+add_action( 'plugins_loaded', 'psp2_sync_legacy_options', 20 );
+function psp2_sync_legacy_options(): void {
+    $map = [
+        'psp_supabase_url'         => 'psp2_supabase_url',
+        'psp_supabase_anon_key'    => 'psp2_supabase_anon_key',
+        'psp_supabase_service_key' => 'psp2_supabase_service_key',
+        'psp_tenant_id'            => 'psp2_tenant_id',
+        'psp_launch_date'          => 'psp2_launch_date',
+        'psp_campaign_start'       => 'psp2_campaign_start',
+        'psp_campaign_end'         => 'psp2_campaign_end',
+    ];
+    foreach ( $map as $legacy_key => $v2_key ) {
+        $v2_val     = get_option( $v2_key, '' );
+        $legacy_val = get_option( $legacy_key, '' );
+        if ( ! empty( $v2_val ) && empty( $legacy_val ) ) {
+            update_option( $legacy_key, $v2_val );
+        }
+    }
+}
 
 // ── Activación ───────────────────────────────────────────────────────────────
 register_activation_hook( __FILE__, 'psp2_core_activate' );
