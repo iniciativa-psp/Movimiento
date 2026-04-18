@@ -26,8 +26,9 @@ function psp2_admin_menu(): void {
         'psp2-status',
         'psp2_status_page'
     );
+    // Legacy slug kept for backward-compatibility redirects; hidden from menu.
     add_submenu_page(
-        'psp-core2',
+        null,
         'Estado del Sistema (Legacy)',
         '&#x1F4CB; Estado (Legacy)',
         'manage_options',
@@ -138,94 +139,25 @@ function psp2_settings_page(): void {
     <?php
 }
 
-// ── Página de estado del sistema ─────────────────────────────────────────────
+// ── Página de estado del sistema (unificada) ─────────────────────────────────
 function psp2_status_page(): void {
     if ( ! current_user_can( 'manage_options' ) ) {
         wp_die( esc_html__( 'No autorizado', 'psp-core2' ) );
     }
 
+    // ── PSP v2 plugins ────────────────────────────────────────────────────────
     $plugins_v2 = [
-        'psp-core2/psp-core2.php'           => 'PSP Core 2',
-        'psp-auth2/psp-auth2.php'           => 'PSP Auth 2',
+        'psp-core2/psp-core2.php'               => 'PSP Core 2',
+        'psp-auth2/psp-auth2.php'               => 'PSP Auth 2',
         'psp-territorial2/psp-territorial2.php' => 'PSP Territorial 2',
-        'psp-payments2/psp-payments2.php'   => 'PSP Payments 2',
-        'psp-referidos2/psp-referidos2.php' => 'PSP Referidos 2',
-        'psp-ranking2/psp-ranking2.php'     => 'PSP Ranking 2',
-        'psp-whatsapp2/psp-whatsapp2.php'   => 'PSP WhatsApp 2',
-        'psp-dashboard2/psp-dashboard2.php' => 'PSP Dashboard 2',
+        'psp-payments2/psp-payments2.php'       => 'PSP Payments 2',
+        'psp-referidos2/psp-referidos2.php'     => 'PSP Referidos 2',
+        'psp-ranking2/psp-ranking2.php'         => 'PSP Ranking 2',
+        'psp-whatsapp2/psp-whatsapp2.php'       => 'PSP WhatsApp 2',
+        'psp-dashboard2/psp-dashboard2.php'     => 'PSP Dashboard 2',
     ];
 
-    $checks = [
-        'Supabase URL'      => ! empty( get_option( 'psp2_supabase_url' ) ),
-        'Supabase Anon Key' => ! empty( get_option( 'psp2_supabase_anon_key' ) ),
-        'Supabase Svc Key'  => ! empty( get_option( 'psp2_supabase_service_key' ) ),
-        'Tenant ID'         => ! empty( get_option( 'psp2_tenant_id' ) ),
-    ];
-    ?>
-    <div class="wrap">
-      <h1>&#x1F4CB; Estado del Sistema PSP v2</h1>
-
-      <h2>Plugins PSP v2</h2>
-      <table class="wp-list-table widefat" style="max-width:600px">
-        <thead><tr><th>Plugin</th><th>Estado</th></tr></thead>
-        <tbody>
-          <?php foreach ( $plugins_v2 as $file => $name ) :
-              $activo = is_plugin_active( $file );
-          ?>
-          <tr>
-            <td><?php echo esc_html( $name ); ?></td>
-            <td><?php echo $activo
-                ? '<span style="color:#166534;font-weight:700">&#x2705; Activo</span>'
-                : '<span style="color:#991b1b">&#x274C; No activo</span>'; ?></td>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-
-      <h2 style="margin-top:24px">Configuraci&oacute;n</h2>
-      <table class="wp-list-table widefat" style="max-width:600px">
-        <thead><tr><th>Elemento</th><th>Estado</th></tr></thead>
-        <tbody>
-          <?php foreach ( $checks as $label => $ok ) : ?>
-          <tr>
-            <td><?php echo esc_html( $label ); ?></td>
-            <td><?php echo $ok
-                ? '<span style="color:#166534;font-weight:700">&#x2705; Configurado</span>'
-                : '<span style="color:#EF9F27">&#x26A0;&#xFE0F; Pendiente</span>'; ?></td>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-
-      <h2 style="margin-top:24px">Test conexi&oacute;n Supabase</h2>
-      <button onclick="psp2TestSupa()" class="button button-primary">&#x1F9EA; Probar conexi&oacute;n</button>
-      <div id="psp2-supa-res" style="margin-top:8px;font-size:13px"></div>
-    </div>
-    <script>
-    async function psp2TestSupa() {
-      var el = document.getElementById('psp2-supa-res');
-      el.textContent = '\u23F3 Probando\u2026';
-      try {
-        var r = await fetch(ajaxurl + '?action=psp2_test_supabase&psp2_nonce=<?php echo esc_js( wp_create_nonce( 'psp2_nonce' ) ); ?>', { method: 'POST' });
-        var d = await r.json();
-        el.innerHTML = d.success
-          ? '&#x2705; Conexi&oacute;n exitosa.'
-          : '&#x274C; Error: ' + (d.data && d.data.message ? d.data.message : 'Sin respuesta');
-      } catch(e) {
-        el.textContent = '&#x274C; Error de red: ' + e.message;
-      }
-    }
-    </script>
-    <?php
-}
-
-// ── Página de estado del sistema (Legacy) ────────────────────────────────────
-function psp2_status_legacy_page(): void {
-    if ( ! current_user_can( 'manage_options' ) ) {
-        wp_die( esc_html__( 'No autorizado', 'psp-core2' ) );
-    }
-
-    // Legacy plugin list with optional v2 equivalents and known settings page slugs.
+    // ── Legacy / compatibility plugin list ───────────────────────────────────
     $plugins_legacy = [
         'psp-core/psp-core.php'             => [
             'name'     => 'PSP Core',
@@ -235,7 +167,7 @@ function psp2_status_legacy_page(): void {
         'psp-auth/psp-auth.php'             => [
             'name'     => 'PSP Auth',
             'v2'       => 'psp-auth2/psp-auth2.php',
-            'settings' => null,
+            'settings' => 'psp2-auth',
         ],
         'psp-territorial/psp-territorial.php' => [
             'name'     => 'PSP Territorial',
@@ -279,8 +211,8 @@ function psp2_status_legacy_page(): void {
         ],
         'psp-facturacion/psp-facturacion.php' => [
             'name'     => 'PSP Facturaci&oacute;n',
-            'v2'       => 'psp-facturacion2/psp-facturacion2.php',
-            'settings' => null,
+            'v2'       => 'psp-facturacion2/psp-facturacion.php',
+            'settings' => 'psp-facturacion-config',
         ],
         'psp-whatsapp/psp-whatsapp.php'     => [
             'name'     => 'PSP WhatsApp',
@@ -289,78 +221,209 @@ function psp2_status_legacy_page(): void {
         ],
         'psp-notificaciones/psp-notificaciones.php' => [
             'name'     => 'PSP Notificaciones',
-            'v2'       => 'psp-notificaciones2/psp-notificaciones2.php',
-            'settings' => null,
+            'v2'       => 'psp-notificaciones2/psp-notificaciones.php',
+            'settings' => 'psp-notificaciones',
         ],
         'psp-pwa/psp-pwa.php'               => [
             'name'     => 'PSP PWA',
-            'v2'       => 'psp-pwa2/psp-pwa2.php',
-            'settings' => null,
+            'v2'       => 'psp-pwa2/psp-pwa.php',
+            'settings' => 'psp-pwa',
         ],
     ];
 
-    // "JSON Territorial" is satisfied when legacy JSON options are set OR when
-    // psp-territorial2 + psp-territorial-v2 are both active (REST replaces JSON).
+    // "JSON Territorial" ok when legacy JSON options set OR REST pipeline active.
     $territorial_rest_ok = is_plugin_active( 'psp-territorial2/psp-territorial2.php' )
         && is_plugin_active( 'psp-territorial-v2/psp-territorial-v2.php' );
 
-    // Configuration checks: consider both legacy (psp_) and v2 (psp2_) options.
-    $checks = [
-        'Supabase URL'       => [
-            'ok'   => ! empty( get_option( 'psp_supabase_url' ) ) || ! empty( get_option( 'psp2_supabase_url' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+    // ── Centralized configuration items (ordered by priority) ────────────────
+    // prioridad: 1 = Crítica, 2 = Alta, 3 = Media
+    $config_central = [
+        [
+            'label'    => 'Supabase URL',
+            'ok'       => ! empty( get_option( 'psp2_supabase_url' ) ) || ! empty( get_option( 'psp_supabase_url' ) ),
+            'uso'      => 'Core 2, Auth 2, Payments 2, Referidos 2, Ranking 2',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
         ],
-        'Supabase Anon Key'  => [
-            'ok'   => ! empty( get_option( 'psp_supabase_anon_key' ) ) || ! empty( get_option( 'psp2_supabase_anon_key' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+        [
+            'label'    => 'Supabase Service Key',
+            'ok'       => ! empty( get_option( 'psp2_supabase_service_key' ) ) || ! empty( get_option( 'psp_supabase_service_key' ) ),
+            'uso'      => 'Core 2 (solo servidor)',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
         ],
-        'Supabase Svc Key'   => [
-            'ok'   => ! empty( get_option( 'psp_supabase_service_key' ) ) || ! empty( get_option( 'psp2_supabase_service_key' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+        [
+            'label'    => 'Tenant ID',
+            'ok'       => ! empty( get_option( 'psp2_tenant_id' ) ) || ! empty( get_option( 'psp_tenant_id' ) ),
+            'uso'      => 'Core 2, Territorial 2',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
         ],
-        'RUC (Facturaci&oacute;n)' => [
-            'ok'   => ! empty( get_option( 'psp_ruc' ) ) || ! empty( get_option( 'psp2_ruc' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+        [
+            'label'    => 'PAC URL (Facturaci&oacute;n)',
+            'ok'       => ! empty( get_option( 'psp_pac_url' ) ),
+            'uso'      => 'Facturaci&oacute;n 2 (DGI)',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => is_plugin_active( 'psp-facturacion2/psp-facturacion.php' )
+                       ? admin_url( 'admin.php?page=psp-facturacion-config' )
+                       : admin_url( 'plugins.php' ),
         ],
-        'JSON Territorial'   => [
-            'ok'   => ! empty( get_option( 'psp_territorial_json_url' ) )
-                   || ! empty( get_option( 'psp_territorial_json_path' ) )
-                   || $territorial_rest_ok,
-            'link' => is_plugin_active( 'psp-territorial2/psp-territorial2.php' )
-                   ? admin_url( 'admin.php?page=psp2-territorial' )
-                   : admin_url( 'plugins.php' ),
+        [
+            'label'    => 'PAC Token (Facturaci&oacute;n)',
+            'ok'       => ! empty( get_option( 'psp_pac_token' ) ),
+            'uso'      => 'Facturaci&oacute;n 2 (DGI)',
+            'prioridad'=> 'Cr&iacute;tica',
+            'prio_num' => 1,
+            'link'     => is_plugin_active( 'psp-facturacion2/psp-facturacion.php' )
+                       ? admin_url( 'admin.php?page=psp-facturacion-config' )
+                       : admin_url( 'plugins.php' ),
         ],
-        'Yappy configurado'  => [
-            'ok'   => ! empty( get_option( 'psp_yappy_numero' ) ) || ! empty( get_option( 'psp2_yappy_numero' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+        [
+            'label'    => 'Yappy n&uacute;mero',
+            'ok'       => ! empty( get_option( 'psp_yappy_numero' ) ) || ! empty( get_option( 'psp2_yappy_numero' ) ),
+            'uso'      => 'Payments 2 (Yappy)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
         ],
-        'PagueloFacil key'   => [
-            'ok'   => ! empty( get_option( 'psp_paguelofacil_key' ) ) || ! empty( get_option( 'psp2_paguelofacil_key' ) ),
-            'link' => admin_url( 'admin.php?page=psp-core2' ),
+        [
+            'label'    => 'PagueloF&aacute;cil key',
+            'ok'       => ! empty( get_option( 'psp_paguelofacil_key' ) ) || ! empty( get_option( 'psp2_paguelofacil_key' ) ),
+            'uso'      => 'Payments 2 (PagueloF&aacute;cil)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => admin_url( 'admin.php?page=psp-core2' ),
         ],
+        [
+            'label'    => 'Twilio SID (SMS)',
+            'ok'       => ! empty( get_option( 'psp_twilio_sid' ) ),
+            'uso'      => 'Notificaciones 2 (SMS)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => is_plugin_active( 'psp-notificaciones2/psp-notificaciones.php' )
+                       ? admin_url( 'admin.php?page=psp-notificaciones' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'Twilio Token (SMS)',
+            'ok'       => ! empty( get_option( 'psp_twilio_token' ) ),
+            'uso'      => 'Notificaciones 2 (SMS)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => is_plugin_active( 'psp-notificaciones2/psp-notificaciones.php' )
+                       ? admin_url( 'admin.php?page=psp-notificaciones' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'WhatsApp 360dialog Token',
+            'ok'       => ! empty( get_option( 'psp_wa_360_token' ) ),
+            'uso'      => 'Notificaciones 2 (WhatsApp)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => is_plugin_active( 'psp-notificaciones2/psp-notificaciones.php' )
+                       ? admin_url( 'admin.php?page=psp-notificaciones' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'VAPID Public Key (PWA Push)',
+            'ok'       => ! empty( get_option( 'psp_vapid_public' ) ),
+            'uso'      => 'PWA 2 (notificaciones push)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => is_plugin_active( 'psp-pwa2/psp-pwa.php' )
+                       ? admin_url( 'admin.php?page=psp-pwa' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'VAPID Private Key (PWA Push)',
+            'ok'       => ! empty( get_option( 'psp_vapid_private' ) ),
+            'uso'      => 'PWA 2 (notificaciones push)',
+            'prioridad'=> 'Alta',
+            'prio_num' => 2,
+            'link'     => is_plugin_active( 'psp-pwa2/psp-pwa.php' )
+                       ? admin_url( 'admin.php?page=psp-pwa' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'RUC (Facturaci&oacute;n)',
+            'ok'       => ! empty( get_option( 'psp_ruc' ) ) || ! empty( get_option( 'psp2_ruc' ) ),
+            'uso'      => 'Facturaci&oacute;n 2 (DGI)',
+            'prioridad'=> 'Media',
+            'prio_num' => 3,
+            'link'     => is_plugin_active( 'psp-facturacion2/psp-facturacion.php' )
+                       ? admin_url( 'admin.php?page=psp-facturacion-config' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'JSON Territorial',
+            'ok'       => ! empty( get_option( 'psp_territorial_json_url' ) )
+                       || ! empty( get_option( 'psp_territorial_json_path' ) )
+                       || $territorial_rest_ok,
+            'uso'      => 'Territorial (datos geogr&aacute;ficos)',
+            'prioridad'=> 'Media',
+            'prio_num' => 3,
+            'link'     => is_plugin_active( 'psp-territorial2/psp-territorial2.php' )
+                       ? admin_url( 'admin.php?page=psp2-territorial' )
+                       : admin_url( 'plugins.php' ),
+        ],
+        [
+            'label'    => 'Auth 2 &mdash; URL Privacidad',
+            'ok'       => ! empty( get_option( 'psp2_privacy_url' ) ),
+            'uso'      => 'Auth 2 (formulario de registro)',
+            'prioridad'=> 'Media',
+            'prio_num' => 3,
+            'link'     => is_plugin_active( 'psp-auth2/psp-auth2.php' )
+                       ? admin_url( 'admin.php?page=psp2-auth' )
+                       : admin_url( 'plugins.php' ),
+        ],
+    ];
+
+    // Priority badge styles.
+    $prio_style = [
+        1 => 'background:#fef2f2;color:#991b1b;border:1px solid #fca5a5;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700',
+        2 => 'background:#fffbeb;color:#92400e;border:1px solid #fcd34d;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700',
+        3 => 'background:#f0fdf4;color:#166534;border:1px solid #86efac;padding:2px 7px;border-radius:4px;font-size:11px',
     ];
     ?>
     <div class="wrap">
-      <h1>&#x1F4CB; Estado del Sistema PSP (Legacy)</h1>
-      <p class="description">Vista de compatibilidad: detecta tanto plugins legacy (v1) como sus equivalentes v2.</p>
+      <h1>&#x1F4CB; Estado del Sistema PSP v2</h1>
+      <p class="description">Vista unificada: detecta plugins v2 y sus equivalentes legacy (v1). Los valores secretos nunca se muestran.</p>
 
-      <h2>Plugins PSP</h2>
+      <h2>Plugins PSP v2</h2>
+      <table class="wp-list-table widefat" style="max-width:660px">
+        <thead><tr><th>Plugin</th><th>Estado</th></tr></thead>
+        <tbody>
+          <?php foreach ( $plugins_v2 as $file => $name ) :
+              $activo = is_plugin_active( $file );
+          ?>
+          <tr>
+            <td><?php echo esc_html( $name ); ?></td>
+            <td><?php echo $activo
+                ? '<span style="color:#166534;font-weight:700">&#x2705; Activo</span>'
+                : '<span style="color:#991b1b">&#x274C; No activo</span>'; ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:28px">Plugins PSP (Compatibilidad Legacy)</h2>
+      <p class="description">Verifica tanto la versi&oacute;n legacy (v1) como su equivalente v2.</p>
       <table class="wp-list-table widefat" style="max-width:960px">
         <thead>
-          <tr>
-            <th>Plugin</th>
-            <th>Estado</th>
-            <th>Gestionar</th>
-          </tr>
+          <tr><th>Plugin</th><th>Estado</th><th>Gestionar</th></tr>
         </thead>
         <tbody>
           <?php foreach ( $plugins_legacy as $legacy_file => $info ) :
-              $v2_file        = $info['v2'];
-              $settings_slug  = $info['settings'];
+              $v2_file       = $info['v2'];
+              $settings_slug = $info['settings'];
 
-              $legacy_active  = is_plugin_active( $legacy_file );
-              $v2_installed   = file_exists( WP_PLUGIN_DIR . '/' . $v2_file );
-              $v2_active      = $v2_installed && is_plugin_active( $v2_file );
+              $legacy_active   = is_plugin_active( $legacy_file );
+              $v2_installed    = file_exists( WP_PLUGIN_DIR . '/' . $v2_file );
+              $v2_active       = $v2_installed && is_plugin_active( $v2_file );
 
               if ( $legacy_active ) {
                   $status_html = '<span style="color:#166534;font-weight:700">&#x2705; Activo</span>';
@@ -374,16 +437,12 @@ function psp2_status_legacy_page(): void {
                   $active_file = null;
               }
 
-              // Build "Gestionar" quick links.
               $manage_links = [];
-
               if ( null !== $active_file ) {
-                  // Plugin is active — link to plugins page with search pre-filled.
-                  $folder = dirname( $active_file );
+                  $folder         = dirname( $active_file );
                   $manage_links[] = '<a href="' . esc_url( admin_url( 'plugins.php?s=' . rawurlencode( $folder ) ) ) . '">'
                                   . esc_html__( 'Ver en Plugins', 'psp-core2' ) . '</a>';
               } else {
-                  // Not active — provide activate link if installed, or "No instalado" otherwise.
                   $legacy_installed = file_exists( WP_PLUGIN_DIR . '/' . $legacy_file );
                   if ( $legacy_installed ) {
                       $act_url        = wp_nonce_url(
@@ -406,8 +465,6 @@ function psp2_status_legacy_page(): void {
                                       . esc_html__( 'Buscar plugins', 'psp-core2' ) . '</a>';
                   }
               }
-
-              // Direct link to settings page when the plugin is active and a slug is known.
               if ( null !== $settings_slug && null !== $active_file ) {
                   $manage_links[] = '<a href="' . esc_url( admin_url( 'admin.php?page=' . $settings_slug ) ) . '">'
                                   . esc_html__( 'Configurar', 'psp-core2' ) . '</a>';
@@ -422,25 +479,33 @@ function psp2_status_legacy_page(): void {
         </tbody>
       </table>
 
-      <h2 style="margin-top:24px">Configuraci&oacute;n</h2>
+      <h2 style="margin-top:28px">Configuraci&oacute;n (Centralizada)</h2>
+      <p class="description">
+        Resumen priorizado de todos los elementos de configuraci&oacute;n del ecosistema PSP.
+        Los valores secretos <strong>no se muestran</strong>; solo se indica si est&aacute;n configurados o pendientes.
+      </p>
       <table class="wp-list-table widefat" style="max-width:960px">
         <thead>
           <tr>
             <th>Elemento</th>
             <th>Estado</th>
+            <th>D&oacute;nde se usa</th>
+            <th>Prioridad</th>
             <th>Configurar</th>
           </tr>
         </thead>
         <tbody>
-          <?php foreach ( $checks as $label => $check ) : ?>
+          <?php foreach ( $config_central as $item ) : ?>
           <tr>
-            <td><?php echo wp_kses_post( $label ); ?></td>
-            <td><?php echo $check['ok']
+            <td><?php echo wp_kses_post( $item['label'] ); ?></td>
+            <td><?php echo $item['ok']
                 ? '<span style="color:#166534;font-weight:700">&#x2705; Configurado</span>'
-                : '<span style="color:#EF9F27">&#x26A0;&#xFE0F; Pendiente</span>'; ?></td>
+                : '<span style="color:#EF9F27;font-weight:700">&#x26A0;&#xFE0F; Pendiente</span>'; ?></td>
+            <td style="color:#374151;font-size:12px"><?php echo wp_kses_post( $item['uso'] ); ?></td>
+            <td><span style="<?php echo esc_attr( $prio_style[ $item['prio_num'] ] ); ?>"><?php echo wp_kses_post( $item['prioridad'] ); ?></span></td>
             <td>
-              <?php if ( ! empty( $check['link'] ) ) : ?>
-              <a href="<?php echo esc_url( $check['link'] ); ?>"><?php esc_html_e( 'Configurar', 'psp-core2' ); ?></a>
+              <?php if ( ! empty( $item['link'] ) ) : ?>
+              <a href="<?php echo esc_url( $item['link'] ); ?>"><?php esc_html_e( 'Configurar', 'psp-core2' ); ?></a>
               <?php endif; ?>
             </td>
           </tr>
@@ -448,29 +513,38 @@ function psp2_status_legacy_page(): void {
         </tbody>
       </table>
 
-      <h2 style="margin-top:24px">Test conexi&oacute;n Supabase</h2>
-      <button onclick="psp2LegacyTestSupa()" class="button button-primary">&#x1F9EA; Probar conexi&oacute;n</button>
-      <div id="psp2-legacy-supa-res" style="margin-top:8px;font-size:13px"></div>
+      <h2 style="margin-top:28px">Test conexi&oacute;n Supabase</h2>
+      <button onclick="psp2TestSupa()" class="button button-primary">&#x1F9EA; Probar conexi&oacute;n</button>
+      <div id="psp2-supa-res" style="margin-top:8px;font-size:13px"></div>
     </div>
     <script>
-    async function psp2LegacyTestSupa() {
-      var el = document.getElementById('psp2-legacy-supa-res');
+    async function psp2TestSupa() {
+      var el = document.getElementById('psp2-supa-res');
       el.textContent = '\u23F3 Probando\u2026';
       try {
-        var r = await fetch(
-          ajaxurl + '?action=psp2_test_supabase&psp2_nonce=<?php echo esc_js( wp_create_nonce( 'psp2_nonce' ) ); ?>',
-          { method: 'POST' }
-        );
+        var r = await fetch(ajaxurl + '?action=psp2_test_supabase&psp2_nonce=<?php echo esc_js( wp_create_nonce( 'psp2_nonce' ) ); ?>', { method: 'POST' });
         var d = await r.json();
-        el.textContent = d.success
-          ? '\u2705 Conexi\u00f3n exitosa. Supabase responde correctamente.'
-          : '\u274C Error: ' + ( d.data && d.data.message ? d.data.message : 'Sin respuesta' );
-      } catch (e) {
+        el.innerHTML = d.success
+          ? '&#x2705; Conexi&oacute;n exitosa. Supabase responde correctamente.'
+          : '&#x274C; Error: ' + (d.data && d.data.message ? d.data.message : 'Sin respuesta');
+      } catch(e) {
         el.textContent = '&#x274C; Error de red: ' + e.message;
       }
     }
     </script>
     <?php
+}
+
+// ── Página de estado del sistema (Legacy) — shim de compatibilidad ───────────
+// Esta página redirige silenciosamente a la nueva vista unificada psp2-status.
+// El slug 'psp-status-legacy' se mantiene registrado (sin aparecer en el menú)
+// para que los marcadores/enlaces antiguos sigan funcionando.
+function psp2_status_legacy_page(): void {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'No autorizado', 'psp-core2' ) );
+    }
+    wp_safe_redirect( admin_url( 'admin.php?page=psp2-status' ) );
+    exit;
 }
 
 // ── AJAX: test conexión Supabase ─────────────────────────────────────────────
